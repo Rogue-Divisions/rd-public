@@ -1,0 +1,15 @@
+name = "rd-public"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
+
+# Routes are bound on roguedivisions.com so that requests to these paths
+# are intercepted by Cloudflare before reaching the Squarespace origin.
+# Everything else on roguedivisions.com falls through to Squarespace as
+# normal.
+routes = [
+  { pattern = "roguedivisions.com/thesis/*", zone_name = "roguedivisions.com" },
+  { pattern = "roguedivisions.com/methodology/*", zone_name = "roguedivisions.com" },
+]

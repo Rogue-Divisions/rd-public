@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Capital Markets Distribution Playbook — methodology notes from Rogue Divisions on running distribution programmes for fund managers, capital advisors, and asset managers." />
+<title>Capital Markets Distribution — Rogue Divisions</title>
+<style>
+/* ============================================================
+   Rogue Divisions — colours and type
+   Single source of truth for tokens. Do not invent new values.
+   ============================================================ */
+
+/* --- Fonts ---------------------------------------------------- */
+@font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/methodology/fonts/Poppins-ExtraBold.ttf") format("truetype");
+}
+
+:root {
+  /* --- Brand palette: neutrals -------------------------------- */
+  --rd-ink:        #191919; /* default page background; near-black */
+  --rd-paper:      #F5F5F7; /* off-white surface */
+  --rd-pure-white: #FFFFFF; /* primary text on ink */
+  --rd-pure-black: #000000; /* reserved: logo + deep shadow tints */
+  --rd-graphite:   #6E6E73; /* secondary text, captions, dividers */
+  --rd-mist:       #E6E6E6; /* light borders, low-contrast outlines */
+
+  /* --- Brand palette: accents (strict priority order) -------- */
+  --rd-signal:  #FF2C55; /* PRIMARY accent — keyword underline + 1 stat */
+  --rd-azure:   #2D5FF7; /* SECONDARY — 1 stat + ➜ arrows on links/CTAs */
+  --rd-jade:    #09BC8A; /* TERTIARY — 1 stat */
+  --rd-citrine: #FFE600; /* RESERVED — do not use without sign-off */
+
+  /* --- Semantic foreground / background ---------------------- */
+  --bg:            var(--rd-ink);
+  --bg-inverted:   var(--rd-paper);
+  --surface:       var(--rd-ink);
+  --surface-light: var(--rd-paper);
+
+  --fg:            var(--rd-pure-white);
+  --fg-inverted:   var(--rd-ink);
+  --fg-muted:      rgba(255, 255, 255, 0.70); /* sub-line on dark */
+  --fg-secondary:  var(--rd-graphite);        /* on light */
+  --fg-eyebrow:    var(--rd-graphite);
+
+  --border:        rgba(110, 110, 115, 0.30); /* graphite @ 30% */
+  --border-light:  var(--rd-mist);
+
+  /* --- Typography -------------------------------------------- */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "Roboto", "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --fw-light:     300;
+  --fw-regular:   400; /* body fallback only — never headings */
+  --fw-medium:    500; /* body / paragraph default */
+  --fw-semibold:  600; /* all headings; nav; CTAs */
+  --fw-bold:      700; /* heading emphasis (the underlined keyword) */
+  --fw-extrabold: 800; /* stat numerals when oversized */
+
+  /* Type scale — anchored to live site computed values */
+  --fs-h1:      64px;   /* desktop hero */
+  --fs-h2:      44.8px;
+  --fs-h3:      33.6px;
+  --fs-h4:      24px;
+  --fs-stat:    72px;   /* credibility chip number */
+  --fs-body:    17px;
+  --fs-body-lg: 19px;
+  --fs-small:   14px;   /* eyebrows, captions */
+  --fs-tiny:    12px;
+
+  --lh-display: 1.14;
+  --lh-heading: 1.18;
+  --lh-body:    1.55;
+
+  /* Tight tracking for headings; flat for body */
+  --ls-h1:    -0.03em;  /* ~ -1.92px at 64px */
+  --ls-h2:    -0.03em;
+  --ls-h3:    -0.025em;
+  --ls-eyebrow: 0.06em; /* small ALL CAPS labels only */
+  --ls-body:    0;
+
+  /* --- Layout system ----------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* Cards: padding & radius are 15% of smallest dimension.
+     These are baseline values; scale with composition. */
+  --card-radius:  20px;
+  --card-padding: 32px;
+  --pill-radius:  9999px;
+
+  /* Strokes */
+  --hairline: 1.5px;       /* never thinner on retina */
+  --stroke-shape: 6px;     /* hero shape blocks @ ~480px avg */
+
+  /* Shadows — black @ 75%, soft, offset Y, no spread */
+  --shadow-chip: 0 8px 24px rgba(0, 0, 0, 0.75);
+  --shadow-cta:  0 6px 18px rgba(0, 0, 0, 0.55);
+  --shadow-signal-low: 0 10px 40px rgba(255, 44, 85, 0.18); /* ticker only */
+
+  /* Motion — minimal library */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast:   150ms;
+  --dur-base:   250ms;
+  --dur-draw:   500ms; /* keyword underline draw-on */
+}
+
+/* ============================================================
+   Element defaults — the page baseline
+   ============================================================ */
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-heading);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-h1);
+}
+h2 { font-size: var(--fs-h2); letter-spacing: var(--ls-h2); }
+h3 { font-size: var(--fs-h3); letter-spacing: var(--ls-h3); }
+h4 { font-size: var(--fs-h4); letter-spacing: var(--ls-h3); }
+
+p {
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+/* Eyebrow — sentence case, graphite, small */
+.eyebrow {
+  font-size: var(--fs-small);
+  color: var(--fg-eyebrow);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
+}
+
+/* ALL CAPS sting — tiny labels and motion graphics only */
+.allcaps {
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  font-size: var(--fs-tiny);
+  font-weight: var(--fw-semibold);
+}
+
+/* ============================================================
+   The signature highlight (keyword underline) — load-bearing
+   Wrap ONE keyword per heading: <span class="rd-mark">right</span>
+   ============================================================ */
+.rd-mark {
+  position: relative;
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+  display: inline-block;
+  isolation: isolate; /* contain the z-index: -1 on ::after */
+}
+.rd-mark::after {
+  content: "";
+  position: absolute;
+  left: -0.04em;
+  right: -0.04em;
+  bottom: -0.04em; /* hugs descenders */
+  height: 0.15em;  /* per spec */
+  background: var(--rd-signal);
+  border-radius: 9999px;
+  z-index: -1;     /* sit behind the glyphs so descenders are not overdrawn */
+  transform-origin: left center;
+}
+@keyframes rd-mark-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.rd-mark.is-drawing::after {
+  animation: rd-mark-draw var(--dur-draw) var(--ease-standard) both;
+}
+
+/* ============================================================
+   Buttons / CTAs — pill, calm imperatives
+   ============================================================ */
+.rd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--pill-radius);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
+  letter-spacing: 0;
+  line-height: 1;
+  cursor: pointer;
+  border: var(--hairline) solid transparent;
+  transition: opacity var(--dur-base) var(--ease-standard),
+              background var(--dur-base) var(--ease-standard),
+              color var(--dur-base) var(--ease-standard);
+  text-decoration: none;
+}
+.rd-btn--filled {
+  background: var(--rd-pure-white);
+  color: var(--rd-ink);
+  box-shadow: var(--shadow-cta);
+}
+.rd-btn--filled:hover { opacity: 0.92; }
+.rd-btn--filled:active { transform: translateY(1px); }
+
+.rd-btn--outline {
+  background: transparent;
+  color: var(--rd-pure-white);
+  border-color: var(--rd-pure-white);
+}
+.rd-btn--outline:hover { background: rgba(255, 255, 255, 0.06); }
+
+.rd-link-arrow {
+  color: var(--rd-pure-white);
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+}
+.rd-link-arrow .arrow {
+  color: var(--rd-azure);
+  margin-left: 8px;
+  transition: transform var(--dur-base) var(--ease-standard);
+  display: inline-block;
+}
+.rd-link-arrow:hover .arrow { transform: translateX(4px); }
+
+/* ============================================================
+   Credibility chip — the only sanctioned stat layout
+   ============================================================ */
+.rd-chip {
+  background: var(--rd-ink);
+  color: var(--rd-pure-white);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-chip);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.rd-chip__eyebrow {
+  font-size: var(--fs-small);
+  color: var(--rd-graphite);
+  font-weight: var(--fw-medium);
+}
+.rd-chip__stat {
+  font-size: var(--fs-stat);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.rd-chip__sub {
+  color: rgba(255, 255, 255, 0.70);
+  font-size: var(--fs-body);
+}
+.rd-chip__stat--signal { color: var(--rd-signal); }
+.rd-chip__stat--azure  { color: var(--rd-azure); }
+.rd-chip__stat--jade   { color: var(--rd-jade); }
+
+/* ============================================================
+   Divider
+   ============================================================ */
+.rd-divider {
+  border: 0;
+  height: 1.5px;
+  background: var(--border);
+  width: 100%;
+}
+
+</style>
+<style>
+  /* =========================================================
+     Page layout — editorial long-read
+     ========================================================= */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--rd-ink);
+    color: var(--rd-pure-white);
+  }
+
+  ::selection { background: var(--rd-signal); color: var(--rd-pure-white); }
+
+  /* Page chrome ---------------------------------------------- */
+  .doc-header {
+    border-bottom: 1.5px solid var(--border);
+    padding: 28px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(25, 25, 25, 0.92);
+    backdrop-filter: saturate(140%);
+    -webkit-backdrop-filter: saturate(140%);
+    z-index: 50;
+  }
+  .doc-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .doc-header__brand img { height: 22px; display: block; }
+  .doc-header__rule {
+    width: 1.5px; height: 18px;
+    background: var(--border);
+  }
+  .doc-header__label {
+    color: var(--rd-graphite);
+    font-size: 13px;
+    font-weight: var(--fw-medium);
+  }
+  .doc-header__meta {
+    color: var(--rd-graphite);
+    font-size: 13px;
+    font-weight: var(--fw-medium);
+    display: flex; gap: 28px; align-items: center;
+  }
+  .doc-header__meta span:not(:last-child)::after {
+    content: ""; display: inline-block; width: 4px; height: 4px;
+    border-radius: 50%; background: var(--rd-graphite);
+    margin-left: 28px; vertical-align: middle; opacity: 0.7;
+  }
+
+  /* Cover ----------------------------------------------------- */
+  .cover {
+    padding: 120px 56px 120px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .cover__eyebrow {
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0;
+    margin-bottom: 40px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .cover__eyebrow::before {
+    content: ""; width: 36px; height: 1.5px; background: var(--rd-signal);
+    display: inline-block;
+  }
+  .cover h1 {
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: var(--fw-semibold);
+    max-width: 14ch;
+    margin-bottom: 40px;
+  }
+  .cover__deck {
+    font-size: 22px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.78);
+    max-width: 62ch;
+    font-weight: var(--fw-medium);
+  }
+  .cover__byline {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    border-top: 1.5px solid var(--border);
+    padding-top: 32px;
+  }
+  .byline__label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 10px;
+  }
+  .byline__value {
+    font-size: 16px;
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Contents -------------------------------------------------- */
+  .contents {
+    padding: 64px 56px 96px;
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 64px;
+    border-top: 1.5px solid var(--border);
+  }
+  .contents__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .contents ol {
+    list-style: none; padding: 0; margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 48px;
+  }
+  .contents li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1.5px solid var(--border);
+    align-items: baseline;
+  }
+  .contents li a {
+    color: var(--rd-pure-white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: var(--fw-medium);
+    transition: color var(--dur-base) var(--ease-standard);
+  }
+  .contents li a:hover { color: var(--rd-signal); }
+  .contents li .num {
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Sections -------------------------------------------------- */
+  .section {
+    padding: 96px 56px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: 1.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 64px;
+  }
+  .section__head {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+  .section__num {
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 16px;
+  }
+  .section__num .dot { color: var(--rd-signal); }
+  .section__kicker {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .section__title {
+    font-size: clamp(32px, 3.4vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 32px;
+    max-width: 22ch;
+  }
+  .section__body {
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.86);
+    font-weight: var(--fw-medium);
+  }
+  .section__body > p { margin: 0 0 1.2em; }
+  .section__body > p:first-child { font-size: 22px; line-height: 1.5; color: var(--rd-pure-white); margin-bottom: 1.4em; }
+  .section__body h3 {
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: var(--fw-semibold);
+    margin: 56px 0 20px;
+    color: var(--rd-pure-white);
+    max-width: 28ch;
+  }
+  .section__body h4 {
+    font-size: 18px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+    margin: 32px 0 12px;
+    letter-spacing: 0;
+  }
+  .section__body strong {
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-semibold);
+  }
+  .section__body em { font-style: italic; color: var(--rd-pure-white); }
+
+  /* Pullquote ------------------------------------------------- */
+  .pullquote {
+    border-left: 2px solid var(--rd-signal);
+    padding: 8px 0 8px 28px;
+    margin: 40px 0;
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-medium);
+    max-width: 36ch;
+  }
+
+  /* Stat row -------------------------------------------------- */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 44px 0 56px;
+  }
+  .stat {
+    background: rgba(255,255,255,0.03);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .stat__num {
+    font-size: 56px;
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--rd-pure-white);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat__num--signal { color: var(--rd-signal); }
+  .stat__num--azure { color: var(--rd-azure); }
+  .stat__num--jade { color: var(--rd-jade); }
+  .stat__label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.45;
+    font-weight: var(--fw-medium);
+  }
+  .stat__source {
+    font-size: 12px;
+    color: var(--rd-graphite);
+    margin-top: auto;
+    padding-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: var(--fw-semibold);
+  }
+
+  /* Architecture diagram (Section 4) ------------------------- */
+  .arch {
+    margin: 48px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .arch__layer {
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    background: rgba(255,255,255,0.02);
+    transition: border-color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard);
+  }
+  .arch__layer:hover { border-color: rgba(255,255,255,0.4); }
+  .arch__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+  }
+  .arch__name {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+  }
+  .arch__role {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    font-weight: var(--fw-medium);
+  }
+  .arch__pill {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    border: 1.5px solid var(--border);
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .arch__layer--foundation {
+    border-color: rgba(255, 44, 85, 0.35);
+    background: rgba(255, 44, 85, 0.05);
+  }
+  .arch__layer--foundation .arch__pill {
+    border-color: rgba(255, 44, 85, 0.5);
+    color: var(--rd-signal);
+  }
+
+  /* Phase diagram (Section 9) -------------------------------- */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 44px 0;
+  }
+  .phase {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    position: relative;
+  }
+  .phase__num {
+    font-size: 14px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .phase__num::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--rd-graphite);
+  }
+  .phase--live .phase__num::before { background: var(--rd-signal); }
+  .phase__name {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .phase__window {
+    font-size: 13px;
+    color: var(--rd-graphite);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 16px;
+  }
+  .phase__body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.7);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Bucket grid (Layer 1) ------------------------------------ */
+  .buckets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 28px 0 40px;
+  }
+  .bucket {
+    border-top: 1.5px solid var(--border);
+    padding: 20px 0 4px;
+  }
+  .bucket__name {
+    font-size: 16px;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 8px;
+    color: var(--rd-pure-white);
+  }
+  .bucket__body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Compound diagram (Section 6) ----------------------------- */
+  .compound {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    margin: 36px 0;
+    background: rgba(255,255,255,0.02);
+  }
+  .compound__title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 20px;
+  }
+  .compound__quote {
+    font-size: 28px;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    font-weight: var(--fw-semibold);
+    max-width: none;
+    white-space: nowrap;
+  }
+  .compound__attr {
+    margin-top: 14px;
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Configurations grid (Section 10) ------------------------- */
+  .configs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 32px 0;
+    border-top: 1.5px solid var(--border);
+  }
+  .config {
+    padding: 24px 0;
+    border-bottom: 1.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .configs > .config:nth-child(odd) { padding-right: 32px; border-right: 1.5px solid var(--border); }
+  .configs > .config:nth-child(even) { padding-left: 32px; }
+  .config__name {
+    font-size: 16px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+  }
+  .config__body {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Decision modes (Section 2) ------------------------------- */
+  .modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .mode {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+  }
+  .mode__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    margin-bottom: 14px;
+  }
+  .mode__title {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .mode__body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    font-weight: var(--fw-medium);
+  }
+  .mode--inst .mode__title::after,
+  .mode--hnw .mode__title::after { content: ""; }
+
+  /* End plate ------------------------------------------------- */
+  .endplate {
+    padding: 96px 56px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: 1.5px solid var(--border);
+    text-align: center;
+  }
+  .endplate__rule {
+    width: 60px; height: 1.5px; background: var(--rd-signal);
+    margin: 0 auto 32px;
+  }
+  .endplate__title {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 24px;
+    max-width: 18ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .endplate__sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.7);
+    max-width: 50ch;
+    margin: 0 auto 40px;
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+  .endplate__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    background: var(--rd-pure-white);
+    color: var(--rd-ink);
+    font-weight: var(--fw-semibold);
+    font-size: 17px;
+    text-decoration: none;
+    box-shadow: var(--shadow-cta);
+    transition: opacity var(--dur-base) var(--ease-standard);
+  }
+  .endplate__cta:hover { opacity: 0.92; }
+
+  /* Footer ---------------------------------------------------- */
+  .doc-footer {
+    border-top: 1.5px solid var(--border);
+    padding: 48px 56px 64px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 56px;
+    align-items: start;
+    color: var(--rd-graphite);
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: var(--fw-medium);
+  }
+  .doc-footer img { height: 18px; opacity: 0.85; display: block; }
+  .doc-footer__brand { padding-top: 2px; }
+  .doc-footer__disclaimer { max-width: 92ch; }
+  .doc-footer__disclaimer p { margin: 0 0 8px; color: var(--rd-graphite); }
+  .doc-footer__disclaimer p:last-child { margin-bottom: 0; }
+  .doc-footer__disclaimer a {
+    color: var(--rd-pure-white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    transition: border-color var(--dur-base) var(--ease-standard);
+  }
+  .doc-footer__disclaimer a:hover { border-bottom-color: var(--rd-pure-white); }
+
+  /* Inline keyword highlight is provided by .rd-mark in colors_and_type.css */
+
+  /* Subtle right-rail anchor index ---------------------------- */
+  .anchor-bullet {
+    color: var(--rd-graphite);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 24px;
+  }
+
+  /* Responsive ------------------------------------------------ */
+  @media (max-width: 1024px) {
+    .section { grid-template-columns: 1fr; gap: 32px; padding: 64px 32px; }
+    .section__head { position: static; }
+    .section__num { font-size: 44px; }
+    .cover, .contents, .endplate { padding-left: 32px; padding-right: 32px; }
+    .doc-header { padding: 20px 32px; }
+    .cover__byline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .stat-row, .phases, .modes, .buckets { grid-template-columns: 1fr; }
+    .contents { grid-template-columns: 1fr; }
+    .contents ol { grid-template-columns: 1fr; }
+    .arch__layer { grid-template-columns: 60px 1fr; }
+    .arch__pill { display: none; }
+    .configs { grid-template-columns: 1fr; }
+    .configs > .config:nth-child(odd) { padding-right: 0; border-right: 0; }
+    .configs > .config:nth-child(even) { padding-left: 0; }
+    .config { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header__brand">
+    <img src="/methodology/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" />
+    <span class="doc-header__rule"></span>
+    <span class="doc-header__label">Methodology / Capital Markets Distribution</span>
+  </div>
+  <div class="doc-header__meta">
+    <span>Version 1.4</span>
+    <span>Internal &amp; partner use</span>
+    <span>2026</span>
+  </div>
+</header>
+
+<!-- =================== COVER =================== -->
+<section class="cover">
+  <div class="cover__eyebrow">Methodology notes from Rogue Divisions</div>
+  <h1>Capital markets <span class="rd-mark is-drawing">distribution</span>.</h1>
+  <p class="cover__deck">
+    How we run distribution programmes for fund managers, capital advisors, and asset managers. A working document covering our position, our process, and the world the work has to operate inside.
+  </p>
+</section>
+
+<!-- =================== STANDFIRST =================== -->
+<section class="section" style="border-top: 0; padding-top: 0;">
+  <div class="section__head">
+    <div class="section__kicker">Premise</div>
+  </div>
+  <div class="section__body">
+    <p style="font-size: 28px; line-height: 1.4; color: var(--rd-pure-white); letter-spacing: -0.015em; max-width: 30ch;">
+      Capital does not flow to the best argument. It flows to the most familiar argument, validated by the strongest chain of trust.
+    </p>
+    <p>
+      Building that familiarity, at scale, in a way that reinforces the relationship-driven model capital raising properly depends on, is the work this methodology describes.
+    </p>
+  </div>
+</section>
+
+<!-- =================== CONTENTS =================== -->
+<nav class="contents" aria-label="Contents">
+  <div class="contents__title">Contents</div>
+  <ol>
+    <li><span class="num">01</span><a href="#s1">Why fund distribution requires its own approach</a></li>
+    <li><span class="num">02</span><a href="#s2">How allocators actually decide</a></li>
+    <li><span class="num">03</span><a href="#s3">Our position</a></li>
+    <li><span class="num">04</span><a href="#s4">The architecture</a></li>
+    <li><span class="num">05</span><a href="#s5">Beyond owned distribution</a></li>
+    <li><span class="num">06</span><a href="#s6">How the layers compound</a></li>
+    <li><span class="num">07</span><a href="#s7">Compliance discipline</a></li>
+    <li><span class="num">08</span><a href="#s8">Measurement</a></li>
+    <li><span class="num">09</span><a href="#s9">How engagements unfold</a></li>
+    <li><span class="num">10</span><a href="#s10">Configurations</a></li>
+  </ol>
+</nav>
+
+<!-- =================== SECTION 1 =================== -->
+<section class="section" id="s1" data-screen-label="01 Why">
+  <div class="section__head">
+    <div class="section__num">01<span class="dot">.</span></div>
+    <div class="section__kicker">The problem</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Why fund distribution requires its own approach.</h2>
+    <p>
+      Raising capital from sophisticated allocators today is a different problem than it was fifteen years ago. The investors are different. The channels they consume content through are different. The ways they vet managers are different. The tools available to managers to engineer presence and recognition are different. Some of those tools are powerful. Most are misapplied.
+    </p>
+    <p>
+      The natural response is to take the consumer marketing playbook and point it at LPs. It does not work. Allocators are not consumers. The product is not a £50 purchase, it is a £5m to £50m commitment. The decision is not impulsive, it is committee-deliberated, peer-validated, and externally defensible. Consumer growth tactics fail at this audience because they are designed for a fundamentally different problem set.
+    </p>
+    <p>
+      The opposite response — to ignore modern marketing capabilities entirely and rely on the rolodex, the dinner circuit, and the slow accumulation of relationships over decades — also no longer works. The relationship infrastructure still matters, materially, and capital still moves through it. But it now moves through it inside an environment where allocators check public footprints during diligence, where AI tools synthesise manager content as part of investment committee work, where LinkedIn distribution is relevance-gated by an LLM-driven ranking system that rewards expertise signals, and where the next generation of investors expects to find a coherent public presence before they are willing to take a meeting.
+    </p>
+
+    <div class="pullquote">
+      The opportunity is in the right application of modern distribution capabilities to the actual problem of capital raising as it works in 2026.
+    </div>
+
+    <p>
+      Not blanket adoption. Not blanket rejection. A specific set of tools, applied with specific discipline, calibrated to how trust-sensitive sophisticated allocators actually decide.
+    </p>
+    <p>
+      The dominant failure pattern in the market is not "marketing does not work." It is that consumer-style acquisition logic systematically underperforms in private capital fundraising when applied to trust-sensitive allocators. Reaching the right people takes precision, not volume. Building credibility takes consistency, not noise. Converting interest takes warm paths and the right context, not paid CTAs.
+    </p>
+    <p>
+      This methodology covers one component of a broader capital-raising effort. It works alongside warm intros, conferences, references, the realisation and distributions narrative, consultant relations where they apply, and the regulated activities of placement agents and IR functions. It does not substitute for any of them. It is calibrated for managers who already have those functions running, and it makes them measurably more productive.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 2 =================== -->
+<section class="section" id="s2" data-screen-label="02 Allocators decide">
+  <div class="section__head">
+    <div class="section__num">02<span class="dot">.</span></div>
+    <div class="section__kicker">The audience</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">How allocators actually decide.</h2>
+    <p>Allocator decision-making takes two shapes, and the methodology has to serve both.</p>
+
+    <div class="modes">
+      <div class="mode mode--inst">
+        <div class="mode__tag">Mode one</div>
+        <div class="mode__title">Institutional &mdash; committee-defensible</div>
+        <div class="mode__body">
+          Pension funds, endowments, foundations, insurance, sovereign wealth, larger family offices. The principal across the table is one node in a governance process. The work is to make every conversation more defensible: materials, frame, and validation that walk the allocation through the IC. Public footprint quality directly affects the ease of the IC paper.
+        </div>
+      </div>
+      <div class="mode mode--hnw">
+        <div class="mode__tag">Mode two</div>
+        <div class="mode__title">HNW &amp; individual &mdash; conviction-led</div>
+        <div class="mode__body">
+          Closer to enterprise sales than committee deliberation. The conviction that gets the commitment over the line is individual, built over a long arc by a champion moved enough to advocate. The work is to build individual recognition, context, and credibility consistently &mdash; so that when the conversation comes, the principal has already been moved most of the way.
+        </div>
+      </div>
+    </div>
+
+    <p>
+      Both modes share the same engine. Capital does not move on a single touch. It moves on the cumulative weight of repeated, consistent, defensible exposure. The mechanism differs &mdash; committee defensibility versus individual conviction &mdash; but the underlying work is the same.
+    </p>
+
+    <h3>The diligence stack now reads public footprints.</h3>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat__num stat__num--signal">99%</div>
+        <div class="stat__label">of LPs review firm and executive social media content during due diligence; 52% do so consistently.</div>
+        <div class="stat__source">Edelman Smithfield, 2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num stat__num--azure">46%</div>
+        <div class="stat__label">of LPs rate GP reputation as more important than returns. 98% check public channels before allocating capital.</div>
+        <div class="stat__source">ILPA, 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num stat__num--jade">49%</div>
+        <div class="stat__label">of LPs use AI in day-to-day workflows by early 2025, up from 14% in early 2024.</div>
+        <div class="stat__source">MSCI, April 2026</div>
+      </div>
+    </div>
+
+    <p>
+      Allocators use public content as a perception and judgement check. Public-facing content provides the credibility infrastructure that allows allocator demand from another origin &mdash; a warm intro, a conference conversation, a peer referral, a piece of earned media &mdash; to become a productive meeting and an active diligence process.
+    </p>
+    <p>
+      Their primary information diet sits across a wider ecosystem than social media. Trusted business publications, industry awards, peer networks, conferences, and curated manager-access platforms. The serious work of allocator perception forms across that ecosystem in combination, not on any single channel.
+    </p>
+
+    <h3>Two further conditions sit alongside the trust dynamics.</h3>
+    <p>
+      <strong>LinkedIn distribution is now relevance-gated rather than network-gated.</strong> The LLM-driven ranking system the platform publicly described in 2025 surfaces content based on perceived expertise, relationship importance, and engagement patterns rather than on follower count or recency. The implication is significant for managers without a large existing audience: precision and quality matter more than scale. A small disciplined account with sharp content travels further today than it did three years ago. Managers who tried this in 2022 and were disappointed are evaluating against an environment that no longer exists.
+    </p>
+    <p>
+      <strong>AI is now part of the diligence stack.</strong> A manager's content footprint must be discoverable and synthesisable by AI tools as well as persuasive to humans. Managers whose public material is structured, dated, and consistent across channels produce clean AI summaries. Managers whose material drifts produce noisy ones. The difference shows up in the quality of internal allocator memos and the ease of subsequent committee conversations.
+    </p>
+
+    <h3>Distribution has a downside, not just an upside.</h3>
+
+    <div class="pullquote">
+      85% of LPs have decided not to allocate to a GP because of content posted by GP personnel on social media.
+    </div>
+
+    <p>
+      The same Edelman Smithfield survey that found 99% of LPs review GP content during diligence also found that 86% think a GP going public can distract from generating value, and 97% think launching or running a private-wealth offering can distract from institutional returns.
+    </p>
+    <p>
+      Distribution is not a one-way bet. The same channel that builds credibility when handled well damages credibility when handled badly. Visible without judgement, present without restraint, marketing without sophistication &mdash; and the public footprint becomes a yellow flag in diligence rather than a positive signal. The line between net positive and net negative is positioning, not volume.
+    </p>
+    <p>
+      This dynamic is sharpest in institutional allocator contexts, where the survey data skews. For HNW and adviser-mediated audiences (wealth platforms, EIS investors, private clients), the mechanism shifts: the risk is less about looking unfocused and more about looking unsophisticated or salesy. The underlying principle holds across both. Positioning discipline determines whether the work helps or hurts.
+    </p>
+    <p>
+      This is the central operational discipline of the methodology, not an edge case. The right partner for this work is the one who can hold the line between confident professional presence and over-marketed posturing &mdash; and the cost of holding the wrong line is measurable in commitments that do not happen.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 3 =================== -->
+<section class="section" id="s3" data-screen-label="03 Position">
+  <div class="section__head">
+    <div class="section__num">03<span class="dot">.</span></div>
+    <div class="section__kicker">Our position</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Distribution is air cover for a relationship-led raise.</h2>
+    <p>
+      Distribution sits underneath the relationship-led capital raising process. It does two things, in this order: it makes the manager's existing relationship infrastructure work harder, and it opens additional paths into allocators the relationship infrastructure alone cannot reach. The first is the larger effect by an order of magnitude. The second is real and worth pursuing, but it follows the first.
+    </p>
+    <p>
+      The augmentation effect is what most managers underweight. The intro lands warmer because the allocator has already seen the firm's name credibly several times. The conference conversation goes deeper because the allocator's diligence team has already triangulated the firm's track record and thesis through public material. The consultant's recommendation is easier because the firm's footprint reads as coherent across channels. The IC paper writes itself faster because the manager's positioning is consistent across every channel the analyst pulls into the memo.
+    </p>
+    <p>
+      The extension effect is narrower but meaningful. Some allocators who would never have been reached through the manager's existing network become reachable through a structured distribution programme &mdash; through warm paths surfaced by content engagement, through inbound interest after sustained presence, through introductions that emerge once a credible footprint exists.
+    </p>
+    <div class="pullquote">
+      Distribution is air cover and credibility infrastructure for a relationship-led capital-raising process. It is not, and cannot be, the capital raise itself.
+    </div>
+  </div>
+</section>
+
+<!-- =================== SECTION 4 =================== -->
+<section class="section" id="s4" data-screen-label="04 Architecture">
+  <div class="section__head">
+    <div class="section__num">04<span class="dot">.</span></div>
+    <div class="section__kicker">The architecture</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Three operational layers on an owned-content foundation.</h2>
+    <p>
+      The work runs across three operational layers, each performing a distinct function, all of which sit on a foundational owned-content layer that anchors the architecture and feeds the others.
+    </p>
+
+    <div class="arch" aria-label="Architecture diagram">
+      <div class="arch__layer">
+        <div class="arch__tag">Layer 03</div>
+        <div>
+          <div class="arch__name">Direct outreach</div>
+          <div class="arch__role">In support of the warm-intro engine. Lowest volume, highest trust.</div>
+        </div>
+        <div class="arch__pill">Conversion</div>
+      </div>
+      <div class="arch__layer">
+        <div class="arch__tag">Layer 02</div>
+        <div>
+          <div class="arch__name">Paid amplification</div>
+          <div class="arch__role">Account-based amplification of organic to a curated allocator list.</div>
+        </div>
+        <div class="arch__pill">Recognition</div>
+      </div>
+      <div class="arch__layer">
+        <div class="arch__tag">Layer 01</div>
+        <div>
+          <div class="arch__name">Organic content</div>
+          <div class="arch__role">Principal-led publishing, anchored on heartbeat cadence.</div>
+        </div>
+        <div class="arch__pill">Trust residue</div>
+      </div>
+      <div class="arch__layer arch__layer--foundation">
+        <div class="arch__tag">Foundation</div>
+        <div>
+          <div class="arch__name">Owned content</div>
+          <div class="arch__role">Citable, durable, AI-ingestible record on the firm's own domain.</div>
+        </div>
+        <div class="arch__pill">Centre of gravity</div>
+      </div>
+    </div>
+
+    <h3>Layer one. Organic content.</h3>
+    <p>
+      The principal-led layer. Personal profiles of the manager's principals carry the work, supplemented by firm-page content for diligence-stage validation. The distribution dynamics on LinkedIn favour personal profiles by an order of magnitude, and the credibility dynamics favour named individuals over institutional voice. Allocators read content from a real person more seriously than content from a brand account.
+    </p>
+    <p>
+      Cadence runs on rhythm, not on a fixed weekly count. Our content distribution operates on a heartbeat framework: large anchor moments, medium moments between them, and a continuous lower-cadence presence underneath that signals active and engaged. Big peaks followed by smaller peaks, with the heartbeat always present. A flat line says the firm is no longer alive.
+    </p>
+
+    <h4>The content runs in five defined buckets.</h4>
+    <div class="buckets">
+      <div class="bucket">
+        <div class="bucket__name">Thesis commentary</div>
+        <div class="bucket__body">Why this strategy, why now, why this team.</div>
+      </div>
+      <div class="bucket">
+        <div class="bucket__name">Portfolio anatomy</div>
+        <div class="bucket__body">How deals came together, anatomy of exits, realisation stories, value creation across the cycle.</div>
+      </div>
+      <div class="bucket">
+        <div class="bucket__name">Market read</div>
+        <div class="bucket__body">What is moving in the sector, where capital is flowing, what allocators are rewarding now.</div>
+      </div>
+      <div class="bucket">
+        <div class="bucket__name">Operating insight</div>
+        <div class="bucket__body">The moments of decision behind the work, how the firm operates at the deal level.</div>
+      </div>
+      <div class="bucket">
+        <div class="bucket__name">Conviction-led storytelling</div>
+        <div class="bucket__body">Founder voice, why the firm exists, what the team believes.</div>
+      </div>
+    </div>
+
+    <p>
+      The buckets are calibrated to what allocators currently reward. In the 2024&ndash;2026 environment, that has been realisations, distributions, and DPI credibility above almost everything else. Portfolio anatomy and market read carry that weight. Managers whose public content is silent on realisations are reading their audience badly.
+    </p>
+
+    <p>
+      <strong>A hard constraint:</strong> organic content does not solicit. Every post is thesis, perspective, or portfolio reflection. Nothing transactional. Allocators read fundraising asks as weakness; restraint signals confidence. This also keeps organic content cleanly outside the regulated promotional perimeter in both UK and US frameworks.
+    </p>
+    <p>
+      The function of this layer is not reach. It is the trust residue an allocator finds when they look. When they type the principal's name into LinkedIn after a conference handshake, they should find a feed that makes the manager look serious. When their diligence team checks the firm during a screening call, they should find consistent commentary that matches the private narrative.
+    </p>
+
+    <h3>Layer two. Paid amplification of organic, to named accounts only.</h3>
+    <p>
+      Modern advertising tools &mdash; precision targeting, account-based audiences, programmatic distribution &mdash; are powerful when applied to the right problem set. The right problem set in capital raising is recognition, not acquisition. The wrong problem set is conversion.
+    </p>
+    <p>
+      This layer takes the firm's own organic content and puts it deliberately in front of a curated allocator list. The audience is small and named: typically several hundred to several thousand specific decision-makers in specific firms, never broadcast. The mechanism is account-based: matched audiences uploaded directly, layered with role and seniority filters where needed.
+    </p>
+    <p>
+      Spend stays modest. The audience does not justify a large budget; it justifies a precise one. The creative is the firm's own organic posts, sponsored and sequenced. No lead-gen forms. No "download our deck" CTAs. No call-to-action consumer marketing tactics. Allocators do not respond to those, and using them positions the manager as marketing-driven in an audience that punishes that signal.
+    </p>
+    <p>
+      The purpose of the layer is cumulative recognition over months. By the time a warm introduction lands or a conference conversation begins, the allocator has seen the firm's content several times in their feed. The recognition is ambient. It does not require recall of any specific piece. It shifts the receiving allocator's sense of the firm from unknown to familiar, which is the entire point.
+    </p>
+
+    <h3>Layer three. Direct outreach, in support of the warm-intro engine.</h3>
+    <p>
+      The lowest-volume, highest-trust layer. Modern outreach tools &mdash; sequencing platforms, personalised automation, multi-channel orchestration &mdash; have legitimate roles. The discipline is in calibration, not in absolutism.
+    </p>
+    <p>
+      Where warm paths exist, they are mapped and activated systematically. Mutual connections across the manager's principals, board, portfolio founders, and existing LP base are surfaced. Second-degree paths into priority allocators are identified. Intro requests are scripted and sequenced to give every introducer a clear, low-friction path to making the introduction.
+    </p>
+    <p>
+      Where warm paths do not exist, direct outreach runs with content-first framing. The first message references something specific the allocator has published or commented on, never a pitch. The first touch reads as a person making contact, not a system pinging. The volume is modest; the personalisation is high; the cadence respects how this audience actually reads.
+    </p>
+    <p>
+      The conversion happens off the platform. In conferences, on calls, in messaging threads, in follow-up meetings, in the quieter places trust is actually built. The work of layer three is to get to those off-platform conversations productively, not to substitute for them.
+    </p>
+
+    <h3>The foundation. Owned content.</h3>
+    <p>
+      The layer most distribution programmes underweight. The three operational layers above all point somewhere. The foundation is what they point to.
+    </p>
+    <p>
+      A structured, citable insights hub on the firm's owned domain. Strategy explanations using consistent terminology. Portfolio cases with stable claim language. Market commentary with dated facts. Definitional pages that say plainly what the fund does, who it is for, and how decisions are made. The foundation is the regulated, controlled, durable record that makes the rest of the public footprint defensible.
+    </p>
+    <p>
+      Without it, the operational layers float free of any anchored, controllable record. With it, the architecture has a centre of gravity that holds across platform changes, content drift, and the AI-driven evaluation processes increasingly used by allocator diligence teams.
+    </p>
+
+    <h4>AI-readability and ingestibility discipline.</h4>
+    <p>
+      Public-facing content is now read by both humans and machines. The machine layer is moving rapidly from general-purpose AI summarisation toward proprietary allocator diligence tools that ingest manager material into structured workflows. Schroders Capital's GAiiA tool has assisted on more than forty investment cases; specialist platforms like DiligenceVault are building allocator-side RAG systems on structured data. Public-facing content should not just be readable, it should be ingestible.
+    </p>
+    <p>
+      The discipline operates on three rules: claims do not drift across channels; terminology stays stable; substantive non-trivial claims are dated and sourced. Beyond those rules, the foundation should host downloadable evidence objects &mdash; DDQ-ready fact packs, structured one-pagers, source-linked policy documents, machine-friendly portfolio summaries &mdash; that point allocator AI workflows at clean material rather than at marketing prose.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 5 =================== -->
+<section class="section" id="s5" data-screen-label="05 Beyond owned">
+  <div class="section__head">
+    <div class="section__num">05<span class="dot">.</span></div>
+    <div class="section__kicker">The wider ecosystem</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Beyond owned distribution.</h2>
+    <p>
+      The architecture above describes the part of the work that runs on owned and paid channels. It is not the whole work. Allocators in this audience also consume content through trusted business publications, industry awards programmes, peer networks, manager-access platforms, conference circuits, podcast appearances, and curated newsletters. The serious work of allocator perception forms across that ecosystem in combination.
+    </p>
+    <p>
+      Earned presence in those channels does not run on the same playbook as owned content. It runs on relationships, editorial judgement, and the trust extended to the publication or institution that hosts the content. Where engagements call for it, we work through these channels too: positioning principals for relevant publications, sequencing appearances and awards alongside the owned content calendar, using earned-media moments as anchor points the heartbeat rhythm rotates around.
+    </p>
+    <p>
+      The earned-media ecosystem in capital markets is also consolidating into proprietary platforms. Preqin sits inside BlackRock; With Intelligence sits inside S&amp;P Global; iConnections and CAIS Allocate operate as platformed allocator-manager environments where significant diligence flow now lives. Where engagements call for it, we work into those platforms too &mdash; through structured firm profiles, platform-ready fact packs, and the same content discipline applied to platform-mediated audiences as to open social channels.
+    </p>
+    <p>
+      The methodology is anchored on LinkedIn for now because that is where the bulk of allocator content consumption still happens, but the architecture is channel-portable: the operational layers and the foundation transfer cleanly to wherever allocator attention lives next.
+    </p>
+    <p>
+      Where engagements need capabilities outside our core remit &mdash; press relations, brand identity, production execution, regulated capital introduction &mdash; we partner with specialists we work with regularly, or refer the work to firms we trust. The methodology accounts for the broader ecosystem; the configuration of any specific engagement reflects which parts the manager wants us to run directly.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 6 =================== -->
+<section class="section" id="s6" data-screen-label="06 Compound">
+  <div class="section__head">
+    <div class="section__num">06<span class="dot">.</span></div>
+    <div class="section__kicker">The compound effect</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">How the layers compound.</h2>
+    <p>Each layer alone is weak. Together they form an investor recognition system.</p>
+    <p>
+      Organic content alone reaches the same audience the firm already has. Paid amplification of nothing produces noise. Direct outreach into a content vacuum lands as cold and is treated accordingly. An owned foundation that is not pointed to from any of the operational layers is read by no one. Earned presence without a coherent owned footprint to point back to leaks momentum.
+    </p>
+    <p>
+      In sequence, the architecture does something different. The organic layer establishes consistent professional presence anchored on the foundation. Paid amplification ensures that the curated allocator list sees that organic content several times across each quarter, building recognition without solicitation. Direct outreach activates warm paths into the same allocator list, with the recognition layer ensuring that every warm introduction lands warmer than it would have done. The foundation gives the allocator and their team somewhere coherent to land when they go looking, including when they go looking with AI tools. Earned-media moments provide anchor peaks the heartbeat rotates around.
+    </p>
+
+    <div class="compound">
+      <div class="compound__title">The compound effect, in the field</div>
+      <div class="compound__quote">
+        &ldquo;I have been seeing <span class="rd-mark">your name</span>.&rdquo;
+      </div>
+      <div class="compound__attr">&mdash; an allocator, after a conference dinner. The system at work.</div>
+    </div>
+
+    <p>
+      That is the system at work. It does not replace the dinner. It makes the dinner more productive.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 7 =================== -->
+<section class="section" id="s7" data-screen-label="07 Compliance">
+  <div class="section__head">
+    <div class="section__num">07<span class="dot">.</span></div>
+    <div class="section__kicker">Regulated by design</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Compliance discipline.</h2>
+    <p>
+      The methodology operates inside regulatory perimeters that constrain what can be said, by whom, to whom, on which channels. We work alongside the manager's compliance function and fund counsel from day one of any engagement. Promotional content is reviewed inside the manager's authorised structure before publication.
+    </p>
+    <p>
+      We do not approve financial promotions, opine on regulatory questions, or substitute for legal advice. We treat the regulatory perimeter as a design constraint, not a disclaimer &mdash; built into how content, audiences, and amplification are scoped from day one of any engagement.
+    </p>
+    <p>
+      The constraints differ by jurisdiction (FCA financial promotion rules and the section 21 gateway in the UK; SEC Marketing Rule and broker-dealer perimeter in the US; equivalents in the EU and Middle East where applicable). We are familiar with all of them at the level required to operate cleanly within their boundaries, and we know when to defer to specialist counsel.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 8 =================== -->
+<section class="section" id="s8" data-screen-label="08 Measurement">
+  <div class="section__head">
+    <div class="section__num">08<span class="dot">.</span></div>
+    <div class="section__kicker">Measurement</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Capital markets attribution is multi-touch and multi-cycle.</h2>
+    <p>
+      A single LP commitment frequently has eighteen months of accumulated contact across organic content, paid amplification, conference encounters, earned media, warm introductions, and direct meetings before the commitment lands. Single-touch attribution misrepresents the mechanism.
+    </p>
+
+    <div class="modes">
+      <div class="mode">
+        <div class="mode__tag">Layer one</div>
+        <div class="mode__title">Quantitative metrics</div>
+        <div class="mode__body">
+          Connection acceptance rates, content engagement from named-account allocators, content performance by piece and bucket, response rates on warm-intro sequences. Optimises sub-components on a weekly and monthly cadence. They tell us whether copy and targeting are working.
+        </div>
+      </div>
+      <div class="mode">
+        <div class="mode__tag">Layer two</div>
+        <div class="mode__title">Qualitative attribution</div>
+        <div class="mode__body">
+          Surfaced through the conversations the manager is already having and through joint pipeline review, a defensible picture builds over months of where capital actually came from. This is the only honest way to attribute capital movement at this scale.
+        </div>
+      </div>
+    </div>
+
+    <p>
+      The end state we measure for is closed LP capital. Vanity metrics &mdash; impressions, follower counts, gross engagement rates &mdash; are useful as directional signals when read in context, never as standalone measures.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 9 =================== -->
+<section class="section" id="s9" data-screen-label="09 Engagements">
+  <div class="section__head">
+    <div class="section__num">09<span class="dot">.</span></div>
+    <div class="section__kicker">How we work</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">How engagements unfold.</h2>
+    <p>Engagements run in three phases. Phase decisions are joint. No multi-year lock-ins.</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="phase__num">Phase 01</div>
+        <div class="phase__name">Discovery &amp; architecture</div>
+        <div class="phase__window">A short initial window</div>
+        <div class="phase__body">
+          We work with the manager's principals to understand the existing footprint, define the target allocator universe, and set the operational envelope alongside the manager's compliance function. The output is a programme architecture and a defined audience the work targets.
+        </div>
+      </div>
+      <div class="phase phase--live">
+        <div class="phase__num">Phase 02</div>
+        <div class="phase__name">Pilot</div>
+        <div class="phase__window">~90 days</div>
+        <div class="phase__body">
+          The architecture goes live across the relevant layers. Baseline metrics build. Qualitative attribution begins. At day ninety, both sides decide whether and how to continue.
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase__num">Phase 03</div>
+        <div class="phase__name">Engine</div>
+        <div class="phase__window">Monthly cadence, quarterly review</div>
+        <div class="phase__body">
+          Pilots that work continue into the full engagement on monthly cadence with quarterly review. The architecture compounds over time as the heartbeat establishes and the named-account list expands.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SECTION 10 =================== -->
+<section class="section" id="s10" data-screen-label="10 Configurations">
+  <div class="section__head">
+    <div class="section__num">10<span class="dot">.</span></div>
+    <div class="section__kicker">Configurations</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The methodology is the same. The slice changes.</h2>
+    <p>
+      Engagements take many shapes depending on which parts of the architecture the manager wants us to run, and which parts are already covered internally or by other partners.
+    </p>
+
+    <div class="configs">
+      <div class="config">
+        <div class="config__name">Full architecture</div>
+        <div class="config__body">End-to-end: foundation, organic, paid amplification, direct outreach, earned-media support, measurement.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Operational subset</div>
+        <div class="config__body">Any combination of the operational layers, scoped to where the manager has gaps and we have leverage.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Advisory only</div>
+        <div class="config__body">Methodology and architecture provided; the manager's team executes. We act as the design and review function.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Single deployment</div>
+        <div class="config__body">A focused engagement around a fund launch, conference moment, or specific raise window.</div>
+      </div>
+    </div>
+
+    <p>
+      We sit alongside placement agents, IR teams, brand identity firms, content production partners, and other specialists, with our work integrated into a broader ecosystem. The configuration is determined at scoping. The methodology in this document is the same; the slice changes.
+    </p>
+  </div>
+</section>
+
+<!-- =================== END PLATE =================== -->
+<section class="endplate">
+  <div class="endplate__rule"></div>
+  <h2 class="endplate__title">Capital does not flow to the best argument. It flows to the most <span class="rd-mark">familiar</span> one.</h2>
+  <p class="endplate__sub">
+    If you are running a raise and want to walk through how this architecture applies to your fund, get in touch.
+  </p>
+  <a class="endplate__cta" href="mailto:hello@roguedivisions.com">Schedule a discovery meeting</a>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="doc-footer">
+  <div class="doc-footer__brand">
+    <img src="/methodology/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" />
+  </div>
+  <div class="doc-footer__disclaimer">
+    <p>Copyright &copy; 2026 Rogue Divisions. All rights reserved.</p>
+    <p>Rogue Divisions is not a broker-dealer or investment adviser. <a href="https://www.roguedivisions.com/capital-markets-disclaimer" target="_blank" rel="noopener">Learn more</a>.</p>
+    <p>Any securities offered to or on behalf of U.S. Persons are being conducted pursuant to a chaperone arrangement under SEC Rule 15a-6 and through <a href="https://www.finalis.com/" target="_blank" rel="noopener">Finalis Securities LLC</a>, Member FINRA and SIPC.</p>
+  </div>
+</footer>
+
+<script>
+  // Trigger keyword underline draw-on when each .rd-mark enters the viewport.
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-drawing');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.rd-mark').forEach((el) => {
+    // .is-drawing already on the cover one; observe the rest
+    if (!el.classList.contains('is-drawing')) obs.observe(el);
+  });
+</script>
+
+</body>
+</html>
