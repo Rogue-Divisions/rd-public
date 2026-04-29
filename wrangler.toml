@@ -1,7 +1,14 @@
 name = "rd-public"
 compatibility_date = "2025-01-01"
 
+# Squarespace serves the apex (roguedivisions.com) and 301-redirects every
+# request to www.roguedivisions.com before Cloudflare's Worker route can run.
+# Bind the routes to the www. hostname so the redirected request lands on the
+# Worker. Apex patterns are kept as a defence-in-depth fallback in case the
+# Squarespace redirect is ever removed.
 routes = [
+  { pattern = "www.roguedivisions.com/thesis/*", zone_name = "roguedivisions.com" },
+  { pattern = "www.roguedivisions.com/methodology/*", zone_name = "roguedivisions.com" },
   { pattern = "roguedivisions.com/thesis/*", zone_name = "roguedivisions.com" },
   { pattern = "roguedivisions.com/methodology/*", zone_name = "roguedivisions.com" },
 ]
