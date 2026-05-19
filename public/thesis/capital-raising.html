@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<meta name="description" content="Capital-Raising for Founders 2026 — a thesis from Rogue Divisions on investor-message fit and how the firm runs equity raises." />
-<title>Capital-Raising for Founders · Rogue Divisions · 2026</title>
+<meta name="description" content="Capital-Raising for Founders 2026 — a thesis from Rogue Divisions on Investor-Message Fit and how the firm runs equity raises." />
+<title>Capital-Raising for Founders — Rogue Divisions</title>
 <style>
 /* ============================================================
    Rogue Divisions — colours and type
@@ -351,1079 +351,1594 @@ p {
 
 </style>
 <style>
-  /* ---------- Page shell ---------- */
-  html, body { margin: 0; }
+  /* =========================================================
+     Page layout — editorial long-read
+     Same chassis as the Capital Markets Distribution playbook.
+     ========================================================= */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
+    margin: 0;
     background: var(--rd-ink);
     color: var(--rd-pure-white);
   }
 
-  .page {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 96px 56px 128px;
-  }
+  ::selection { background: var(--rd-signal); color: var(--rd-pure-white); }
 
-  /* ---------- Top bar ---------- */
-  .topbar {
+  /* Page chrome ---------------------------------------------- */
+  .doc-header {
+    border-bottom: 1.5px solid var(--border);
+    padding: 28px 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 28px;
-    border-bottom: 1.5px solid var(--border);
-    margin-bottom: 96px;
+    position: sticky;
+    top: 0;
+    background: rgba(25, 25, 25, 0.92);
+    backdrop-filter: saturate(140%);
+    -webkit-backdrop-filter: saturate(140%);
+    z-index: 50;
   }
-  .topbar img { height: 22px; display: block; }
-  .topbar .meta {
-    font-size: var(--fs-small);
-    color: var(--rd-graphite);
-    letter-spacing: 0.02em;
-  }
-
-  /* ---------- Cover ---------- */
-  .cover { margin-bottom: 128px; }
-  .cover .eyebrow-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--rd-graphite);
-    font-size: var(--fs-small);
-    margin-bottom: 40px;
-  }
-  .eyebrow-rule {
-    height: 1.5px;
-    width: 56px;
-    background: var(--rd-graphite);
-    opacity: 0.6;
-    display: inline-block;
-  }
-  .cover h1 {
-    font-size: 76px;
-    line-height: 1.04;
-    letter-spacing: -0.035em;
-    margin: 0 0 32px;
-    max-width: 760px;
-  }
-  .cover .lede {
-    font-size: 24px;
-    line-height: 1.35;
-    color: rgba(255,255,255,0.78);
-    font-weight: var(--fw-medium);
-    letter-spacing: -0.01em;
-    max-width: 640px;
-    margin: 0 0 64px;
-  }
-  .cover .byline {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
-    padding-top: 32px;
-    border-top: 1.5px solid var(--border);
-  }
-  .byline .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--rd-graphite);
-    margin-bottom: 8px;
-    font-weight: var(--fw-semibold);
-  }
-  .byline .val {
-    font-size: var(--fs-body);
-    color: var(--rd-pure-white);
-    font-weight: var(--fw-medium);
-  }
-
-  /* ---------- Stat strip on cover ---------- */
-  .stat-strip {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1.5px solid var(--border);
-    border-bottom: 1.5px solid var(--border);
-    margin: 96px 0 0;
-  }
-  .stat-strip .cell {
-    padding: 36px 32px 36px 0;
-    border-right: 1.5px solid var(--border);
-  }
-  .stat-strip .cell:last-child {
-    border-right: 0;
-    padding-right: 0;
-  }
-  .stat-strip .cell:not(:first-child) { padding-left: 32px; }
-  .stat-strip .num {
-    font-size: 56px;
-    font-weight: var(--fw-semibold);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    margin-bottom: 12px;
-  }
-  .stat-strip .num--signal { color: var(--rd-signal); }
-  .stat-strip .num--azure  { color: var(--rd-azure);  }
-  .stat-strip .num--jade   { color: var(--rd-jade);   }
-  .stat-strip .lbl {
-    font-size: var(--fs-small);
-    color: rgba(255,255,255,0.70);
-    line-height: 1.4;
-  }
-
-  /* ---------- Section ---------- */
-  section { margin-bottom: 96px; }
-  .section-eyebrow {
+  .doc-header__brand {
     display: flex;
     align-items: center;
     gap: 16px;
-    color: var(--rd-graphite);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-weight: var(--fw-semibold);
-    margin-bottom: 28px;
   }
-  .section-eyebrow .num {
-    color: var(--rd-pure-white);
-    font-variant-numeric: tabular-nums;
-  }
-  .section-eyebrow .rule {
-    flex: 1;
-    height: 1px;
+  .doc-header__brand img { height: 22px; display: block; }
+  .doc-header__rule {
+    width: 1.5px; height: 18px;
     background: var(--border);
   }
-  h1.section {
-    font-size: 56px;
-    letter-spacing: -0.03em;
-    line-height: 1.06;
-    margin: 0 0 48px;
-    max-width: 720px;
+  .doc-header__label {
+    color: var(--rd-graphite);
+    font-size: 13px;
+    font-weight: var(--fw-medium);
   }
-  h2.section {
-    font-size: 32px;
+  .doc-header__meta {
+    color: var(--rd-graphite);
+    font-size: 13px;
+    font-weight: var(--fw-medium);
+    display: flex; gap: 28px; align-items: center;
+  }
+  .doc-header__meta span:not(:last-child)::after {
+    content: ""; display: inline-block; width: 4px; height: 4px;
+    border-radius: 50%; background: var(--rd-graphite);
+    margin-left: 28px; vertical-align: middle; opacity: 0.7;
+  }
+
+  /* Cover ----------------------------------------------------- */
+  .cover {
+    padding: 120px 56px 120px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .cover__eyebrow {
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0;
+    margin-bottom: 40px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .cover__eyebrow::before {
+    content: ""; width: 36px; height: 1.5px; background: var(--rd-signal);
+    display: inline-block;
+  }
+  .cover h1 {
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: var(--fw-semibold);
+    max-width: 16ch;
+    margin-bottom: 40px;
+  }
+  .cover__deck {
+    font-size: 22px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.78);
+    max-width: 62ch;
+    font-weight: var(--fw-medium);
+  }
+  .cover__byline {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    border-top: 1.5px solid var(--border);
+    padding-top: 32px;
+  }
+  .byline__label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 10px;
+  }
+  .byline__value {
+    font-size: 16px;
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Contents -------------------------------------------------- */
+  .contents {
+    padding: 64px 56px 96px;
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 64px;
+    border-top: 1.5px solid var(--border);
+  }
+  .contents__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .contents ol {
+    list-style: none; padding: 0; margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 48px;
+  }
+  .contents li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1.5px solid var(--border);
+    align-items: baseline;
+  }
+  .contents li a {
+    color: var(--rd-pure-white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: var(--fw-medium);
+    transition: color var(--dur-base) var(--ease-standard);
+  }
+  .contents li a:hover { color: var(--rd-signal); }
+  .contents li .num {
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Sections -------------------------------------------------- */
+  .section {
+    padding: 96px 56px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: 1.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 64px;
+  }
+  .section__head {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+  .section__num {
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 16px;
+  }
+  .section__num .dot { color: var(--rd-signal); }
+  .section__kicker {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .section__title {
+    font-size: clamp(32px, 3.4vw, 44px);
+    line-height: 1.1;
     letter-spacing: -0.025em;
-    line-height: 1.18;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 32px;
+    max-width: 22ch;
+  }
+  .section__body {
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.86);
+    font-weight: var(--fw-medium);
+  }
+  .section__body > p { margin: 0 0 1.2em; }
+  .section__body > p:first-child { font-size: 22px; line-height: 1.5; color: var(--rd-pure-white); margin-bottom: 1.4em; }
+  .section__body h3 {
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: var(--fw-semibold);
     margin: 56px 0 20px;
     color: var(--rd-pure-white);
+    max-width: 28ch;
   }
-  h3.section {
-    font-size: 22px;
-    letter-spacing: -0.015em;
-    line-height: 1.25;
-    margin: 40px 0 14px;
-    color: var(--rd-pure-white);
-    font-weight: var(--fw-semibold);
-  }
-  p {
+  .section__body h4 {
     font-size: 18px;
-    line-height: 1.62;
-    color: rgba(255,255,255,0.84);
-    margin: 0 0 1.1em;
-    text-wrap: pretty;
-    max-width: 70ch;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+    margin: 32px 0 12px;
+    letter-spacing: 0;
   }
-  p strong, p b {
+  .section__body strong {
     color: var(--rd-pure-white);
     font-weight: var(--fw-semibold);
   }
-  em, i { color: rgba(255,255,255,0.92); font-style: italic; }
+  .section__body em { font-style: italic; color: var(--rd-pure-white); }
 
-  /* Pull-quote / lede paragraph that opens a section */
-  .lede-p {
-    font-size: 22px;
-    line-height: 1.42;
+  /* Pullquote ------------------------------------------------- */
+  .pullquote {
+    border-left: 2px solid var(--rd-signal);
+    padding: 8px 0 8px 28px;
+    margin: 40px 0;
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
     color: var(--rd-pure-white);
-    letter-spacing: -0.005em;
-    margin: 0 0 32px;
-    max-width: 60ch;
     font-weight: var(--fw-medium);
+    max-width: 36ch;
   }
 
-  /* Lists */
-  ol.rd-ol, ul.rd-ul {
-    list-style: none;
-    margin: 8px 0 24px;
-    padding: 0;
-    counter-reset: rdlist;
-  }
-  ol.rd-ol li, ul.rd-ul li {
-    position: relative;
-    padding: 14px 0 14px 56px;
-    font-size: 18px;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.84);
-    border-bottom: 1px solid rgba(110,110,115,0.18);
-  }
-  ol.rd-ol li:last-child, ul.rd-ul li:last-child { border-bottom: 0; }
-  ol.rd-ol li {
-    counter-increment: rdlist;
-  }
-  ol.rd-ol li::before {
-    content: counter(rdlist, decimal-leading-zero);
-    position: absolute;
-    left: 0;
-    top: 16px;
-    color: var(--rd-signal);
-    font-weight: var(--fw-semibold);
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    font-variant-numeric: tabular-nums;
-  }
-  ul.rd-ul li::before {
-    content: "";
-    position: absolute;
-    left: 16px;
-    top: 26px;
-    width: 20px;
-    height: 1.5px;
-    background: var(--rd-graphite);
-  }
-  ul.rd-ul li b, ol.rd-ol li b {
-    color: var(--rd-pure-white);
-    font-weight: var(--fw-semibold);
-    display: inline;
-  }
-
-  /* ---------- Five-component grid ---------- */
-  .components {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5px;
-    background: var(--border);
-    border-top: 1.5px solid var(--border);
-    border-bottom: 1.5px solid var(--border);
-    margin: 32px 0 8px;
-  }
-  .components .cell {
-    background: var(--rd-ink);
-    padding: 36px 32px 40px;
-  }
-  .components .cell:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-  }
-  .components .cell .num {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--rd-signal);
-    font-weight: var(--fw-semibold);
-    margin-bottom: 12px;
-    display: block;
-  }
-  .components .cell h3 {
-    font-size: 26px;
-    line-height: 1.18;
-    letter-spacing: -0.02em;
-    margin: 0 0 14px;
-    color: var(--rd-pure-white);
-    font-weight: var(--fw-semibold);
-  }
-  .components .cell p {
-    font-size: 16px;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.74);
-    margin: 0;
-    max-width: none;
-  }
-
-  /* ---------- Case studies ---------- */
-  .case {
-    border-top: 1.5px solid var(--border);
-    padding: 40px 0 16px;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 48px;
-  }
-  .case:last-of-type { border-bottom: 1.5px solid var(--border); }
-  .case .meta-col h2 {
-    font-size: 22px;
-    letter-spacing: -0.015em;
-    line-height: 1.2;
-    margin: 0 0 8px;
-    font-weight: var(--fw-semibold);
-  }
-  .case .meta-col .sector {
-    color: var(--rd-graphite);
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-weight: var(--fw-semibold);
-    margin: 0 0 14px;
-  }
-  .case .meta-col .target {
-    color: var(--rd-signal);
-    font-size: 17px;
-    font-weight: var(--fw-semibold);
-    letter-spacing: -0.01em;
-  }
-  .case .body-col p { margin-top: 0; }
-  .case .ba {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 0 20px;
-    margin-bottom: 18px;
-  }
-  .case .ba .tag {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    font-weight: var(--fw-semibold);
-    padding-top: 4px;
-  }
-  .case .ba .tag--before { color: var(--rd-graphite); }
-  .case .ba .tag--after  { color: var(--rd-jade); }
-  .case .ba p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.82);
-  }
-
-  .case-note {
-    font-size: 13px;
-    color: var(--rd-graphite);
-    font-style: italic;
-    margin-top: 28px;
-    max-width: 60ch;
-  }
-
-  /* ---------- Pricing ---------- */
-  .pricing-grid {
+  /* Stat row -------------------------------------------------- */
+  .stat-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    background: var(--border);
+    gap: 16px;
+    margin: 44px 0 56px;
+  }
+  .stat {
+    background: rgba(255,255,255,0.03);
     border: 1.5px solid var(--border);
-    margin: 24px 0 32px;
+    border-radius: 20px;
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 10px;
   }
-  .pricing-grid .leg {
-    background: var(--rd-ink);
-    padding: 32px 28px 36px;
-  }
-  .pricing-grid .leg .ord {
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--rd-graphite);
+  .stat__num {
+    font-size: 56px;
     font-weight: var(--fw-semibold);
-    margin-bottom: 16px;
-  }
-  .pricing-grid .leg h3 {
-    font-size: 22px;
-    margin: 0 0 12px;
-    letter-spacing: -0.015em;
-    font-weight: var(--fw-semibold);
-  }
-  .pricing-grid .leg .range {
-    font-size: 28px;
-    font-weight: var(--fw-semibold);
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-    line-height: 1.1;
-  }
-  .pricing-grid .leg .range--signal { color: var(--rd-signal); }
-  .pricing-grid .leg .range--azure  { color: var(--rd-azure); }
-  .pricing-grid .leg .range--jade   { color: var(--rd-jade); }
-  .pricing-grid .leg p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.72);
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  /* ---------- Process steps ---------- */
-  .process-step {
-    border-top: 1.5px solid var(--border);
-    padding: 32px 0 8px;
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 32px;
-  }
-  .process-step:last-of-type { border-bottom: 1.5px solid var(--border); }
-  .process-step .step-num {
-    font-size: 44px;
     line-height: 1;
-    color: var(--rd-graphite);
-    font-weight: var(--fw-semibold);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    color: var(--rd-pure-white);
     font-variant-numeric: tabular-nums;
   }
-  .process-step h3 {
-    margin: 4px 0 16px;
-    font-size: 24px;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    font-weight: var(--fw-semibold);
-  }
-
-  /* ---------- Fit / Misfit ---------- */
-  .fit-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    margin: 24px 0 0;
-  }
-  .fit-col h3 {
-    font-size: 16px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin: 0 0 20px;
-    padding-bottom: 14px;
-    border-bottom: 1.5px solid var(--border);
-    font-weight: var(--fw-semibold);
-  }
-  .fit-col--yes h3 { color: var(--rd-jade); }
-  .fit-col--no  h3 { color: var(--rd-signal); }
-  .fit-col ul.rd-ul li { padding-left: 28px; font-size: 16px; }
-  .fit-col ul.rd-ul li::before {
-    left: 0;
-    width: 14px;
-    top: 24px;
-  }
-  .fit-col--yes ul.rd-ul li::before { background: var(--rd-jade); }
-  .fit-col--no  ul.rd-ul li::before { background: var(--rd-signal); }
-
-  /* ---------- Testimonials ---------- */
-  .quote {
-    border-left: 2px solid var(--rd-signal);
-    padding: 6px 0 6px 32px;
-    margin: 32px 0;
-    max-width: 70ch;
-  }
-  .quote p {
-    font-size: 22px;
-    line-height: 1.4;
-    color: var(--rd-pure-white);
-    font-style: italic;
-    margin: 0 0 16px;
-    letter-spacing: -0.005em;
+  .stat__num--signal { color: var(--rd-signal); }
+  .stat__num--azure { color: var(--rd-azure); }
+  .stat__num--jade { color: var(--rd-jade); }
+  .stat__label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.45;
     font-weight: var(--fw-medium);
   }
-  .quote .attr {
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--rd-graphite);
-    font-weight: var(--fw-semibold);
-    font-style: normal;
-  }
-
-  /* ---------- Conclusion / colophon ---------- */
-  .colophon {
-    border-top: 1.5px solid var(--border);
-    margin-top: 96px;
-    padding-top: 48px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 32px;
-    align-items: end;
-  }
-  .colophon .mark { font-size: 22px; font-weight: var(--fw-semibold); letter-spacing: -0.02em; margin-bottom: 8px;}
-  .colophon .tag {
-    color: rgba(255,255,255,0.7);
-    font-style: italic;
-    font-size: 16px;
-    margin-bottom: 16px;
-    max-width: 50ch;
-  }
-  .colophon .meta {
-    font-size: 13px;
-    color: var(--rd-graphite);
-    letter-spacing: 0.04em;
-  }
-  .colophon a { color: var(--rd-pure-white); text-decoration: none; }
-  .colophon a:hover { color: var(--rd-azure); }
-  .colophon .compliance {
+  .stat__source {
     font-size: 12px;
     color: var(--rd-graphite);
-    letter-spacing: 0.06em;
+    margin-top: auto;
+    padding-top: 12px;
     text-transform: uppercase;
-    text-align: right;
+    letter-spacing: 0.06em;
     font-weight: var(--fw-semibold);
   }
 
-  /* Page-break helpers (print) */
-  @media print {
-    body { background: white; color: black; }
-    .topbar, .colophon { break-inside: avoid; }
+  /* Architecture diagram ------------------------------------- */
+  .arch {
+    margin: 48px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .arch__layer {
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    background: rgba(255,255,255,0.02);
+    transition: border-color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard);
+  }
+  .arch__layer:hover { border-color: rgba(255,255,255,0.4); }
+  .arch__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+  }
+  .arch__name {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+  }
+  .arch__role {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    font-weight: var(--fw-medium);
+  }
+  .arch__pill {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    border: 1.5px solid var(--border);
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .arch__layer--foundation {
+    border-color: rgba(255, 44, 85, 0.35);
+    background: rgba(255, 44, 85, 0.05);
+  }
+  .arch__layer--foundation .arch__pill {
+    border-color: rgba(255, 44, 85, 0.5);
+    color: var(--rd-signal);
   }
 
-  /* Smaller screens */
-  @media (max-width: 720px) {
-    .page { padding: 56px 24px 80px; }
-    .cover h1 { font-size: 44px; }
-    .cover .lede { font-size: 18px; }
-    .cover .byline { grid-template-columns: 1fr; gap: 16px; }
-    .stat-strip { grid-template-columns: 1fr; }
-    .stat-strip .cell { border-right: 0; border-bottom: 1.5px solid var(--border); padding: 24px 0; }
-    .stat-strip .cell:last-child { border-bottom: 0; }
-    h1.section { font-size: 36px; }
-    h2.section { font-size: 24px; }
-    .components, .pricing-grid, .fit-grid { grid-template-columns: 1fr; }
-    .case, .process-step { grid-template-columns: 1fr; gap: 16px; }
-    .colophon { grid-template-columns: 1fr; }
-    .colophon .compliance { text-align: left; }
+  /* Phase diagram -------------------------------------------- */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 44px 0;
+  }
+  .phase {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    position: relative;
+  }
+  .phase__num {
+    font-size: 14px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .phase__num::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--rd-graphite);
+  }
+  .phase--live .phase__num::before { background: var(--rd-signal); }
+  .phase__name {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .phase__window {
+    font-size: 13px;
+    color: var(--rd-graphite);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 16px;
+  }
+  .phase__body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.7);
+    font-weight: var(--fw-medium);
+  }
+  .phase__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.72);
+    font-weight: var(--fw-medium);
+  }
+  .phase__list li {
+    padding: 10px 0;
+    border-top: 1.5px solid var(--border);
+  }
+  .phase__list li:first-child { border-top: 0; padding-top: 0; }
+
+  /* Compound diagram ----------------------------------------- */
+  .compound {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    margin: 36px 0;
+    background: rgba(255,255,255,0.02);
+  }
+  .compound__title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 20px;
+  }
+  .compound__quote {
+    font-size: 28px;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    font-weight: var(--fw-semibold);
+  }
+  .compound__attr {
+    margin-top: 14px;
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Configurations grid -------------------------------------- */
+  .configs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 32px 0;
+    border-top: 1.5px solid var(--border);
+  }
+  .config {
+    padding: 24px 0;
+    border-bottom: 1.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .configs > .config:nth-child(odd) { padding-right: 32px; border-right: 1.5px solid var(--border); }
+  .configs > .config:nth-child(even) { padding-left: 32px; }
+  .config__name {
+    font-size: 16px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+  }
+  .config__body {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Modes grid ----------------------------------------------- */
+  .modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .mode {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+  }
+  .mode__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    margin-bottom: 14px;
+  }
+  .mode__title {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .mode__body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Case studies --------------------------------------------- */
+  .cases {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .case {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    background: rgba(255,255,255,0.02);
+  }
+  .case__id {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .case__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .case__name {
+    font-size: 26px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--rd-pure-white);
+  }
+  .case__sector {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    font-weight: var(--fw-medium);
+    margin-top: 6px;
+  }
+  .case__round {
+    font-size: 13px;
+    color: var(--rd-signal);
+    font-weight: var(--fw-semibold);
+    margin-top: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .case__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .case__col h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin: 0 0 10px;
+  }
+  .case__col p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.78);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Pricing legs --------------------------------------------- */
+  .legs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 36px 0 28px;
+  }
+  .leg {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 10px;
+    background: rgba(255,255,255,0.02);
+  }
+  .leg__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+  }
+  .leg__name {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+  }
+  .leg__range {
+    font-size: 32px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.02em;
+    color: var(--rd-pure-white);
+    font-variant-numeric: tabular-nums;
+    margin: 4px 0 6px;
+    line-height: 1.1;
+  }
+  .leg__sub {
+    font-size: 13px;
+    color: var(--rd-graphite);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 8px;
+  }
+  .leg__body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.7);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Bullet list ---------------------------------------------- */
+  .rules {
+    list-style: none;
+    margin: 28px 0 36px;
+    padding: 0;
+    border-top: 1.5px solid var(--border);
+  }
+  .rules li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1.5px solid var(--border);
+    align-items: baseline;
+  }
+  .rules li .ix {
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    font-variant-numeric: tabular-nums;
+  }
+  .rules li strong {
+    color: var(--rd-pure-white);
+  }
+  .rules li.is-negative .ix { color: rgba(255, 44, 85, 0.65); }
+
+  /* Results grid --------------------------------------------- */
+  .results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1.5px solid var(--border);
+    margin: 32px 0;
+  }
+  .result {
+    padding: 28px 0;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .results > .result:nth-child(odd) { padding-right: 32px; border-right: 1.5px solid var(--border); }
+  .results > .result:nth-child(even) { padding-left: 32px; }
+  .result__name {
+    font-size: 18px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .result__body {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Testimonials --------------------------------------------- */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 40px 0 24px;
+  }
+  .testimonial {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.02);
+  }
+  .testimonial__quote {
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-medium);
+    margin: 0 0 24px;
+  }
+  .testimonial__attr {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1.5px solid var(--border);
+  }
+  .testimonial__name {
+    font-size: 14px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+  }
+  .testimonial__role {
+    font-size: 13px;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-medium);
+    margin-top: 2px;
+  }
+
+  /* End plate ------------------------------------------------- */
+  .endplate {
+    padding: 96px 56px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: 1.5px solid var(--border);
+    text-align: center;
+  }
+  .endplate__rule {
+    width: 60px; height: 1.5px; background: var(--rd-signal);
+    margin: 0 auto 32px;
+  }
+  .endplate__title {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 24px;
+    max-width: 20ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .endplate__sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.7);
+    max-width: 56ch;
+    margin: 0 auto 40px;
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+  .endplate__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    background: var(--rd-pure-white);
+    color: var(--rd-ink);
+    font-weight: var(--fw-semibold);
+    font-size: 17px;
+    text-decoration: none;
+    box-shadow: var(--shadow-cta);
+    transition: opacity var(--dur-base) var(--ease-standard);
+  }
+  .endplate__cta:hover { opacity: 0.92; }
+
+  /* Footer ---------------------------------------------------- */
+  .doc-footer {
+    border-top: 1.5px solid var(--border);
+    padding: 48px 56px 64px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 56px;
+    align-items: start;
+    color: var(--rd-graphite);
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: var(--fw-medium);
+  }
+  .doc-footer img { height: 18px; opacity: 0.85; display: block; }
+  .doc-footer__brand { padding-top: 2px; }
+  .doc-footer__disclaimer { max-width: 92ch; }
+  .doc-footer__disclaimer p { margin: 0 0 8px; color: var(--rd-graphite); }
+  .doc-footer__disclaimer p:last-child { margin-bottom: 0; }
+  .doc-footer__disclaimer a {
+    color: var(--rd-pure-white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    transition: border-color var(--dur-base) var(--ease-standard);
+  }
+  .doc-footer__disclaimer a:hover { border-bottom-color: var(--rd-pure-white); }
+
+  /* Responsive ------------------------------------------------ */
+  @media (max-width: 1024px) {
+    .section { grid-template-columns: 1fr; gap: 32px; padding: 64px 32px; }
+    .section__head { position: static; }
+    .section__num { font-size: 44px; }
+    .cover, .contents, .endplate { padding-left: 32px; padding-right: 32px; }
+    .doc-header { padding: 20px 32px; }
+    .cover__byline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .stat-row, .phases, .modes, .legs, .testimonials { grid-template-columns: 1fr; }
+    .contents { grid-template-columns: 1fr; }
+    .contents ol { grid-template-columns: 1fr; }
+    .arch__layer { grid-template-columns: 60px 1fr; }
+    .arch__pill { display: none; }
+    .configs, .results { grid-template-columns: 1fr; }
+    .configs > .config:nth-child(odd), .results > .result:nth-child(odd) { padding-right: 0; border-right: 0; }
+    .configs > .config:nth-child(even), .results > .result:nth-child(even) { padding-left: 0; }
+    .config { grid-template-columns: 1fr; gap: 8px; }
+    .case { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+    .case__body { grid-template-columns: 1fr; gap: 18px; }
   }
 </style>
 </head>
 <body>
 
-<div class="page">
-
-  <!-- Top bar -->
-  <div class="topbar">
-    <img src="/thesis/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" />
-    <div class="meta">Thesis · 2026 Edition</div>
+<header class="doc-header">
+  <div class="doc-header__brand">
+    <a href="/" aria-label="Rogue Divisions home"><img src="/thesis/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" /></a>
+    <span class="doc-header__rule"></span>
+    <span class="doc-header__label">Methodology / Capital-Raising for Founders</span>
   </div>
+  <div class="doc-header__meta">
+    <span>2026 Edition</span>
+    <span>For founders raising equity</span>
+    <span>London</span>
+  </div>
+</header>
 
-  <!-- Cover -->
-  <header class="cover">
-    <div class="eyebrow-row">
-      <span class="eyebrow-rule"></span>
-      <span>For founders and operators raising equity</span>
+<!-- =================== COVER =================== -->
+<section class="cover">
+  <div class="cover__eyebrow">Methodology notes from Rogue Divisions</div>
+  <h1>Capital-raising for <span class="rd-mark is-drawing">founders</span>.</h1>
+  <p class="cover__deck">
+    Achieving Investor-Message Fit. Specialist narrative and targeted access for the modern private markets &mdash; how we run equity raises for founders and operators from Seed through Series B, with select work at growth and lower-middle-market.
+  </p>
+  <div class="cover__byline">
+    <div>
+      <div class="byline__label">Author</div>
+      <div class="byline__value">Sage Dillon</div>
+    </div>
+    <div>
+      <div class="byline__label">Role</div>
+      <div class="byline__value">Founder, Rogue Divisions</div>
+    </div>
+    <div>
+      <div class="byline__label">Edition</div>
+      <div class="byline__value">2026</div>
+    </div>
+    <div>
+      <div class="byline__label">Location</div>
+      <div class="byline__value">London</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== STANDFIRST =================== -->
+<section class="section" style="border-top: 0; padding-top: 0;">
+  <div class="section__head">
+    <div class="section__kicker">Premise</div>
+  </div>
+  <div class="section__body">
+    <p style="font-size: 28px; line-height: 1.4; color: var(--rd-pure-white); letter-spacing: -0.015em; max-width: 34ch;">
+      Capital flows to the most familiar argument, delivered through a chain of trust the investor recognises, in a form the room that decides can underwrite without bending.
+    </p>
+    <p>
+      That is Investor-Message Fit. Becoming the familiar argument for the investors who can actually back the deal &mdash; against the actual deployment frontier as it exists today. This methodology is how we do it.
+    </p>
+  </div>
+</section>
+
+<!-- =================== IN BRIEF / STATS =================== -->
+<section class="section" id="brief" data-screen-label="00 In brief">
+  <div class="section__head">
+    <div class="section__num">00<span class="dot">.</span></div>
+    <div class="section__kicker">In brief</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The short version.</h2>
+    <p>
+      The thesis, the work, the frontier, the operation, and the numbers &mdash; in five lines. The rest of the document is the long version.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat__num stat__num--signal">80<span style="font-size: 36px;">+</span></div>
+        <div class="stat__label">mandates run across 28 countries, with global coverage spanning Europe, the Americas, APAC, and the GCC.</div>
+        <div class="stat__source">Firm record</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num stat__num--azure">17,000<span style="font-size: 36px;">+</span></div>
+        <div class="stat__label">active VC, PE, family office, HNW, and sovereign relationships across the investor network.</div>
+        <div class="stat__source">Investor network</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num stat__num--jade">$1.1<span style="font-size: 36px;">tn</span></div>
+        <div class="stat__label">aggregate dry powder across the network; clients collectively represent $100bn+ in enterprise value.</div>
+        <div class="stat__source">Aggregate capacity</div>
+      </div>
     </div>
 
-    <h1>
-      Capital-raising for founders.<br />
-      Achieving <span class="rd-mark">investor-message fit</span>.
-    </h1>
+    <h3>Five lines.</h3>
+    <ol class="rules">
+      <li>
+        <span class="ix">01</span>
+        <div><strong>The thesis.</strong> Capital flows to the most familiar argument, delivered through a chain of trust the investor recognises, in a form the room that decides can underwrite without bending. That is Investor-Message Fit.</div>
+      </li>
+      <li>
+        <span class="ix">02</span>
+        <div><strong>The work.</strong> Two questions decide whether a round closes. How do we show this is a 10x opportunity, and how do we de-risk it. We answer both at the same time. Mandate fit is the entry condition; the positioning is the differentiator.</div>
+      </li>
+      <li>
+        <span class="ix">03</span>
+        <div><strong>The frontier.</strong> Capital is concentrating at the top into mega-funds and fragmenting at the bottom into emerging managers, family offices, sovereigns, strategics, and corporate venture. The investor list that worked five years ago will not close your round today. Our network and systems are built for the deployment frontier as it exists now.</div>
+      </li>
+      <li>
+        <span class="ix">04</span>
+        <div><strong>The operation.</strong> AI-forward, integrated, judgement-led. Every engagement runs against a live client environment that shows the round in real time. We work as partners across multiple rounds, not transactional through one.</div>
+      </li>
+      <li>
+        <span class="ix">05</span>
+        <div><strong>Commercial.</strong> Setup, success fee, warrants. Flexible mix. Explicit ranges. Non-exclusive. Past clients have attracted Paradigm, Tiger Global, Alexandre Arnault, and Green Bay Ventures.</div>
+      </li>
+    </ol>
+  </div>
+</section>
 
-    <p class="lede">
-      Specialist narrative and targeted access for the modern private markets.
-    </p>
+<!-- =================== CONTENTS =================== -->
+<nav class="contents" aria-label="Contents">
+  <div class="contents__title">Contents</div>
+  <ol>
+    <li><span class="num">01</span><a href="#s1">The state of capital raising</a></li>
+    <li><span class="num">02</span><a href="#s2">Our approach &mdash; Investor-Message Fit</a></li>
+    <li><span class="num">03</span><a href="#s3">The five components</a></li>
+    <li><span class="num">04</span><a href="#s4">Why it works</a></li>
+    <li><span class="num">05</span><a href="#s5">The system behind it</a></li>
+    <li><span class="num">06</span><a href="#s6">Case studies</a></li>
+    <li><span class="num">07</span><a href="#s7">Our process</a></li>
+    <li><span class="num">08</span><a href="#s8">Right fit, wrong fit</a></li>
+    <li><span class="num">09</span><a href="#s9">Commercial structure</a></li>
+    <li><span class="num">10</span><a href="#s10">Testimonials &amp; references</a></li>
+  </ol>
+</nav>
 
-    <div class="byline">
-      <div>
-        <div class="label">Author</div>
-        <div class="val">Sage Dillon</div>
-      </div>
-      <div>
-        <div class="label">Role</div>
-        <div class="val">Founder, Rogue Divisions</div>
-      </div>
-      <div>
-        <div class="label">Edition</div>
-        <div class="val">London · 2026</div>
-      </div>
-    </div>
-
-    <!-- Standing stats -->
-    <div class="stat-strip">
-      <div class="cell">
-        <div class="num num--azure">$100bn+</div>
-        <div class="lbl">Aggregate enterprise value of clients we have worked with.</div>
-      </div>
-      <div class="cell">
-        <div class="num num--signal">17,000+</div>
-        <div class="lbl">Active investor relationships across VC, PE, FO, HNW, and SWF.</div>
-      </div>
-      <div class="cell">
-        <div class="num num--jade">80+</div>
-        <div class="lbl">Mandates run across twenty-eight countries.</div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Introduction -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">01</span>
-      <span>Introduction</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">Raising capital is harder than it should be.</h1>
-
-    <p class="lede-p">
-      A founder with a strong business often spends six to nine months running an outreach motion that pre-supposes warm intros, generic decks, and the hope that the right investor will surface. Most do not. The ones who do tend to be a function of network, not narrative.
-    </p>
-
+<!-- =================== SECTION 1 =================== -->
+<section class="section" id="s1" data-screen-label="01 State">
+  <div class="section__head">
+    <div class="section__num">01<span class="dot">.</span></div>
+    <div class="section__kicker">The problem</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The state of capital raising.</h2>
     <p>
-      Rogue Divisions is a specialist capital advisory firm headquartered in London with global coverage across Europe, the Americas, APAC, and the GCC. We help founders raise equity, primarily from Seed through Series B, with select work at growth and lower-middle-market. We are now sector agnostic, with deeper specialism in deep-tech, fintech, climate and energy, life sciences, consumer, and food and agtech.
+      Raising capital is harder than it should be, and the standard playbook is not aging well. A founder with a strong business often spends six to nine months running an outreach motion that pre-supposes warm intros, generic decks, and the hope that the right investor will surface. Most do not. The ones who do tend to be a function of network, not narrative.
     </p>
-
     <p>
-      The numbers that anchor the firm are simple. We have run more than eighty mandates across twenty-eight countries. Our investor network spans seventeen thousand active VC, PE, family office, HNW, and sovereign relationships, with aggregate dry powder above <strong>$1.1 trillion</strong>. Clients we have worked with collectively represent more than <strong>$100 billion</strong> in enterprise value.
+      Two patterns repeat in conversations with founders who come to us after running their own process.
     </p>
 
-    <p>
-      The point of those numbers is not the size. The point is the precision of the access. The same network applied to the wrong investor segment produces noise. The work we do is making sure your raise is in front of the people whose mandate, stage, geography, and thesis already align with the deal.
-    </p>
-
-    <p>
-      The firm grew out of marketing operations that had run high-performance campaigns for global brands and venture-backed startups before turning the same instinct on the private capital markets. The capital markets are largely stuck on a previous generation of operating practice: static investor lists, generic blast emails, advisor relationships that have not been re-evaluated in a decade. We treat raises like product launches. Segment the audience. Build the asset. Run the campaign. Iterate against live signal. Close.
-    </p>
-
-    <p>
-      That instinct, applied with the discipline of capital markets compliance and the operational scale of an AI-forward stack, is the firm.
-    </p>
-  </section>
-
-  <!-- The State of Capital Raising -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">02</span>
-      <span>The state of capital raising</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">Two patterns repeat in conversations with founders who come to us after running their own process.</h1>
-
-    <h3 class="section">First, the volume problem.</h3>
+    <h3>The volume problem.</h3>
     <p>
       Founders are sending the same pitch to investor lists that were not built around their deal. The reply rate is low because the targeting is generic. The signal is buried under noise. By the time a founder has burned through a hundred warm intros and a thousand cold emails, the remaining capacity is exhausted and morale is lower than the cap table can sustain.
     </p>
 
-    <h3 class="section">Second, the narrative problem.</h3>
+    <h3>The narrative problem.</h3>
     <p>
       The deck reads like the founder is in the room presenting it, but the founder is not in the room. Investors get five minutes with the asset. If the document does not communicate the thesis, the unit economics, the moat, and the path to the next round in the first thirty seconds, the deal is filed. Most decks are written for the founder, not the investor. Most teasers are too long, too generic, or too vague to drive a meeting.
     </p>
-
     <p>
       These two problems compound. A poorly targeted list with a poorly framed asset produces poor outcomes regardless of how strong the underlying business is. The fix is not more activity. The fix is alignment between message and audience.
     </p>
 
-    <p class="lede-p" style="margin-top: 32px;">
-      That alignment is what we call <span class="rd-mark">Investor-Message Fit</span>.
-    </p>
-  </section>
-
-  <!-- Approach: Investor-Message Fit -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">03</span>
-      <span>Our approach</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">Investor-Message Fit.</h1>
-
-    <p>Investors filter capital deployment against two questions:</p>
-
-    <ol class="rd-ol">
-      <li>Why should I believe in this business?</li>
-      <li>How do I reduce my risk in deploying into it?</li>
-    </ol>
-
-    <p>
-      The answer to the first question is narrative grounded in evidence. The answer to the second is matching the deal to investors whose existing thesis, sector, and stage already make this deal underwritable. Most fundraising effort fails because it answers one of these questions, not both.
-    </p>
-
-    <p>
-      Investor-Message Fit is the discipline of getting both right at the same time. It sits at the intersection of five components, and we work across all of them in parallel.
-    </p>
-
-    <div class="components">
-      <div class="cell">
-        <span class="num">01 · Narrative</span>
-        <h3>Your thesis distilled into materials an investor can underwrite in fifty minutes.</h3>
-        <p>A sharper deck, a teaser that drives meetings rather than describes the business, a data room organised the way diligence actually flows, and a teaser-deck-meeting funnel where each step earns the next. On nuanced deals, narrative gives an IC something they can take to their LPs and defend, even when the deal does not match their previous twenty deployments. That is craft.</p>
-      </div>
-      <div class="cell">
-        <span class="num">02 · Investor segment</span>
-        <h3>Not a list. A mandate-aware target set.</h3>
-        <p>Built from stage, sector, geography, cheque size, deal type, portfolio fit, and thesis alignment. Database integrations, network mapping, and live deal-flow signals identify investors actively deploying into deals like yours, not investors who deployed into something adjacent in 2019. Outreach is then prioritised in waves; the strongest-fit investors are reserved for the moment the materials and process are tight.</p>
-      </div>
-      <div class="cell">
-        <span class="num">03 · Channel</span>
-        <h3>Coordinated outreach across the channels investors actually pay attention to.</h3>
-        <p>Direct email, LinkedIn, warm introductions, and where appropriate, paid distribution. The infrastructure handles deliverability, sender reputation, sequencing, and personalisation at scale, so the message arrives in the inbox rather than the spam folder, and lands as a tailored note rather than an obvious template. We do not blast. A campaign that books fifteen of the right investors beats one that books a hundred wrong ones.</p>
-      </div>
-      <div class="cell">
-        <span class="num">04 · Presentation</span>
-        <h3>The materials and the founder both ready for the meeting the campaign generates.</h3>
-        <p>We refine the pitch deck and supporting collateral against real investor feedback, coach delivery, build out objection-handling for the questions we are seeing on calls, and prepare the data room so that diligence is fast rather than fraught. We sit on calls when useful. We do not sit on calls when not.</p>
-      </div>
-      <div class="cell">
-        <span class="num">05 · Optimisation loop</span>
-        <h3>Every investor meeting produces signal. We capture it.</h3>
-        <p>Which questions came up, which objections recurred, which segments are converting at a higher rate, where the narrative is strong, and where it needs another pass. We feed that signal back into the materials, the targeting, and the messaging, and run the next wave better than the last. A first-wave reply rate is data. A second-wave reply rate that is double the first is leverage.</p>
-      </div>
+    <div class="pullquote">
+      The investor list that worked five years ago will not close your round today.
     </div>
 
-    <p style="margin-top: 32px;">
-      Together, these five components are the operating system of a Rogue Divisions raise.
+    <h3>The third pattern, larger than the first two.</h3>
+    <p>
+      Private capital is concentrating at the top and fragmenting at the bottom. The largest funds are raising at unprecedented scale and deploying into mega-rounds, particularly in AI infrastructure, that have nothing to do with most founders' lives. Below that, the actual deployment frontier for early-stage and lower-middle-market equity has fragmented across emerging managers, family offices, sovereigns, strategic capital, and corporate venture arms.
     </p>
-  </section>
+    <p>
+      LPs are demanding distributions, not paper marks. Family offices are increasingly going direct. The implication for founders is uncomfortable but clear: getting in front of the capital that is actually deploying, rather than the capital that makes headlines, is harder than it has ever been, and the firms that can do it precisely are at a structural advantage.
+    </p>
+    <p>
+      That alignment &mdash; between message and audience, against the actual deployment frontier as it exists today &mdash; is what we call <strong>Investor-Message Fit.</strong>
+    </p>
+  </div>
+</section>
 
-  <!-- Why It Works -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">04</span>
-      <span>Why it works</span>
-      <span class="rule"></span>
+<!-- =================== SECTION 2 =================== -->
+<section class="section" id="s2" data-screen-label="02 Investor-Message Fit">
+  <div class="section__head">
+    <div class="section__num">02<span class="dot">.</span></div>
+    <div class="section__kicker">Our position</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Becoming the familiar argument.</h2>
+    <p>
+      Capital does not flow to the best argument. It flows to the most familiar one, brought to the investor by a chain of trust they already recognise. Investor-Message Fit is the discipline of becoming the familiar argument for the investors who can actually back the deal.
+    </p>
+    <p>
+      <strong>Familiar means legible to the room that decides.</strong> Investors do not write cheques alone. The cheque is written after a partnership conversation, an investment committee defense, a portfolio review, an LP letter. The deal has to survive all of those. The numbers have to tie out. The narrative has to map to a thesis the partnership has already aligned around. The shape has to read as a deal this fund makes, not a deal this fund is being asked to consider for the first time.
+    </p>
+
+    <div class="pullquote">
+      Legibility to capital is not a presentation skill. It is the discipline of producing a deal an investor can defend, repeat, and underwrite without bending.
     </div>
-    <h1 class="section">Separate the two halves of the investor decision.</h1>
 
-    <h3 class="section">On belief</h3>
     <p>
-      Belief is built by evidence framed inside a narrative the investor can repeat. We work with you to surface the strongest data your business has, including unit economics, retention, market validation, and proof of scale where applicable, and structure it inside a story that maps to what investors at your stage are pattern-matching against. Where the data is incomplete, we run targeted campaigns to gather it. Where the story is unclear, we restructure it. The result is materials that pass the first scan and survive the second meeting.
+      Legible does not mean identical. The strongest deals are <em>legible in shape and unfamiliar in insight</em>: an architecture the partnership pattern-matches, with a wedge inside it the partnership has not yet had to consider. The first makes the bet underwritable. The second makes it worth taking. Most fundraising goes wrong by getting one and not the other.
     </p>
 
-    <h3 class="section">On risk</h3>
+    <h3>Mandate fit is the entry condition.</h3>
     <p>
-      Risk is reduced by counterparty fit, not by claims of low risk. An investor underwriting a deal in their existing thesis carries less perceived risk than the same investor underwriting a deal that requires them to bend their mandate. Our targeting work makes sure your deal is in front of the investors for whom this is a familiar shape, not an exception. Where the deal does require some calibration on the investor side, the materials provide the rationale they need to defend the decision internally.
+      The investor's thesis, stage, sector, and cheque size have to align with the round, or no amount of positioning closes it. Mandate fit is the entry condition, not the win. Most fundraising effort never gets past it: the wrong investors look at the deal, decline politely, and the founder loses six months of runway working a list that was never built around the deal.
     </p>
 
-    <h3 class="section">On structure</h3>
+    <h3>Past mandate fit, two questions.</h3>
+    <div class="modes">
+      <div class="mode">
+        <div class="mode__tag">Question one</div>
+        <div class="mode__title">How is this a 10x opportunity?</div>
+        <div class="mode__body">
+          The magnitude case. Building the evidence and the narrative so the right investors can see how this becomes the deal that returns the fund, not just an interesting business.
+        </div>
+      </div>
+      <div class="mode">
+        <div class="mode__tag">Question two</div>
+        <div class="mode__title">How do we de-risk it?</div>
+        <div class="mode__body">
+          The process case. Running parallel right-fit investors against the same round so that interest compounds visibly, the round moves at a known pace, and the cost of inaction becomes sharper than the cost of action.
+        </div>
+      </div>
+    </div>
     <p>
-      There is a second-order effect. Finding the right lead, not just any cheque, sets the rest of the round up to close. The right lead validates the deal for follow-on capital. The right cap table is structurally built to support the next round before you need to raise it. We work with founders on cap table construction, not just on capital identification.
+      Most fundraising effort answers one of these questions, not both. We answer both at the same time.
     </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 3 =================== -->
+<section class="section" id="s3" data-screen-label="03 Components">
+  <div class="section__head">
+    <div class="section__num">03<span class="dot">.</span></div>
+    <div class="section__kicker">The architecture</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Five components, worked in parallel.</h2>
+    <p>
+      Investor-Message Fit sits at the intersection of five components, and we work across all of them at the same time. The optimisation loop is the load-bearing layer underneath the other four &mdash; it is what makes the next wave better than the last.
+    </p>
+
+    <div class="arch" aria-label="Five components diagram">
+      <div class="arch__layer">
+        <div class="arch__tag">04</div>
+        <div>
+          <div class="arch__name">Presentation</div>
+          <div class="arch__role">Materials, talk track, and founder readiness for the meeting the campaign generates.</div>
+        </div>
+        <div class="arch__pill">In the room</div>
+      </div>
+      <div class="arch__layer">
+        <div class="arch__tag">03</div>
+        <div>
+          <div class="arch__name">Channel</div>
+          <div class="arch__role">Where each investor segment will encounter the deal. Not impressions &mdash; the right conversations.</div>
+        </div>
+        <div class="arch__pill">Where they are</div>
+      </div>
+      <div class="arch__layer">
+        <div class="arch__tag">02</div>
+        <div>
+          <div class="arch__name">Investor segment</div>
+          <div class="arch__role">A mandate-aware target set, not a list. Stage, sector, geography, cheque, deal type, thesis.</div>
+        </div>
+        <div class="arch__pill">Who they are</div>
+      </div>
+      <div class="arch__layer">
+        <div class="arch__tag">01</div>
+        <div>
+          <div class="arch__name">Narrative</div>
+          <div class="arch__role">Thesis distilled into materials an investor can scan in five minutes and underwrite in fifty.</div>
+        </div>
+        <div class="arch__pill">The asset</div>
+      </div>
+      <div class="arch__layer arch__layer--foundation">
+        <div class="arch__tag">Loop</div>
+        <div>
+          <div class="arch__name">Optimisation loop</div>
+          <div class="arch__role">Signal from every meeting fed back into materials, targeting, and messaging. The next wave runs better than the last.</div>
+        </div>
+        <div class="arch__pill">The engine</div>
+      </div>
+    </div>
+
+    <h3>01. Narrative.</h3>
+    <p>
+      Your investment thesis distilled from traction, vision, and team into materials an investor can scan in five minutes and underwrite in fifty. That means a sharper deck, a teaser that drives meetings rather than describes the business, a data room organised the way diligence actually flows, and a teaser-deck-meeting funnel where each step earns the next.
+    </p>
+    <p>
+      On nuanced deals, narrative does heavier lifting. Some of the strongest businesses we work with do not sit cleanly inside one investor bucket. The job of the narrative is to give an investment committee something they can take to their LPs and defend, even when the deal does not match their previous twenty deployments. That is craft.
+    </p>
+
+    <h3>02. Investor segment.</h3>
+    <p>
+      Not a list. A mandate-aware target set built from stage, sector, geography, cheque size, deal type, portfolio fit, and thesis alignment. Our database integrations, network mapping, and live deal-flow signals let us identify the investors actively deploying into deals like yours, not the investors who deployed into something adjacent in 2019.
+    </p>
+    <p>
+      Outreach is then prioritised in waves. The strongest-fit investors are reserved for the moment the materials and process are tight, not burned in the first wave when the calibration is still being learned.
+    </p>
+
+    <h3>03. Channel.</h3>
+    <p>
+      Different investor types form conviction in different places. Family offices and principal investors get there through events, personal references, and reputation that travels inside their peer set. Institutional VCs get there through warm introductions, founder narrative, and thesis-aligned content that reaches them where they already pay attention. Strategic and corporate venture investors get there through industry presence and partnership conversations. Emerging managers and thesis-led specialists get there through direct, well-framed approach from a founder who has clearly done the work.
+    </p>
+    <p>
+      Channel work is choosing where each segment of your investor universe will encounter the deal, and meeting them there. <strong>A campaign that produces fifteen of the right meetings beats one that produces a hundred wrong ones.</strong>
+    </p>
+
+    <h3>04. Presentation.</h3>
+    <p>
+      The materials and the founder both need to be ready for the meeting that the campaign generates. We refine the pitch deck and supporting collateral against real investor feedback, coach delivery, build out objection-handling for the questions we are seeing on calls, and prepare the data room so that diligence is fast rather than fraught.
+    </p>
+    <p>
+      We sit on calls when useful. We do not sit on calls when not. Either way the materials, the talk track, and the follow-up sequence are calibrated to the investor type in front of you.
+    </p>
+
+    <h3>The loop. Optimisation.</h3>
+    <p>
+      Every investor meeting produces signal. Which questions came up, which objections recurred, which segments are converting at a higher rate, where the narrative is strong, and where it needs another pass. We capture that signal, feed it back into the materials, the targeting, and the messaging, and run the next wave better than the last.
+    </p>
+    <p>
+      This is the part most advisory firms do not do, and it is the part that matters most. A first-wave reply rate is data. A second-wave reply rate that is double the first is leverage.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 4 =================== -->
+<section class="section" id="s4" data-screen-label="04 Why it works">
+  <div class="section__head">
+    <div class="section__num">04<span class="dot">.</span></div>
+    <div class="section__kicker">The mechanism</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Why it works.</h2>
+    <p>
+      The mechanism is plain when you separate the two halves of the investor decision. Belief in the upside has to be built. Urgency has to be compressed. Structure has to set up the round after this one.
+    </p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="phase__num">Layer 01</div>
+        <div class="phase__name">Upside</div>
+        <div class="phase__window">Magnitude case</div>
+        <div class="phase__body">
+          Belief in the upside is built by evidence framed inside a narrative the investor can repeat. We surface the strongest data your business has &mdash; unit economics, retention, market validation, proof of scale where applicable &mdash; and structure it inside a story that maps to how the right investors at your stage actually pattern-match deals. Materials that pass the first scan and survive the second meeting.
+        </div>
+      </div>
+      <div class="phase phase--live">
+        <div class="phase__num">Layer 02</div>
+        <div class="phase__name">Urgency</div>
+        <div class="phase__window">Process case</div>
+        <div class="phase__body">
+          An investor weighing your deal in isolation has all the time in the world. An investor weighing your deal alongside aligned interest from other right-fit investors does not. Parallel waves, real interest from real counterparties surfaced visibly, a managed pace through diligence. Make the cost of inaction sharper than the cost of action.
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase__num">Layer 03</div>
+        <div class="phase__name">Structure</div>
+        <div class="phase__window">Second-order effect</div>
+        <div class="phase__body">
+          Finding the right lead, not just any cheque, sets the rest of the round up to close. The right lead validates the deal for follow-on capital. The right cap table is structurally built to support the next round before you need to raise it. We work with founders on cap table construction, not just on capital identification.
+        </div>
+      </div>
+    </div>
 
     <p>
       Combined, those three layers shorten the time to a strong term sheet and improve the terms of the round when it arrives.
     </p>
-  </section>
 
-  <!-- The System Behind It -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">05</span>
-      <span>The system behind it</span>
-      <span class="rule"></span>
+    <div class="compound">
+      <div class="compound__title">The compound effect, in the field</div>
+      <div class="compound__quote">
+        &ldquo;One meeting and they just knew exactly what we needed and how to <span class="rd-mark">execute</span>.&rdquo;
+      </div>
+      <div class="compound__attr">&mdash; Myles Peyton, Centric Software</div>
     </div>
-    <h1 class="section">The capital markets adopted email twenty years late.</h1>
+  </div>
+</section>
 
+<!-- =================== SECTION 5 =================== -->
+<section class="section" id="s5" data-screen-label="05 System">
+  <div class="section__head">
+    <div class="section__num">05<span class="dot">.</span></div>
+    <div class="section__kicker">The system</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The system behind it.</h2>
     <p>
-      The advisory firms that stayed dominant kept their relationships and their processes. The advisory firms that grew to fit the current environment built systems.
+      The capital markets adopted email twenty years late and have been adopting modern operating practice ever since. The advisory firms that stayed dominant kept their relationships and their processes. The advisory firms that grew to fit the current environment built systems.
+    </p>
+    <p>
+      Rogue Divisions is built on integrated systems that compress the work an analyst used to do over two weeks into an afternoon, and the tasks that used to take an afternoon into something ambient. Investor intelligence, mandate matching, deal operations, and post-meeting analysis run as one stack rather than as a sequence of disconnected tools.
     </p>
 
-    <p>
-      Rogue Divisions is built on integrated systems across investor intelligence, mandate matching, outreach infrastructure, deliverability, CRM, conversation intelligence, and reporting. The work that used to be done by an analyst over two weeks is now done in an afternoon. The tasks that used to be done in an afternoon are now ambient. What that frees up is judgement: where to position the deal, which investors to reach, how to reframe the narrative when the first wave teaches us something the second wave should reflect.
-    </p>
+    <div class="pullquote">
+      What that frees up is judgement: where to position the deal, which investors to reach, how to reframe the narrative when the first wave teaches us something the second wave should reflect.
+    </div>
 
     <p>
       We are deliberate about how much of this we describe in marketing material, because the system is not what is being sold. The system is what makes our judgement go further than a traditional advisory team can without it. The output is what we are accountable for: meetings with the right investors, faster, on terms that compound to a better round.
     </p>
-
+    <p>
+      <strong>We make that work visible.</strong> Every engagement runs against a live client environment that shows the round in real time: investor pipeline, conversation status, meetings booked, milestones, next steps. Founders see the work as it happens, not in a monthly PDF. The accountability is in the open.
+    </p>
     <p>
       The lessons are not from finance. They are from the operators we worked with before this was a capital markets firm: the best venture-backed startups, the best consumer brands, the best growth marketing teams. Those operators run tight feedback loops, instrument everything, segment relentlessly, and iterate against signal. We brought that discipline into a market that still defaults to relationship, list, and deck. That gap is the firm's edge, and it does not close on its own.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Case Studies -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">06</span>
-      <span>Case studies</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">Three representative engagements across sectors.</h1>
-    <p style="margin-bottom: 48px;">
-      Names used with permission. Several other live mandates are not named here for confidentiality reasons but are available on a call.
+<!-- =================== SECTION 6 =================== -->
+<section class="section" id="s6" data-screen-label="06 Case studies">
+  <div class="section__head">
+    <div class="section__num">06<span class="dot">.</span></div>
+    <div class="section__kicker">Case studies</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Three engagements, across sectors.</h2>
+    <p>
+      Three representative engagements, names used with permission. Several other live mandates are not named here for confidentiality reasons but are available on a call.
     </p>
 
-    <article class="case">
-      <div class="meta-col">
-        <div class="sector">Cybersecurity infrastructure</div>
-        <h2>Geeq</h2>
-        <div class="target">Pre-Series A · $15M</div>
-      </div>
-      <div class="body-col">
-        <div class="ba">
-          <div class="tag tag--before">Before</div>
-          <p>A deep-tech security platform with strong technical IP and an institutional pipeline that was moving slowly. Generalist VCs were unable to underwrite the technical thesis at speed; the deal needed specialist counterparties who could evaluate the cryptographic and architectural claims without thirty pages of explanation.</p>
+    <div class="cases">
+      <article class="case">
+        <div class="case__id">
+          <div class="case__tag">Case 01</div>
+          <div class="case__name">Geeq</div>
+          <div class="case__sector">Cybersecurity infrastructure</div>
+          <div class="case__round">Pre-Series A &middot; $15M target</div>
         </div>
-        <div class="ba">
-          <div class="tag tag--after">After</div>
-          <p>Repositioned the narrative to lead with verified-economy infrastructure rather than a feature-level zero-trust framing. Targeted cyber strategics, enterprise SaaS funds, and web3 infrastructure investors with thesis-aligned mandates. The pipeline now sits at $15M of investor interest with term sheets expected.</p>
+        <div class="case__body">
+          <div class="case__col">
+            <h4>Before</h4>
+            <p>A deep-tech security platform with strong technical IP and an institutional pipeline that was moving slowly. Generalist VCs were unable to underwrite the technical thesis at speed; the deal needed specialist counterparties who could evaluate the cryptographic and architectural claims without thirty pages of explanation.</p>
+          </div>
+          <div class="case__col">
+            <h4>After</h4>
+            <p>Repositioned the narrative to lead with verified-economy infrastructure rather than a feature-level zero-trust framing. Targeted cyber strategics, enterprise SaaS funds, and web3 infrastructure investors with thesis-aligned mandates. The pipeline now sits at $15M of investor interest with term sheets expected.</p>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="case">
-      <div class="meta-col">
-        <div class="sector">AI loyalty SaaS</div>
-        <h2>Hang</h2>
-        <div class="target">Convertible · $5M</div>
-      </div>
-      <div class="body-col">
-        <div class="ba">
-          <div class="tag tag--before">Before</div>
-          <p>Strong commercial traction and operating data: 300%+ year-on-year growth, 3.5x higher member spend, 244% increase in visit frequency, and ten thousand signups in forty days at a single launch partner. The challenge was converting that operating momentum into a clean convertible round at favourable terms.</p>
+      <article class="case">
+        <div class="case__id">
+          <div class="case__tag">Case 02</div>
+          <div class="case__name">Hang</div>
+          <div class="case__sector">AI loyalty SaaS</div>
+          <div class="case__round">$5M convertible &middot; AI-led commerce</div>
         </div>
-        <div class="ba">
-          <div class="tag tag--after">After</div>
-          <p>Packaged the operating data into an investor narrative built around the structural shift in loyalty economics, ran a coordinated multi-wave outbound to AI-native and consumer-tech funds, and closed the convertible with appetite to spare. Subsequent rounds have brought total capital raised above $15M.</p>
+        <div class="case__body">
+          <div class="case__col">
+            <h4>Before</h4>
+            <p>Strong commercial traction and operating data: 300%+ year-on-year growth, 3.5x higher member spend, 244% increase in visit frequency, and ten thousand signups in forty days at a single launch partner. The challenge was converting that operating momentum into a clean convertible round at favourable terms.</p>
+          </div>
+          <div class="case__col">
+            <h4>After</h4>
+            <p>Packaged the operating data into an investor narrative built around the structural shift in loyalty economics, ran a coordinated multi-wave outbound to AI-native and consumer-tech funds, and closed the convertible with appetite to spare. Subsequent rounds have brought total capital raised above $15M.</p>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="case">
-      <div class="meta-col">
-        <div class="sector">Sustainable beauty · UK</div>
-        <h2>People Care. Planet Care.</h2>
-        <div class="target">Bridge · $5M</div>
-      </div>
-      <div class="body-col">
-        <div class="ba">
-          <div class="tag tag--before">Before</div>
-          <p>A skincare and fragrance brand built around hand-harvested seaweed inputs, recovering from a high-burn expansion phase that had introduced legacy liabilities. The deal did not sit inside any clean investor bucket: not a typical seed, not a typical growth round, not a textbook turnaround. Generalist investors struggled to match it to their mandate.</p>
+      <article class="case">
+        <div class="case__id">
+          <div class="case__tag">Case 03</div>
+          <div class="case__name">People Care. Planet Care.</div>
+          <div class="case__sector">Sustainable beauty, UK</div>
+          <div class="case__round">$5M bridge &middot; post-restructuring</div>
         </div>
-        <div class="ba">
-          <div class="tag tag--after">After</div>
-          <p>Repositioned the narrative as brand-led recovery with disciplined unit economics, a story investors could underwrite against the new operating model rather than the prior burn profile. Targeted sustainable-beauty VCs, family offices, and corporate venture groups whose mandates fit the asset's profile and stage. Process executed at speed against a defined runway.</p>
+        <div class="case__body">
+          <div class="case__col">
+            <h4>Before</h4>
+            <p>A skincare and fragrance brand built around hand-harvested seaweed inputs, recovering from a high-burn expansion phase that had introduced legacy liabilities. The deal did not sit inside any clean investor bucket: not a typical seed, not a typical growth round, not a textbook turnaround. Generalist investors struggled to match it to their mandate.</p>
+          </div>
+          <div class="case__col">
+            <h4>After</h4>
+            <p>Repositioned the narrative as brand-led recovery with disciplined unit economics &mdash; a story investors could underwrite against the new operating model rather than the prior burn profile. Targeted sustainable-beauty VCs, family offices, and corporate venture groups whose mandates fit the asset's profile and stage. Process executed at speed against a defined runway.</p>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
 
-    <h3 class="section">Beyond the marquee four</h3>
+    <h3>Beyond the marquee three.</h3>
     <p>
       Live and recently completed mandates span consumer beauty (Province Apothecary, Uncover Skincare), industrial bio (Nordtreat, EniferBio), proptech IoT (Spintly, with more than 10 million square feet under management and backing from Accel and Chakra Growth Fund), food-tech hardware (On2Cook, with a licensing partnership with Antunes), B2B SaaS (DeepStream, Droppe, Trusstor), cultivated proteins (Umami Bioworks, Mermade Seafoods), design-to-commerce (TIOR), and biodegradable materials (Biotic). The pattern is consistent: a specific thesis, a specific investor segment, materials calibrated to that segment, and a process run to optimise against live signal.
     </p>
-
-    <p class="case-note">
-      <em>Note. Specific outcomes vary by individual deal context. Case studies illustrate methodology, not guaranteed results. References available on request.</em>
+    <p style="font-size: 14px; color: var(--rd-graphite); border-top: 1.5px solid var(--border); padding-top: 16px; margin-top: 32px;">
+      Note &mdash; Specific outcomes vary by individual deal context. Case studies illustrate methodology, not guaranteed results. References available on request.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Our Process -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">07</span>
-      <span>Our process</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">How we get there in practice.</h1>
-    <p style="margin-bottom: 32px;">
-      The five-component framework above is what we are working towards. Buildout typically takes four to six weeks from kickoff to first wave; outreach and refinement run in parallel from that point through close.
-    </p>
-
-    <div class="process-step">
-      <div class="step-num">01</div>
-      <div>
-        <h3>Discovery and strategy</h3>
-        <ul class="rd-ul">
-          <li>Deep working session on the business model, market position, competitive landscape, growth thesis, and existing capital position.</li>
-          <li>Identification of investor objections we expect to see and the reinforcement work needed to pre-empt them.</li>
-          <li>Capital-raising strategy: which investors, which channels, which materials, which sequence, which milestones.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="process-step">
-      <div class="step-num">02</div>
-      <div>
-        <h3>Materials and data</h3>
-        <ul class="rd-ul">
-          <li>Audit of existing pitch deck, data room, financial model, and any supporting collateral.</li>
-          <li>Refinement or rebuild of pitch materials, teaser document, executive summary, and data room structure.</li>
-          <li>Where applicable, targeted data acquisition campaigns to gather the metrics investors will ask for: customer acquisition cost, lifetime value, retention curves, market validation.</li>
-          <li>A unified teaser document that anchors all outbound messaging.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="process-step">
-      <div class="step-num">03</div>
-      <div>
-        <h3>Investor research</h3>
-        <ul class="rd-ul">
-          <li>Mandate-driven targeting across our investor network and database integrations: stage, sector, geography, cheque size, deal type, portfolio fit, recent deployment activity.</li>
-          <li>A curated, prioritised investor list segmented into tiers, with the strongest-fit investors reserved for the moment process and materials are most calibrated.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="process-step">
-      <div class="step-num">04</div>
-      <div>
-        <h3>Outreach and appointment setting</h3>
-        <ul class="rd-ul">
-          <li>Multi-wave outreach across email, LinkedIn, warm introductions, and where appropriate, paid distribution.</li>
-          <li>Personalisation at scale through our outreach infrastructure: each investor receives a message calibrated to their mandate, recent investments, and known thesis.</li>
-          <li>Meetings booked directly to the founder's calendar.</li>
-          <li>Discreet handling of compliance and regulatory considerations through our broker-dealer chaperone partnerships where the deal type requires it.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="process-step">
-      <div class="step-num">05</div>
-      <div>
-        <h3>Iteration and close support</h3>
-        <ul class="rd-ul">
-          <li>Coaching on pitch delivery and objection-handling between meetings.</li>
-          <li>Recording and analysis of investor calls to identify recurring themes.</li>
-          <li>Continuous refinement of materials, targeting, and messaging based on signal from each wave.</li>
-          <li>Support through term sheet, diligence, and close. We are partners through the round, not transactional through the first meeting.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Results You Can Expect -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">08</span>
-      <span>Results you can expect</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">What the work compounds into.</h1>
-
-    <h3 class="section">Faster time to a strong term sheet.</h3>
-    <p>By matching the deal to the right investor segment from the start, the conversion from first meeting to credible interest is materially compressed.</p>
-
-    <h3 class="section">Better terms.</h3>
-    <p>Reduced perceived risk and a competitive process between aligned investors translate to favourable valuations and structures.</p>
-
-    <h3 class="section">More leverage.</h3>
-    <p>Multiple aligned investors at the same table create the optionality to choose your lead and structure your cap table for the rounds that come after this one.</p>
-
-    <h3 class="section">A cleaner organisation.</h3>
-    <p>By the end of the buildout phase your materials, data room, and investor narrative are in better shape than they were when you started, regardless of how the round closes. That work compounds.</p>
-  </section>
-
-  <!-- Right For You -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">09</span>
-      <span>Is Rogue Divisions right for you?</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">A strong fit in some situations. A wrong fit in others.</h1>
-
-    <div class="fit-grid">
-      <div class="fit-col fit-col--yes">
-        <h3>Right partner, if</h3>
-        <ul class="rd-ul">
-          <li><b>You are raising equity at Seed, Series A, or Series B</b> with an established business or a credible thesis backed by data, and you have a clear use of proceeds.</li>
-          <li><b>You have run a process and the targeting feels off.</b> You are getting meetings with investors who do not understand the deal, or you are not getting meetings at all because the list was not built around your specifics.</li>
-          <li><b>Your deal needs positioning work.</b> The business is strong but does not sit cleanly inside one investor bucket, and you need someone who can translate it into language each segment of investors can underwrite.</li>
-          <li><b>You value process and infrastructure.</b> You want to know what is happening, when, and what the data is showing, rather than waiting for a monthly update from an advisor on a static retainer.</li>
-          <li><b>You are looking for a partner, not a list.</b> You want someone who will work the deal end to end and stays with you through the close, not someone who hands over an investor spreadsheet and waits for an introduction request.</li>
-        </ul>
-      </div>
-      <div class="fit-col fit-col--no">
-        <h3>Wrong partner, if</h3>
-        <ul class="rd-ul">
-          <li>You are pre-product and pre-thesis with no data and no clear use of proceeds. We are not the right firm to help you find the business.</li>
-          <li>You are looking exclusively for cheap angel cheques inside your existing network. The marginal value of our process is lower in that situation.</li>
-          <li>You are not prepared to commit time to building the materials and the targeting strategy with us in the first four to six weeks. The work compounds; the buildout matters.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Commercial Structure -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">10</span>
-      <span>Commercial structure</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">Three legs of a stool.</h1>
+<!-- =================== SECTION 7 =================== -->
+<section class="section" id="s7" data-screen-label="07 Process">
+  <div class="section__head">
+    <div class="section__num">07<span class="dot">.</span></div>
+    <div class="section__kicker">How we work</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Our process.</h2>
     <p>
-      Our pricing is built on three components. We treat them as three legs of a stool: increasing one allows the others to come down. We are flexible on the mix, deliberately, because every deal is structured differently and the alignment that works for a $5M Seed is not the alignment that works for a $50M Series B.
+      The five-component framework above is what we are working towards. The process below is how we get there in practice. Buildout typically takes four to six weeks from kickoff to first wave; outreach and refinement run in parallel from that point through close.
     </p>
 
-    <div class="pricing-grid">
+    <div class="phases" style="grid-template-columns: repeat(5, 1fr); gap: 12px;">
+      <div class="phase">
+        <div class="phase__num">Step 01</div>
+        <div class="phase__name">Discovery</div>
+        <div class="phase__window">Weeks 1&ndash;2</div>
+      </div>
+      <div class="phase">
+        <div class="phase__num">Step 02</div>
+        <div class="phase__name">Materials</div>
+        <div class="phase__window">Weeks 2&ndash;4</div>
+      </div>
+      <div class="phase">
+        <div class="phase__num">Step 03</div>
+        <div class="phase__name">Research</div>
+        <div class="phase__window">Weeks 3&ndash;5</div>
+      </div>
+      <div class="phase phase--live">
+        <div class="phase__num">Step 04</div>
+        <div class="phase__name">Outreach</div>
+        <div class="phase__window">Week 5 onward</div>
+      </div>
+      <div class="phase">
+        <div class="phase__num">Step 05</div>
+        <div class="phase__name">Iterate &amp; close</div>
+        <div class="phase__window">Through close</div>
+      </div>
+    </div>
+
+    <h3>01. Discovery and strategy.</h3>
+    <ul class="phase__list">
+      <li>Deep working session on the business model, market position, competitive landscape, growth thesis, and existing capital position.</li>
+      <li>Identification of investor objections we expect to see and the reinforcement work needed to pre-empt them.</li>
+      <li>Capital-raising strategy: which investors, which channels, which materials, which sequence, which milestones.</li>
+    </ul>
+
+    <h3>02. Materials and data.</h3>
+    <ul class="phase__list">
+      <li>Audit of existing pitch deck, data room, financial model, and any supporting collateral.</li>
+      <li>Refinement or rebuild of pitch materials, teaser document, executive summary, and data room structure.</li>
+      <li>Where applicable, targeted data acquisition campaigns to gather the metrics investors will ask for: customer acquisition cost, lifetime value, retention curves, market validation.</li>
+      <li>A unified teaser document that anchors all outbound messaging.</li>
+    </ul>
+
+    <h3>03. Investor research.</h3>
+    <ul class="phase__list">
+      <li>Mandate-driven targeting across our investor network and database integrations: stage, sector, geography, cheque size, deal type, portfolio fit, recent deployment activity.</li>
+      <li>A curated, prioritised investor list segmented into tiers, with the strongest-fit investors reserved for the moment process and materials are most calibrated.</li>
+    </ul>
+
+    <h3>04. Outreach and appointment setting.</h3>
+    <ul class="phase__list">
+      <li>Multi-wave outreach across email, LinkedIn, warm introductions, and where appropriate, paid distribution.</li>
+      <li>Personalisation at scale through our outreach infrastructure: each investor receives a message calibrated to their mandate, recent investments, and known thesis.</li>
+      <li>Inbox management on the founder's behalf. Investor replies are triaged, qualified, and warmed before introduction. Founder time is reserved for genuine conversations, not triage. Declines are captured and used to build relationships for future rounds.</li>
+      <li>Meetings booked directly to the founder's calendar.</li>
+      <li>Discreet handling of compliance and regulatory considerations through our broker-dealer chaperone partnerships where the deal type requires it.</li>
+    </ul>
+
+    <h3>05. Iteration and close support.</h3>
+    <ul class="phase__list">
+      <li>Coaching on pitch delivery and objection-handling between meetings.</li>
+      <li>Recording and analysis of investor calls to identify recurring themes.</li>
+      <li>Continuous refinement of materials, targeting, and messaging based on signal from each wave. Refinement runs on three triggers: performance thresholds when a campaign underperforms, milestone gates as each tier completes, and a fixed time cadence regardless of either.</li>
+      <li>Support through term sheet, diligence, and close. We are partners through the round, not transactional through the first meeting.</li>
+    </ul>
+
+    <h3>Results you can expect.</h3>
+    <div class="results">
+      <div class="result">
+        <div class="result__name">Faster time to a strong term sheet.</div>
+        <div class="result__body">By matching the deal to the right investor segment from the start, the conversion from first meeting to credible interest is materially compressed.</div>
+      </div>
+      <div class="result">
+        <div class="result__name">Better terms.</div>
+        <div class="result__body">Reduced perceived risk and a competitive process between aligned investors translate to favourable valuations and structures.</div>
+      </div>
+      <div class="result">
+        <div class="result__name">More leverage.</div>
+        <div class="result__body">Multiple aligned investors at the same table create the optionality to choose your lead and structure your cap table for the rounds that come after this one.</div>
+      </div>
+      <div class="result">
+        <div class="result__name">A cleaner organisation.</div>
+        <div class="result__body">By the end of buildout your materials, data room, and investor narrative are in better shape than they were when you started, regardless of how the round closes. That work compounds.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SECTION 8 =================== -->
+<section class="section" id="s8" data-screen-label="08 Fit">
+  <div class="section__head">
+    <div class="section__num">08<span class="dot">.</span></div>
+    <div class="section__kicker">Right fit</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Is Rogue Divisions right for you?</h2>
+    <p>
+      The honest answer is that we are a strong fit in some situations and a wrong fit in others.
+    </p>
+
+    <h3>Signals we are the right partner.</h3>
+    <ol class="rules">
+      <li>
+        <span class="ix">01</span>
+        <div><strong>You are raising equity at Seed, Series A, or Series B</strong>, with an established business or a credible thesis backed by data, and you have a clear use of proceeds.</div>
+      </li>
+      <li>
+        <span class="ix">02</span>
+        <div><strong>You have run a process and the targeting feels off.</strong> You are getting meetings with investors who do not understand the deal, or you are not getting meetings at all because the list was not built around your specifics.</div>
+      </li>
+      <li>
+        <span class="ix">03</span>
+        <div><strong>Your deal needs positioning work.</strong> The business is strong but does not sit cleanly inside one investor bucket, and you need someone who can translate it into language each segment of investors can underwrite.</div>
+      </li>
+      <li>
+        <span class="ix">04</span>
+        <div><strong>You value process and infrastructure.</strong> You want to know what is happening, when, and what the data is showing, rather than waiting for a monthly update from an advisor on a static retainer.</div>
+      </li>
+      <li>
+        <span class="ix">05</span>
+        <div><strong>You are looking for a partner, not a list.</strong> You want someone who will work the deal end to end and stays with you through the close, not someone who hands over an investor spreadsheet and waits for an introduction request.</div>
+      </li>
+    </ol>
+
+    <h3>Signals we are the wrong partner.</h3>
+    <ol class="rules">
+      <li class="is-negative">
+        <span class="ix">&times;</span>
+        <div>You are pre-product and pre-thesis with no data and no clear use of proceeds. We are not the right firm to help you find the business.</div>
+      </li>
+      <li class="is-negative">
+        <span class="ix">&times;</span>
+        <div>You are looking exclusively for cheap angel cheques inside your existing network. The marginal value of our process is lower in that situation.</div>
+      </li>
+      <li class="is-negative">
+        <span class="ix">&times;</span>
+        <div>You are not prepared to commit time to building the materials and the targeting strategy with us in the first four to six weeks. The work compounds; the buildout matters.</div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =================== SECTION 9 =================== -->
+<section class="section" id="s9" data-screen-label="09 Commercial">
+  <div class="section__head">
+    <div class="section__num">09<span class="dot">.</span></div>
+    <div class="section__kicker">Commercial</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Three legs of a stool.</h2>
+    <p>
+      Our pricing is built on three components. We treat them as three legs of a stool: increasing one allows the others to come down. We are flexible on the mix, deliberately, because every deal is structured differently &mdash; the alignment that works for a $5M Seed is not the alignment that works for a $50M Series B.
+    </p>
+
+    <div class="legs">
       <div class="leg">
-        <div class="ord">01 · Setup fee</div>
-        <h3>Upfront, paid at start of engagement.</h3>
-        <div class="range range--azure">$10k – $25k</div>
-        <p>Covers compliance and regulatory work, due diligence on our side, materials development, investor list curation, outreach infrastructure, analyst time, and the buildout phase that gets the campaign ready to go live. Not a retainer. Hard cost we incur on day one and recover on day one.</p>
+        <div class="leg__tag">Leg 01</div>
+        <div class="leg__name">Setup fee</div>
+        <div class="leg__range">$10&ndash;25k</div>
+        <div class="leg__sub">USD or GBP &middot; one-time, upfront</div>
+        <div class="leg__body">
+          Covers compliance and regulatory work, due diligence on our side, materials development, investor list curation, outreach infrastructure, analyst time, and the buildout phase that gets the campaign ready to go live. Not a retainer. Hard cost incurred on day one and recovered on day one.
+        </div>
       </div>
       <div class="leg">
-        <div class="ord">02 · Success fee</div>
-        <h3>A percentage of capital raised, paid on close.</h3>
-        <div class="range range--signal">2 – 4% equity<br /><span style="font-size: 18px; color: rgba(255,44,85,0.7);">1 – 2% debt</span></div>
-        <p>Paid on capital that comes through our process. We do not take exclusive mandates. Where appropriate, success fees can be split with co-advisors in our network when capital is raised through their relationships.</p>
+        <div class="leg__tag">Leg 02</div>
+        <div class="leg__name">Success fee</div>
+        <div class="leg__range">2&ndash;4%</div>
+        <div class="leg__sub">Equity &middot; 1&ndash;2% on debt</div>
+        <div class="leg__body">
+          A percentage of capital raised through our introductions, paid on close. We do not take exclusive mandates; the success fee is paid on capital that comes through our process. Where appropriate, success fees can be split with co-advisors in our network when capital is raised through their relationships.
+        </div>
       </div>
       <div class="leg">
-        <div class="ord">03 · Warrants</div>
-        <h3>A portion of compensation as warrants.</h3>
-        <div class="range range--jade">0.5 – 1.5%</div>
-        <p>Where useful, structured at the most recent round price, prorated to capital raised or time-vested over twelve to twenty-four months. Aligns our incentives with the long-term success of the business and reduces cash burden.</p>
+        <div class="leg__tag">Leg 03</div>
+        <div class="leg__name">Warrants</div>
+        <div class="leg__range">0.5&ndash;1.5%</div>
+        <div class="leg__sub">Most recent round price</div>
+        <div class="leg__body">
+          Where useful, a portion of compensation is structured as warrants on the company at the most recent round price. Prorated to capital raised or time-vested over twelve to twenty-four months depending on the engagement. Warrants align our incentives with the long-term success of the business and reduce the cash burden.
+        </div>
       </div>
     </div>
 
-    <h3 class="section">How the three legs interact</h3>
+    <h3>How the three legs interact.</h3>
+    <div class="configs">
+      <div class="config">
+        <div class="config__name">Minimise upfront cash</div>
+        <div class="config__body">Shift weight onto success fee or warrants. Useful where buildout cash is tight but the deal is high-conviction.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Minimise dilution</div>
+        <div class="config__body">Shift weight onto upfront and success. Useful where the cap table is sensitive or the next round depends on a clean ownership picture.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Maximise cash alignment</div>
+        <div class="config__body">Keep all three at lower levels and pay nothing extra unless we deliver. Highest skin-in-game for us, lowest absolute exposure for the founder.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Multi-round partnership</div>
+        <div class="config__body">Six-month initial terms with renewal terms agreed if the round runs longer. Framed with a view to multiple rounds, because the strongest outcomes are partnership-shaped, not transactional.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SECTION 10 =================== -->
+<section class="section" id="s10" data-screen-label="10 Testimonials">
+  <div class="section__head">
+    <div class="section__num">10<span class="dot">.</span></div>
+    <div class="section__kicker">Social proof</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Testimonials &amp; references.</h2>
     <p>
-      A founder who wants to minimise upfront cash can shift weight onto success fee or warrants. A founder who wants to minimise dilution and equity-linked compensation can shift weight onto upfront and success. A founder who wants to maximise cash alignment can keep all three at lower levels and pay nothing extra unless we deliver. Every engagement is shaped to the deal.
+      We collaborate with a network of seasoned advisors and investors who have successfully exited multiple businesses and managed over &pound;500 million in transactions. Their expertise enhances our insights into what investors are actually looking for, and adds significant value to client engagements.
     </p>
 
-    <p>
-      Engagements are typically structured as six-month initial terms with renewal terms agreed if the round runs longer. We frame engagements with a view to multiple rounds, because the strongest outcomes are when we are partners with you across this round and the next, not transactional through one transaction.
-    </p>
-  </section>
+    <div class="testimonials">
+      <figure class="testimonial">
+        <blockquote class="testimonial__quote">
+          &ldquo;The sourcing and identification of investor candidates have been spot-on, exactly the right people we need to speak to. As a small company, we have tried reaching out ourselves without success, and the team's ability to secure the right meetings has been impressive. This service has made a real difference by connecting us with the right level of sophistication we require, avoiding the wasted time and cost we have experienced elsewhere.&rdquo;
+        </blockquote>
+        <figcaption class="testimonial__attr">
+          <div class="testimonial__name">Maurice Boucher</div>
+          <div class="testimonial__role">Executive Chairman, Renaissance Bioscience</div>
+        </figcaption>
+      </figure>
 
-  <!-- Testimonials -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">11</span>
-      <span>Testimonials and social proof</span>
-      <span class="rule"></span>
+      <figure class="testimonial">
+        <blockquote class="testimonial__quote">
+          &ldquo;The distinct advantage is the capability to turn over every rock until they find that perfect fit. With the right network, entrepreneurial spirit, and integrated capabilities, they bring a level of drive and reach that traditional firms lack. This combination has proven incredibly valuable in connecting clients with exactly the right opportunities.&rdquo;
+        </blockquote>
+        <figcaption class="testimonial__attr">
+          <div class="testimonial__name">Dominic Spooner</div>
+          <div class="testimonial__role">Founder, Spooner Capital Advisors</div>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial">
+        <blockquote class="testimonial__quote">
+          &ldquo;One meeting and they just knew exactly what we needed and how to execute.&rdquo;
+        </blockquote>
+        <figcaption class="testimonial__attr">
+          <div class="testimonial__name">Myles Peyton</div>
+          <div class="testimonial__role">Centric Software</div>
+        </figcaption>
+      </figure>
     </div>
-    <h1 class="section">From the people we have worked with.</h1>
-    <p>
-      We collaborate with a network of seasoned advisors and investors who have successfully exited multiple businesses and managed over £500 million in transactions. Their expertise enhances our insights into what investors are actually looking for, and adds significant value to client engagements.
-    </p>
 
-    <div class="quote">
-      <p>“The sourcing and identification of investor candidates have been spot-on, exactly the right people we need to speak to. As a small company, we have tried reaching out ourselves without success, and the team's ability to secure the right meetings has been impressive. This service has made a real difference by connecting us with the right level of sophistication we require, avoiding the wasted time and cost we have experienced elsewhere.”</p>
-      <div class="attr">Maurice Boucher · Executive Chairman, Renaissance Bioscience</div>
-    </div>
-
-    <div class="quote">
-      <p>“The distinct advantage is the capability to turn over every rock until they find that perfect fit. With the right network, entrepreneurial spirit, and integrated capabilities, they bring a level of drive and reach that traditional firms lack. This combination has proven incredibly valuable in connecting clients with exactly the right opportunities.”</p>
-      <div class="attr">Dominic Spooner · Founder, Spooner Capital Advisors</div>
-    </div>
-
-    <div class="quote">
-      <p>“One meeting and they just knew exactly what we needed and how to execute.”</p>
-      <div class="attr">Myles Peyton · Centric Software</div>
-    </div>
-
-    <p style="color: var(--rd-graphite); font-size: 14px; margin-top: 32px;">
+    <p style="font-size: 14px; color: var(--rd-graphite); border-top: 1.5px solid var(--border); padding-top: 16px; margin-top: 24px;">
       References and direct introductions to past clients available on request.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Conclusion -->
-  <section>
-    <div class="section-eyebrow">
-      <span class="num">12</span>
-      <span>Conclusion</span>
-      <span class="rule"></span>
-    </div>
-    <h1 class="section">Securing capital is more than a numbers game.</h1>
+<!-- =================== END PLATE =================== -->
+<section class="endplate">
+  <div class="endplate__rule"></div>
+  <h2 class="endplate__title">Become the <span class="rd-mark">familiar</span> argument for the investors who can actually back the deal.</h2>
+  <p class="endplate__sub">
+    Securing capital is the discipline of presenting a business in a way that makes belief easy and risk legible, in front of investors for whom the deal is already underwritable. If you are raising equity and ready to put a real process around it, we would like to hear about the deal.
+  </p>
+  <a class="endplate__cta" href="/contact">Schedule a discovery call</a>
+</section>
 
-    <p class="lede-p">
-      It is the discipline of presenting a business in a way that makes belief easy and risk legible, in front of the investors for whom the deal is already underwritable, and refining the process against live signal until the <span class="rd-mark">right</span> term sheet arrives.
-    </p>
-
-    <p>
-      That is what we do. We bridge the gap between data and narrative, between business and investor, between the deal you have today and the round you need closed in the next six months. The work is substantive, the system is built, and the alignment is honest.
-    </p>
-
-    <p>
-      If you are raising equity and ready to put a real process around it, we would like to hear about the deal.
-    </p>
-  </section>
-
-  <!-- Colophon -->
-  <footer class="colophon">
-    <div>
-      <div class="mark">Rogue Divisions</div>
-      <div class="tag"><em>Specialist advisory and narrative for the private capital markets.</em></div>
-      <div class="meta">
-        <a href="https://roguedivisions.com">roguedivisions.com</a>
-        &nbsp;·&nbsp; London
-        &nbsp;·&nbsp; <a href="mailto:sage@roguedivisions.com">sage@roguedivisions.com</a>
-      </div>
-    </div>
-    <div class="compliance">Registered with FINRA and SIPC.</div>
-  </footer>
-
-</div>
+<!-- =================== FOOTER =================== -->
+<footer class="doc-footer">
+  <div class="doc-footer__brand">
+    <a href="/" aria-label="Rogue Divisions home"><img src="/thesis/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" /></a>
+  </div>
+  <div class="doc-footer__disclaimer">
+    <p>Copyright &copy; 2026 Rogue Divisions. All rights reserved. Specialist advisory and narrative for the private capital markets &mdash; roguedivisions.com &middot; London &middot; sage@roguedivisions.com</p>
+    <p>Rogue Divisions is not a broker-dealer or investment adviser. <a href="https://www.roguedivisions.com/capital-markets-disclaimer" target="_blank" rel="noopener">Learn more</a>.</p>
+    <p>Any securities offered to or on behalf of U.S. Persons are being conducted pursuant to a chaperone arrangement under SEC Rule 15a-6 and through <a href="https://www.finalis.com/" target="_blank" rel="noopener">Finalis Securities LLC</a>, Member FINRA and SIPC.</p>
+  </div>
+</footer>
 
 <script>
-  // Trigger the keyword underline draw-on once when each .rd-mark enters the viewport.
+  // Trigger keyword underline draw-on when each .rd-mark enters the viewport.
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+    entries.forEach((e) => {
       if (e.isIntersecting) {
         e.target.classList.add('is-drawing');
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.6 });
-  document.querySelectorAll('.rd-mark').forEach(el => obs.observe(el));
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.rd-mark').forEach((el) => {
+    if (!el.classList.contains('is-drawing')) obs.observe(el);
+  });
 </script>
+
 </body>
 </html>
