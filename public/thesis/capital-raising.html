@@ -748,6 +748,10 @@ p {
   }
   .phase__list li:first-child { border-top: 0; padding-top: 0; }
 
+  /* 5-column variant used by the process diagram. Mobile rule below
+     (".phases { grid-template-columns: 1fr; }") still collapses it. */
+  .phases--5col { grid-template-columns: repeat(5, 1fr); gap: 12px; }
+
   /* Compound diagram ----------------------------------------- */
   .compound {
     border: 1.5px solid var(--border);
@@ -1132,6 +1136,7 @@ p {
     .section__num { font-size: 44px; }
     .cover, .contents, .endplate { padding-left: 32px; padding-right: 32px; }
     .doc-header { padding: 20px 32px; }
+    .doc-header__meta { display: none; }
     .cover__byline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .stat-row, .phases, .modes, .legs, .testimonials { grid-template-columns: 1fr; }
     .contents { grid-template-columns: 1fr; }
@@ -1647,7 +1652,7 @@ p {
       The five-component framework above is what we are working towards. The process below is how we get there in practice. Buildout typically takes four to six weeks from kickoff to first wave; outreach and refinement run in parallel from that point through close.
     </p>
 
-    <div class="phases" style="grid-template-columns: repeat(5, 1fr); gap: 12px;">
+    <div class="phases phases--5col">
       <div class="phase">
         <div class="phase__num">Step 01</div>
         <div class="phase__name">Discovery</div>
