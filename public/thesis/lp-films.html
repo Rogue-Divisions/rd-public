@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="LP Film Kit — methodology notes from Rogue Divisions on producing investor-grade short films for emerging managers and LP audiences." />
+<title>LP Film Kit — Rogue Divisions</title>
+<style>
+/* ============================================================
+   Rogue Divisions — colours and type
+   Single source of truth for tokens. Do not invent new values.
+   ============================================================ */
+
+/* --- Fonts ---------------------------------------------------- */
+@font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/thesis/fonts/Poppins-ExtraBold.ttf") format("truetype");
+}
+
+:root {
+  /* --- Brand palette: neutrals -------------------------------- */
+  --rd-ink:        #191919; /* default page background; near-black */
+  --rd-paper:      #F5F5F7; /* off-white surface */
+  --rd-pure-white: #FFFFFF; /* primary text on ink */
+  --rd-pure-black: #000000; /* reserved: logo + deep shadow tints */
+  --rd-graphite:   #6E6E73; /* secondary text, captions, dividers */
+  --rd-mist:       #E6E6E6; /* light borders, low-contrast outlines */
+
+  /* --- Brand palette: accents (strict priority order) -------- */
+  --rd-signal:  #FF2C55; /* PRIMARY accent — keyword underline + 1 stat */
+  --rd-azure:   #2D5FF7; /* SECONDARY — 1 stat + ➜ arrows on links/CTAs */
+  --rd-jade:    #09BC8A; /* TERTIARY — 1 stat */
+  --rd-citrine: #FFE600; /* RESERVED — do not use without sign-off */
+
+  /* --- Semantic foreground / background ---------------------- */
+  --bg:            var(--rd-ink);
+  --bg-inverted:   var(--rd-paper);
+  --surface:       var(--rd-ink);
+  --surface-light: var(--rd-paper);
+
+  --fg:            var(--rd-pure-white);
+  --fg-inverted:   var(--rd-ink);
+  --fg-muted:      rgba(255, 255, 255, 0.70); /* sub-line on dark */
+  --fg-secondary:  var(--rd-graphite);        /* on light */
+  --fg-eyebrow:    var(--rd-graphite);
+
+  --border:        rgba(110, 110, 115, 0.30); /* graphite @ 30% */
+  --border-light:  var(--rd-mist);
+
+  /* --- Typography -------------------------------------------- */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "Roboto", "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --fw-light:     300;
+  --fw-regular:   400; /* body fallback only — never headings */
+  --fw-medium:    500; /* body / paragraph default */
+  --fw-semibold:  600; /* all headings; nav; CTAs */
+  --fw-bold:      700; /* heading emphasis (the underlined keyword) */
+  --fw-extrabold: 800; /* stat numerals when oversized */
+
+  /* Type scale — anchored to live site computed values */
+  --fs-h1:      64px;   /* desktop hero */
+  --fs-h2:      44.8px;
+  --fs-h3:      33.6px;
+  --fs-h4:      24px;
+  --fs-stat:    72px;   /* credibility chip number */
+  --fs-body:    17px;
+  --fs-body-lg: 19px;
+  --fs-small:   14px;   /* eyebrows, captions */
+  --fs-tiny:    12px;
+
+  --lh-display: 1.14;
+  --lh-heading: 1.18;
+  --lh-body:    1.55;
+
+  /* Tight tracking for headings; flat for body */
+  --ls-h1:    -0.03em;  /* ~ -1.92px at 64px */
+  --ls-h2:    -0.03em;
+  --ls-h3:    -0.025em;
+  --ls-eyebrow: 0.06em; /* small ALL CAPS labels only */
+  --ls-body:    0;
+
+  /* --- Layout system ----------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* Cards: padding & radius are 15% of smallest dimension.
+     These are baseline values; scale with composition. */
+  --card-radius:  20px;
+  --card-padding: 32px;
+  --pill-radius:  9999px;
+
+  /* Strokes */
+  --hairline: 1.5px;       /* never thinner on retina */
+  --stroke-shape: 6px;     /* hero shape blocks @ ~480px avg */
+
+  /* Shadows — black @ 75%, soft, offset Y, no spread */
+  --shadow-chip: 0 8px 24px rgba(0, 0, 0, 0.75);
+  --shadow-cta:  0 6px 18px rgba(0, 0, 0, 0.55);
+  --shadow-signal-low: 0 10px 40px rgba(255, 44, 85, 0.18); /* ticker only */
+
+  /* Motion — minimal library */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast:   150ms;
+  --dur-base:   250ms;
+  --dur-draw:   500ms; /* keyword underline draw-on */
+}
+
+/* ============================================================
+   Element defaults — the page baseline
+   ============================================================ */
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-heading);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-h1);
+}
+h2 { font-size: var(--fs-h2); letter-spacing: var(--ls-h2); }
+h3 { font-size: var(--fs-h3); letter-spacing: var(--ls-h3); }
+h4 { font-size: var(--fs-h4); letter-spacing: var(--ls-h3); }
+
+p {
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+/* Eyebrow — sentence case, graphite, small */
+.eyebrow {
+  font-size: var(--fs-small);
+  color: var(--fg-eyebrow);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
+}
+
+/* ALL CAPS sting — tiny labels and motion graphics only */
+.allcaps {
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  font-size: var(--fs-tiny);
+  font-weight: var(--fw-semibold);
+}
+
+/* ============================================================
+   The signature highlight (keyword underline) — load-bearing
+   Wrap ONE keyword per heading: <span class="rd-mark">right</span>
+   ============================================================ */
+.rd-mark {
+  position: relative;
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+  display: inline-block;
+  isolation: isolate; /* contain the z-index: -1 on ::after */
+}
+.rd-mark::after {
+  content: "";
+  position: absolute;
+  left: -0.04em;
+  right: -0.04em;
+  bottom: -0.04em; /* hugs descenders */
+  height: 0.15em;  /* per spec */
+  background: var(--rd-signal);
+  border-radius: 9999px;
+  z-index: -1;     /* sit behind the glyphs so descenders are not overdrawn */
+  transform-origin: left center;
+}
+@keyframes rd-mark-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.rd-mark.is-drawing::after {
+  animation: rd-mark-draw var(--dur-draw) var(--ease-standard) both;
+}
+
+/* ============================================================
+   Buttons / CTAs — pill, calm imperatives
+   ============================================================ */
+.rd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--pill-radius);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
+  letter-spacing: 0;
+  line-height: 1;
+  cursor: pointer;
+  border: var(--hairline) solid transparent;
+  transition: opacity var(--dur-base) var(--ease-standard),
+              background var(--dur-base) var(--ease-standard),
+              color var(--dur-base) var(--ease-standard);
+  text-decoration: none;
+}
+.rd-btn--filled {
+  background: var(--rd-pure-white);
+  color: var(--rd-ink);
+  box-shadow: var(--shadow-cta);
+}
+.rd-btn--filled:hover { opacity: 0.92; }
+.rd-btn--filled:active { transform: translateY(1px); }
+
+.rd-btn--outline {
+  background: transparent;
+  color: var(--rd-pure-white);
+  border-color: var(--rd-pure-white);
+}
+.rd-btn--outline:hover { background: rgba(255, 255, 255, 0.06); }
+
+.rd-link-arrow {
+  color: var(--rd-pure-white);
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+}
+.rd-link-arrow .arrow {
+  color: var(--rd-azure);
+  margin-left: 8px;
+  transition: transform var(--dur-base) var(--ease-standard);
+  display: inline-block;
+}
+.rd-link-arrow:hover .arrow { transform: translateX(4px); }
+
+/* ============================================================
+   Credibility chip — the only sanctioned stat layout
+   ============================================================ */
+.rd-chip {
+  background: var(--rd-ink);
+  color: var(--rd-pure-white);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-chip);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.rd-chip__eyebrow {
+  font-size: var(--fs-small);
+  color: var(--rd-graphite);
+  font-weight: var(--fw-medium);
+}
+.rd-chip__stat {
+  font-size: var(--fs-stat);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.rd-chip__sub {
+  color: rgba(255, 255, 255, 0.70);
+  font-size: var(--fs-body);
+}
+.rd-chip__stat--signal { color: var(--rd-signal); }
+.rd-chip__stat--azure  { color: var(--rd-azure); }
+.rd-chip__stat--jade   { color: var(--rd-jade); }
+
+/* ============================================================
+   Divider
+   ============================================================ */
+.rd-divider {
+  border: 0;
+  height: 1.5px;
+  background: var(--border);
+  width: 100%;
+}
+
+</style>
+<style>
+  /* =========================================================
+     Page layout — editorial long-read
+     ========================================================= */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--rd-ink);
+    color: var(--rd-pure-white);
+  }
+
+  ::selection { background: var(--rd-signal); color: var(--rd-pure-white); }
+
+  /* Page chrome ---------------------------------------------- */
+  .doc-header {
+    border-bottom: 1.5px solid var(--border);
+    padding: 28px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(25, 25, 25, 0.92);
+    backdrop-filter: saturate(140%);
+    -webkit-backdrop-filter: saturate(140%);
+    z-index: 50;
+  }
+  .doc-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .doc-header__brand img { height: 22px; display: block; }
+  .doc-header__rule {
+    width: 1.5px; height: 18px;
+    background: var(--border);
+  }
+  .doc-header__label {
+    color: var(--rd-graphite);
+    font-size: 13px;
+    font-weight: var(--fw-medium);
+  }
+  .doc-header__meta {
+    color: var(--rd-graphite);
+    font-size: 13px;
+    font-weight: var(--fw-medium);
+    display: flex; gap: 28px; align-items: center;
+  }
+  .doc-header__meta span:not(:last-child)::after {
+    content: ""; display: inline-block; width: 4px; height: 4px;
+    border-radius: 50%; background: var(--rd-graphite);
+    margin-left: 28px; vertical-align: middle; opacity: 0.7;
+  }
+
+  /* Cover ----------------------------------------------------- */
+  .cover {
+    padding: 120px 56px 120px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .cover__eyebrow {
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0;
+    margin-bottom: 40px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .cover__eyebrow::before {
+    content: ""; width: 36px; height: 1.5px; background: var(--rd-signal);
+    display: inline-block;
+  }
+  .cover h1 {
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: var(--fw-semibold);
+    max-width: 14ch;
+    margin-bottom: 40px;
+  }
+  .cover__deck {
+    font-size: 22px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.78);
+    max-width: 62ch;
+    font-weight: var(--fw-medium);
+  }
+  .cover__byline {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    border-top: 1.5px solid var(--border);
+    padding-top: 32px;
+  }
+  .byline__label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 10px;
+  }
+  .byline__value {
+    font-size: 16px;
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Contents -------------------------------------------------- */
+  .contents {
+    padding: 64px 56px 96px;
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 64px;
+    border-top: 1.5px solid var(--border);
+  }
+  .contents__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .contents ol {
+    list-style: none; padding: 0; margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 48px;
+  }
+  .contents li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1.5px solid var(--border);
+    align-items: baseline;
+  }
+  .contents li a {
+    color: var(--rd-pure-white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: var(--fw-medium);
+    transition: color var(--dur-base) var(--ease-standard);
+  }
+  .contents li a:hover { color: var(--rd-signal); }
+  .contents li .num {
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Sections -------------------------------------------------- */
+  .section {
+    padding: 96px 56px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: 1.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 64px;
+  }
+  .section__head {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+  .section__num {
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 16px;
+  }
+  .section__num .dot { color: var(--rd-signal); }
+  .section__kicker {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .section__title {
+    font-size: clamp(32px, 3.4vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 32px;
+    max-width: 22ch;
+  }
+  .section__body {
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.86);
+    font-weight: var(--fw-medium);
+  }
+  .section__body > p { margin: 0 0 1.2em; }
+  .section__body > p:first-child { font-size: 22px; line-height: 1.5; color: var(--rd-pure-white); margin-bottom: 1.4em; }
+  .section__body h3 {
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: var(--fw-semibold);
+    margin: 56px 0 20px;
+    color: var(--rd-pure-white);
+    max-width: 28ch;
+  }
+  .section__body h4 {
+    font-size: 18px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+    margin: 32px 0 12px;
+    letter-spacing: 0;
+  }
+  .section__body strong {
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-semibold);
+  }
+  .section__body em { font-style: italic; color: var(--rd-pure-white); }
+
+  /* Pullquote ------------------------------------------------- */
+  .pullquote {
+    border-left: 2px solid var(--rd-signal);
+    padding: 8px 0 8px 28px;
+    margin: 40px 0;
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    color: var(--rd-pure-white);
+    font-weight: var(--fw-medium);
+    max-width: 36ch;
+  }
+
+  /* Stat row -------------------------------------------------- */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 44px 0 56px;
+  }
+  .stat {
+    background: rgba(255,255,255,0.03);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .stat__num {
+    font-size: 56px;
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--rd-pure-white);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat__num--signal { color: var(--rd-signal); }
+  .stat__num--azure { color: var(--rd-azure); }
+  .stat__num--jade { color: var(--rd-jade); }
+  .stat__label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.45;
+    font-weight: var(--fw-medium);
+  }
+  .stat__source {
+    font-size: 12px;
+    color: var(--rd-graphite);
+    margin-top: auto;
+    padding-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: var(--fw-semibold);
+  }
+
+  /* Kit architecture (Section 2) ----------------------------- */
+  .arch {
+    margin: 48px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .arch__layer {
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    background: rgba(255,255,255,0.02);
+    transition: border-color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard);
+  }
+  .arch__layer:hover { border-color: rgba(255,255,255,0.4); }
+  .arch__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    font-variant-numeric: tabular-nums;
+  }
+  .arch__name {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+  }
+  .arch__role {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    font-weight: var(--fw-medium);
+  }
+  .arch__pill {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    border: 1.5px solid var(--border);
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+  }
+  .arch__layer--canonical {
+    border-color: rgba(255, 44, 85, 0.35);
+    background: rgba(255, 44, 85, 0.05);
+  }
+  .arch__layer--canonical .arch__pill {
+    border-color: rgba(255, 44, 85, 0.5);
+    color: var(--rd-signal);
+  }
+
+  /* Modes / two-up cards (Section 5) -------------------------- */
+  .modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .mode {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+  }
+  .mode__tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    margin-bottom: 14px;
+  }
+  .mode__title {
+    font-size: 22px;
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .mode__body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Engagement / 21 days panel (Section 4) ------------------- */
+  .delivery {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 36px 0 24px;
+    background: rgba(255,255,255,0.02);
+    display: grid;
+    grid-template-columns: 1.05fr 1.4fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .delivery__big {
+    font-size: clamp(72px, 9vw, 132px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+    font-variant-numeric: tabular-nums;
+  }
+  .delivery__big .signal { color: var(--rd-signal); }
+  .delivery__cap {
+    font-size: 14px;
+    color: var(--rd-graphite);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    margin-top: 18px;
+  }
+  .delivery__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .delivery__list-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 12px;
+  }
+  .delivery__row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1.5px solid var(--border);
+    align-items: baseline;
+  }
+  .delivery__row:last-child { border-bottom: 0; }
+  .delivery__role {
+    font-size: 15px;
+    font-weight: var(--fw-medium);
+    color: rgba(255,255,255,0.86);
+  }
+  .delivery__owner {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+  }
+  .delivery__owner--rd { color: var(--rd-signal); }
+
+  /* Change list (Section 5) ---------------------------------- */
+  .change-list {
+    margin: 28px 0 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1.5px solid var(--border);
+  }
+  .change-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 28px;
+    padding: 28px 0;
+    border-bottom: 1.5px solid var(--border);
+    align-items: baseline;
+  }
+  .change-item__num {
+    font-size: 14px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-signal);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+  .change-item__title {
+    font-size: 20px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+  }
+  .change-item__body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.72);
+    font-weight: var(--fw-medium);
+  }
+
+  /* Not-measured strip --------------------------------------- */
+  .not-measured {
+    margin-top: 36px;
+    padding: 24px 28px;
+    border: 1.5px dashed rgba(255,255,255,0.18);
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .not-measured__label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-graphite);
+    white-space: nowrap;
+  }
+  .not-measured__body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Boundary configurations (Section 6) ---------------------- */
+  .configs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 32px 0;
+    border-top: 1.5px solid var(--border);
+  }
+  .config {
+    padding: 24px 0;
+    border-bottom: 1.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .configs > .config:nth-child(odd) { padding-right: 32px; border-right: 1.5px solid var(--border); }
+  .configs > .config:nth-child(even) { padding-left: 32px; }
+  .config__name {
+    font-size: 16px;
+    font-weight: var(--fw-semibold);
+    color: var(--rd-pure-white);
+  }
+  .config__body {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+
+  /* Compound block (Section 1 transmission illustration) ----- */
+  .compound {
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    margin: 36px 0;
+    background: rgba(255,255,255,0.02);
+  }
+  .compound__title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rd-graphite);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 20px;
+  }
+  .compound__quote {
+    font-size: 26px;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    font-weight: var(--fw-semibold);
+    max-width: none;
+  }
+  .compound__attr {
+    margin-top: 14px;
+    color: var(--rd-graphite);
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+  }
+
+  /* End plate ------------------------------------------------- */
+  .endplate {
+    padding: 96px 56px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: 1.5px solid var(--border);
+    text-align: center;
+  }
+  .endplate__rule {
+    width: 60px; height: 1.5px; background: var(--rd-signal);
+    margin: 0 auto 32px;
+  }
+  .endplate__title {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 24px;
+    max-width: 22ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .endplate__sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.7);
+    max-width: 52ch;
+    margin: 0 auto 40px;
+    line-height: 1.55;
+    font-weight: var(--fw-medium);
+  }
+  .endplate__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    background: var(--rd-pure-white);
+    color: var(--rd-ink);
+    font-weight: var(--fw-semibold);
+    font-size: 17px;
+    text-decoration: none;
+    box-shadow: var(--shadow-cta);
+    transition: opacity var(--dur-base) var(--ease-standard);
+  }
+  .endplate__cta:hover { opacity: 0.92; }
+
+  /* Footer ---------------------------------------------------- */
+  .doc-footer {
+    border-top: 1.5px solid var(--border);
+    padding: 48px 56px 64px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 56px;
+    align-items: start;
+    color: var(--rd-graphite);
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: var(--fw-medium);
+  }
+  .doc-footer img { height: 18px; opacity: 0.85; display: block; }
+  .doc-footer__brand { padding-top: 2px; }
+  .doc-footer__disclaimer { max-width: 92ch; }
+  .doc-footer__disclaimer p { margin: 0 0 8px; color: var(--rd-graphite); }
+  .doc-footer__disclaimer p:last-child { margin-bottom: 0; }
+  .doc-footer__disclaimer a {
+    color: var(--rd-pure-white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    transition: border-color var(--dur-base) var(--ease-standard);
+  }
+  .doc-footer__disclaimer a:hover { border-bottom-color: var(--rd-pure-white); }
+
+  /* Responsive ------------------------------------------------ */
+  @media (max-width: 1024px) {
+    .section { grid-template-columns: 1fr; gap: 32px; padding: 64px 32px; }
+    .section__head { position: static; }
+    .section__num { font-size: 44px; }
+    .cover, .contents, .endplate { padding-left: 32px; padding-right: 32px; }
+    .doc-header { padding: 20px 32px; }
+    .doc-header__meta { display: none; }
+    .cover__byline { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .stat-row, .modes { grid-template-columns: 1fr; }
+    .contents { grid-template-columns: 1fr; }
+    .contents ol { grid-template-columns: 1fr; }
+    .arch__layer { grid-template-columns: 60px 1fr; }
+    .arch__pill { display: none; }
+    .configs { grid-template-columns: 1fr; }
+    .configs > .config:nth-child(odd) { padding-right: 0; border-right: 0; }
+    .configs > .config:nth-child(even) { padding-left: 0; }
+    .config { grid-template-columns: 1fr; gap: 8px; }
+    .delivery { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
+    .not-measured { grid-template-columns: 1fr; gap: 12px; }
+    .change-item { grid-template-columns: 40px 1fr; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header__brand">
+    <a href="/" aria-label="Rogue Divisions home"><img src="/thesis/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" /></a>
+    <span class="doc-header__rule"></span>
+    <span class="doc-header__label">Thesis / LP Film Kit</span>
+  </div>
+  <div class="doc-header__meta">
+    <span>Thesis</span>
+    <span>Internal &amp; partner use</span>
+    <span>2026</span>
+  </div>
+</header>
+
+<!-- =================== COVER =================== -->
+<section class="cover">
+  <div class="cover__eyebrow">A thesis from Rogue Divisions</div>
+  <h1>The LP <span class="rd-mark is-drawing">Film Kit</span>.</h1>
+  <p class="cover__deck">
+    Capital does not commit to the best deck. It commits to the version of the manager that survives the diligence cycle. This is the artefact built to make that survival possible.
+  </p>
+  <div class="cover__byline">
+    <div>
+      <div class="byline__label">Audience</div>
+      <div class="byline__value">Institutional &amp; family office LPs</div>
+    </div>
+    <div>
+      <div class="byline__label">Built for</div>
+      <div class="byline__value">VC, growth, real-estate, specialist PE</div>
+    </div>
+    <div>
+      <div class="byline__label">Delivery</div>
+      <div class="byline__value">21 days, workshop to kit</div>
+    </div>
+    <div>
+      <div class="byline__label">Document</div>
+      <div class="byline__value">Rogue Divisions, 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== STANDFIRST =================== -->
+<section class="section" style="border-top: 0; padding-top: 0;">
+  <div class="section__head">
+    <div class="section__kicker">Premise</div>
+  </div>
+  <div class="section__body">
+    <p style="font-size: 28px; line-height: 1.4; color: var(--rd-pure-white); letter-spacing: -0.015em; max-width: 32ch;">
+      Capital commits to the version of the manager that the internal champion can transmit and the investment committee can defend.
+    </p>
+    <p>
+      The kit is built for venture, growth, real-estate, and specialist PE funds raising institutional and family office capital. It does not apply to retail fundraising, crowd platforms, or any context where the audience is unsophisticated or transactional.
+    </p>
+  </div>
+</section>
+
+<!-- =================== CONTENTS =================== -->
+<nav class="contents" aria-label="Contents">
+  <div class="contents__title">Contents</div>
+  <ol>
+    <li><span class="num">01</span><a href="#s1">The transmission problem</a></li>
+    <li><span class="num">02</span><a href="#s2">Why film, and why a kit</a></li>
+    <li><span class="num">03</span><a href="#s3">The diligence environment has changed</a></li>
+    <li><span class="num">04</span><a href="#s4">What the manager brings</a></li>
+    <li><span class="num">05</span><a href="#s5">What changes when the kit is in market</a></li>
+    <li><span class="num">06</span><a href="#s6">Boundaries</a></li>
+    <li><span class="num">07</span><a href="#s7">Beyond the kit</a></li>
+  </ol>
+</nav>
+
+<!-- =================== SECTION 1 =================== -->
+<section class="section" id="s1" data-screen-label="01 Transmission problem">
+  <div class="section__head">
+    <div class="section__num">01<span class="dot">.</span></div>
+    <div class="section__kicker">The problem</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The transmission problem.</h2>
+    <p>
+      Fund commitments are committee decisions. The principal in the room is rarely the only person who has to be persuaded. The decision must be defensible inside an investment committee, a board, a multi-generational family, or an external consultant review. The internal champion at the LP is not closing the allocation in the meeting. They are leaving with a story they will be expected to repeat, often imperfectly, weeks later, to people who never sat across from the GP.
+    </p>
+    <p>
+      Narrative degrades with every retelling. Rogue refers to this as the transmission problem. The deck is static and does not capture conviction. The data room is comprehensive and does not capture story. The first meeting captures both, briefly, in the body of one allocator. By the time that allocator is briefing their IC the following week, the thesis has been simplified, the differentiators smoothed, and the language has drifted toward whichever frame the allocator was already comfortable with.
+    </p>
+
+    <div class="pullquote">
+      The narrative the IC eventually evaluates is rarely the narrative the GP delivered.
+    </div>
+
+    <p>
+      Closing that gap is the job the kit was built to do.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 2 =================== -->
+<section class="section" id="s2" data-screen-label="02 Why film, why a kit">
+  <div class="section__head">
+    <div class="section__num">02<span class="dot">.</span></div>
+    <div class="section__kicker">The artefact</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">Why film, and why a kit.</h2>
+    <p>
+      The standard raise stack performs every function except one: carrying the GP's voice, register, and conviction into the room where the GP is not. Film performs that function in a form no other artefact can match. It is also the asset most likely to be forwarded intact to an IC or co-investor, because the format itself resists summary distortion.
+    </p>
+    <p>
+      A clipped quote in an email can be paraphrased away. A two-minute film of the GP articulating the edge cannot. A single film is necessary but not sufficient. A kit is a film and the assets that compound around it.
+    </p>
+
+    <div class="arch" aria-label="The LP Film Kit, by component">
+      <div class="arch__layer">
+        <div class="arch__tag">04</div>
+        <div>
+          <div class="arch__name">Short-form clips</div>
+          <div class="arch__role">Email follow-up, post-meeting touchpoints, the GP team's owned social presence. Transmission artefacts pre-cut for a specific moment.</div>
+        </div>
+        <div class="arch__pill">Surface</div>
+      </div>
+      <div class="arch__layer">
+        <div class="arch__tag">03</div>
+        <div>
+          <div class="arch__name">Segmented LP cuts</div>
+          <div class="arch__role">A family office cut for the family office encounter. An institutional cut for the pension or endowment. A short technical cut for the consultant gatekeeper.</div>
+        </div>
+        <div class="arch__pill">Fit</div>
+      </div>
+      <div class="arch__layer">
+        <div class="arch__tag">02</div>
+        <div>
+          <div class="arch__name">GP and team vignette</div>
+          <div class="arch__role">The team's credibility on camera. An IC member who has watched the vignette reads the deck biographies differently &mdash; the film is reading the deck for them, in the GP's voice, in advance.</div>
+        </div>
+        <div class="arch__pill">Credibility</div>
+      </div>
+      <div class="arch__layer arch__layer--canonical">
+        <div class="arch__tag">01</div>
+        <div>
+          <div class="arch__name">The thesis film</div>
+          <div class="arch__role">Two to three minutes of investor-grade work. Structured around the manager's edge, sourcing, value creation, and risk discipline.</div>
+        </div>
+        <div class="arch__pill">Canonical artefact</div>
+      </div>
+    </div>
+
+    <p>
+      The thesis film is the canonical artefact &mdash; the version of the GP that survives transmission. Everything above it extends the canonical material into the formats LPs already use to scan, share, and brief. The segmented cut ensures the version of the thesis the LP carries into their internal review is the version the GP would want carried. The clip is not a marketing artefact; it is a transmission artefact pre-cut for a specific moment.
+    </p>
+    <p>
+      The kit is therefore not a film service. It is a structured artefact set engineered for a specific failure in the raise cycle.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 3 =================== -->
+<section class="section" id="s3" data-screen-label="03 Diligence environment">
+  <div class="section__head">
+    <div class="section__num">03<span class="dot">.</span></div>
+    <div class="section__kicker">The environment</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The diligence environment has changed.</h2>
+    <p>
+      The case for a deliberately engineered LP-facing footprint has tightened on its own in the last twenty-four months.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat__num stat__num--signal">99%</div>
+        <div class="stat__label">of allocators review firm and executive content during due diligence; 52% do so consistently.</div>
+        <div class="stat__source">Edelman Smithfield, 2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num stat__num--azure">98%</div>
+        <div class="stat__label">of LPs check public channels before allocating. 46% rate GP reputation as more important than fund-level returns.</div>
+        <div class="stat__source">ILPA, 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num stat__num--jade">49%</div>
+        <div class="stat__label">of LPs use AI in investment or operational workflows by early 2025, up from 14% the year before.</div>
+        <div class="stat__source">MSCI / Vantager, 2026</div>
+      </div>
+    </div>
+
+    <p>
+      What an LP can find about the manager, in the manager's own voice, with the thesis articulated clearly enough that an AI tool can summarise it without contradicting the deck, now sits inside the allocation decision in a way it did not five years ago.
+    </p>
+    <p>
+      The kit is the canonical version of the manager's thesis that this audit terminates against. When the AI summary, the LinkedIn footprint, the website thesis page, and the kit all return the same story, the diligence trail confirms the deck. When they drift, the diligence trail flags a manager whose narrative is not held tight.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 4 =================== -->
+<section class="section" id="s4" data-screen-label="04 What manager brings">
+  <div class="section__head">
+    <div class="section__num">04<span class="dot">.</span></div>
+    <div class="section__kicker">The engagement</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">What the manager brings.</h2>
+    <p>
+      The kit is engineered to require very little of the GP team. The manager brings the thesis, the team, and approximately three hours of senior partner time across the workshop and shoot. Rogue handles the rest.
+    </p>
+
+    <div class="delivery">
+      <div>
+        <div class="delivery__big"><span class="signal">21</span> days</div>
+        <div class="delivery__cap">Workshop to delivered kit</div>
+      </div>
+      <div class="delivery__list">
+        <div class="delivery__list-title">Engagement shape</div>
+        <div class="delivery__row">
+          <div class="delivery__role">Thesis, team, ~3 hrs senior partner time</div>
+          <div class="delivery__owner">Manager</div>
+        </div>
+        <div class="delivery__row">
+          <div class="delivery__role">Material review &amp; GP / IR workshop</div>
+          <div class="delivery__owner delivery__owner--rd">Rogue</div>
+        </div>
+        <div class="delivery__row">
+          <div class="delivery__role">Production schedule &amp; on-site or remote shoot</div>
+          <div class="delivery__owner delivery__owner--rd">Rogue</div>
+        </div>
+        <div class="delivery__row">
+          <div class="delivery__role">Two revision rounds</div>
+          <div class="delivery__owner delivery__owner--rd">Rogue</div>
+        </div>
+        <div class="delivery__row">
+          <div class="delivery__role">Compliance review co-ordination with fund counsel</div>
+          <div class="delivery__owner delivery__owner--rd">Rogue</div>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      The shape of the engagement is deliberately compressed. A raise window does not afford a six-month asset development cycle. The discipline of twenty-one days is part of the methodology, not a concession to the manager's calendar.
+    </p>
+  </div>
+</section>
+
+<!-- =================== SECTION 5 =================== -->
+<section class="section" id="s5" data-screen-label="05 What changes">
+  <div class="section__head">
+    <div class="section__num">05<span class="dot">.</span></div>
+    <div class="section__kicker">In market</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">What changes when the kit is in market.</h2>
+    <p>
+      Private capital attribution is multi-touch and multi-cycle. A single LP commitment frequently has nine to eighteen months of accumulated contact across owned content, conference encounters, warm introductions, and direct meetings before commitment lands. Attempting to attribute a single commitment to a single touchpoint is misleading. The kit is one input among many, and the manager's IC should hold that frame.
+    </p>
+    <p>
+      What the kit demonstrably changes is what travels with the LP after the first meeting.
+    </p>
+
+    <div class="change-list">
+      <div class="change-item">
+        <div class="change-item__num">01</div>
+        <div>
+          <div class="change-item__title">The version of the thesis the LP carries into their internal review.</div>
+          <div class="change-item__body">A film and a segmented cut sent in follow-up replaces the champion's reconstructed paraphrase with the manager's own articulation. The simplest test of whether the kit is working is whether the champion is forwarding the assets onward, requesting additional cuts for colleagues, or surfacing the thesis in their own language in subsequent conversations.</div>
+        </div>
+      </div>
+      <div class="change-item">
+        <div class="change-item__num">02</div>
+        <div>
+          <div class="change-item__title">First-meeting to second-meeting conversion.</div>
+          <div class="change-item__body">A meeting that ended with a thesis film and segmented cut sent in follow-up converts at a different rate than a meeting that ended with a deck attachment. Worth tracking pre- and post-kit.</div>
+        </div>
+      </div>
+      <div class="change-item">
+        <div class="change-item__num">03</div>
+        <div>
+          <div class="change-item__title">Diligence-stage progression.</div>
+          <div class="change-item__body">The rate at which engaged LPs progress from first meeting through second meeting through IC presentation. Where the kit is doing its work, the IC presentation lands with a thesis that has already been seen, in the manager's voice, by the people who will decide.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="not-measured">
+      <div class="not-measured__label">What the kit is<br />not measured by</div>
+      <div class="not-measured__body">
+        View counts (the audience is two hundred to five hundred named LPs &mdash; views are an input, not an outcome). Click-through rates (the assets do not exist to be clicked). Single-piece attribution to commitment.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SECTION 6 =================== -->
+<section class="section" id="s6" data-screen-label="06 Boundaries">
+  <div class="section__head">
+    <div class="section__num">06<span class="dot">.</span></div>
+    <div class="section__kicker">Boundaries</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The kit lands hardest where it is the missing piece.</h2>
+    <p>
+      The kit is the canonical owned-content artefact for a raise. It is not a comms strategy by itself.
+    </p>
+
+    <div class="modes">
+      <div class="mode">
+        <div class="mode__tag">Where it works</div>
+        <div class="mode__title">A manager with sound infrastructure</div>
+        <div class="mode__body">
+          A manager with strong relationship infrastructure and a sound deck will see a step-change in transmission quality from the kit alone. The kit lands hardest where it is the missing piece in an otherwise functional raise.
+        </div>
+      </div>
+      <div class="mode">
+        <div class="mode__tag">Where it does less</div>
+        <div class="mode__title">A manager without supporting pieces</div>
+        <div class="mode__body">
+          A manager with thin existing IR infrastructure, no public footprint, and no clear LP target list will see less of that change without supporting work. The kit is not where a raise starts from zero.
+        </div>
+      </div>
+    </div>
+
+    <h3>What the kit is not.</h3>
+    <div class="configs">
+      <div class="config">
+        <div class="config__name">Not capital introduction</div>
+        <div class="config__body">The kit equips placement agents, capital introduction, and warm-introduction channels. It does not replace them.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Not relationship building</div>
+        <div class="config__body">Rogue does not introduce LPs, broker relationships, or make first contact on the manager's behalf.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Not compliance review</div>
+        <div class="config__body">All assets are reviewed by the manager's fund counsel before distribution. The kit is built to clear counsel review efficiently.</div>
+      </div>
+      <div class="config">
+        <div class="config__name">Not regulatory advice</div>
+        <div class="config__body">Rogue does not perform compliance review and does not opine on regulatory questions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SECTION 7 =================== -->
+<section class="section" id="s7" data-screen-label="07 Beyond the kit">
+  <div class="section__head">
+    <div class="section__num">07<span class="dot">.</span></div>
+    <div class="section__kicker">Beyond the kit</div>
+  </div>
+  <div class="section__body">
+    <h2 class="section__title">The kit anchors a broader methodology.</h2>
+    <p>
+      The kit anchors a broader LP-facing communications methodology. Where the manager engages Rogue beyond the kit, the work extends into paid amplification of the manager's content against named allocator audiences, ongoing written content under the GP team's names, and direct outreach support across the raise.
+    </p>
+    <p>
+      The broader methodology is documented separately and available on request.
+    </p>
+  </div>
+</section>
+
+<!-- =================== END PLATE =================== -->
+<section class="endplate">
+  <div class="endplate__rule"></div>
+  <h2 class="endplate__title">The version of the manager that survives the <span class="rd-mark">diligence cycle</span>.</h2>
+  <p class="endplate__sub">
+    If you are running a raise and want to walk through how the kit applies to your fund, get in touch.
+  </p>
+  <a class="endplate__cta" href="/contact">Book intro call</a>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="doc-footer">
+  <div class="doc-footer__brand">
+    <a href="/" aria-label="Rogue Divisions home"><img src="/thesis/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" /></a>
+  </div>
+  <div class="doc-footer__disclaimer">
+    <p>Copyright &copy; 2026 Rogue Divisions. All rights reserved.</p>
+    <p>Rogue Divisions is not a broker-dealer or investment adviser. The LP Film Kit is a content production and narrative engagement; it does not constitute capital introduction, regulated promotion, or investment advice. All assets are reviewed by the manager's fund counsel before distribution.</p>
+  </div>
+</footer>
+
+<script>
+  // Trigger keyword underline draw-on when each .rd-mark enters the viewport.
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-drawing');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.rd-mark').forEach((el) => {
+    if (!el.classList.contains('is-drawing')) obs.observe(el);
+  });
+</script>
+
+</body>
+</html>
