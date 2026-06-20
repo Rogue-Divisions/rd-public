@@ -9,8 +9,10 @@ compatibility_date = "2025-01-01"
 routes = [
   { pattern = "www.roguedivisions.com/thesis/*", zone_name = "roguedivisions.com" },
   { pattern = "www.roguedivisions.com/methodology/*", zone_name = "roguedivisions.com" },
+  { pattern = "www.roguedivisions.com/clients/*", zone_name = "roguedivisions.com" },
   { pattern = "roguedivisions.com/thesis/*", zone_name = "roguedivisions.com" },
   { pattern = "roguedivisions.com/methodology/*", zone_name = "roguedivisions.com" },
+  { pattern = "roguedivisions.com/clients/*", zone_name = "roguedivisions.com" },
 ]
 
 [assets]
