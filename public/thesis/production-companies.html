@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Production Company Consulting — a thesis from Rogue Divisions on Brief-Mandate Fit and how production companies win the right briefs." />
+<title>Production Company Consulting &middot; Rogue Divisions</title>
+<style>
+@font-face{font-family:"Poppins";font-weight:300;font-style:normal;font-display:swap;src:url("/thesis/fonts/Poppins-Light.ttf") format("truetype");}
+@font-face{font-family:"Poppins";font-weight:400;font-style:normal;font-display:swap;src:url("/thesis/fonts/Poppins-Regular.ttf") format("truetype");}
+@font-face{font-family:"Poppins";font-weight:500;font-style:normal;font-display:swap;src:url("/thesis/fonts/Poppins-Medium.ttf") format("truetype");}
+@font-face{font-family:"Poppins";font-weight:600;font-style:normal;font-display:swap;src:url("/thesis/fonts/Poppins-SemiBold.ttf") format("truetype");}
+@font-face{font-family:"Poppins";font-weight:700;font-style:normal;font-display:swap;src:url("/thesis/fonts/Poppins-Bold.ttf") format("truetype");}
+@font-face{font-family:"Poppins";font-weight:800;font-style:normal;font-display:swap;src:url("/thesis/fonts/Poppins-ExtraBold.ttf") format("truetype");}
+:root{
+  --ink:#191919;--paper:#F5F5F7;--white:#FFFFFF;--graphite:#6E6E73;--mist:#E6E6E6;
+  --signal:#FF2C55;--azure:#2D5FF7;--jade:#09BC8A;
+  --body:rgba(255,255,255,0.84);--faint:rgba(255,255,255,0.55);
+  --line:rgba(110,110,115,0.32);--line-soft:rgba(110,110,115,0.18);
+  --surface:#1F1F1F;--surface-2:#202022;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#141414;color:var(--white);font-family:"Poppins",ui-sans-serif,system-ui,sans-serif;font-weight:500;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+::selection{background:var(--signal);color:#fff;}
+.rd-mark{position:relative;font-weight:700;white-space:nowrap;display:inline-block;isolation:isolate;}
+.rd-mark::after{content:"";position:absolute;left:-0.04em;right:-0.04em;bottom:0.02em;height:0.16em;background:var(--signal);border-radius:9999px;z-index:-1;transform-origin:left center;transform:scaleX(1);}
+.rd-mark.draw::after{transform:scaleX(0);}
+.rd-mark.draw.in::after{transform:scaleX(1);transition:transform 560ms cubic-bezier(0.2,0.8,0.2,1);}
+.mark-azure::after{background:var(--azure);}
+a{color:inherit;}
+@media print{
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .rd-mark.draw::after{transform:scaleX(1) !important;}
+}
+</style>
+</head>
+<body>
+<div style="background:#141414;min-height:100vh;padding-bottom:0;">
+
+
+
+<!-- MASTHEAD -->
+<header data-screen-label="Masthead" style="max-width:1100px;margin:0 auto;padding:34px 40px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+  <div style="display:flex;align-items:center;gap:18px;min-width:0;">
+    <a href="/" aria-label="Rogue Divisions home"><img src="/thesis/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" style="height:19px;width:auto;display:block;opacity:0.96;"></a>
+    <span style="width:1px;height:20px;background:var(--line);display:inline-block;"></span>
+    <span style="font-size:13px;font-weight:500;color:var(--faint);letter-spacing:0.01em;">Thesis · Production Company Consulting</span>
+  </div>
+  <span style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);white-space:nowrap;">Internal &amp; partner use · 2026</span>
+</header>
+
+<!-- HERO -->
+<section data-screen-label="Hero" style="max-width:1100px;margin:0 auto;padding:84px 40px 0;">
+  <div style="font-size:14px;font-weight:500;color:var(--faint);letter-spacing:0.01em;margin-bottom:30px;">A thesis from Rogue Divisions</div>
+  <h1 style="font-size:clamp(40px,6.4vw,78px);line-height:1.04;letter-spacing:-0.032em;font-weight:600;margin:0;max-width:15ch;">Achieving Brief‑Mandate <span class="rd-mark draw">Fit</span>.</h1>
+  <p style="font-size:clamp(19px,2.1vw,23px);line-height:1.42;font-weight:400;color:var(--body);max-width:36ch;margin:30px 0 0;letter-spacing:-0.01em;">Strategic capability and a capital markets register for production firms serving high-stakes briefs. We move you up the register.</p>
+
+  <div style="height:1.5px;background:var(--line);margin:56px 0 0;"></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--line-soft);">
+    <div style="background:#141414;padding:26px 24px 26px 0;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px;">Audience</div>
+      <div style="font-size:15.5px;font-weight:500;color:var(--white);line-height:1.4;">Production founders &amp; managing directors</div>
+    </div>
+    <div style="background:#141414;padding:26px 24px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px;">Built for</div>
+      <div style="font-size:15.5px;font-weight:500;color:var(--white);line-height:1.4;">Sub-50 firms serving finance-sector briefs</div>
+    </div>
+    <div style="background:#141414;padding:26px 24px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px;">Author</div>
+      <div style="font-size:15.5px;font-weight:500;color:var(--white);line-height:1.4;">Sage Dillon — Founder, Rogue Divisions</div>
+    </div>
+    <div style="background:#141414;padding:26px 0 26px 24px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px;">Edition</div>
+      <div style="font-size:15.5px;font-weight:500;color:var(--white);line-height:1.4;">London · 2026 Edition</div>
+    </div>
+  </div>
+  <div style="height:1.5px;background:var(--line);"></div>
+</section>
+
+<!-- PREMISE + DILIGENCE STATS -->
+<section data-screen-label="Premise" style="max-width:1100px;margin:0 auto;padding:80px 40px 0;">
+  <div style="display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:56px;align-items:start;">
+    <div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);margin-bottom:18px;">Premise</div>
+    </div>
+    <div style="max-width:760px;">
+      <p style="font-size:clamp(22px,2.6vw,30px);line-height:1.32;letter-spacing:-0.02em;font-weight:500;color:var(--white);margin:0;">Premium briefs do not flow to the best film. They flow to the firm the client's partnership can defend.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--line);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);">
+    <div style="background:#141414;padding:34px 30px 36px 0;">
+      <div style="font-size:clamp(44px,5.2vw,62px);font-weight:600;line-height:1;letter-spacing:-0.03em;color:var(--white);">99%</div>
+      <p style="font-size:15px;color:var(--body);font-weight:400;margin:16px 0 0;line-height:1.5;max-width:28ch;">of LPs review firm and executive content during due diligence; 52% do so consistently.</p>
+      <div style="font-size:12.5px;color:var(--graphite);margin-top:14px;">Edelman Smithfield, 2025</div>
+    </div>
+    <div style="background:#141414;padding:34px 30px 36px;">
+      <div style="font-size:clamp(44px,5.2vw,62px);font-weight:600;line-height:1;letter-spacing:-0.03em;color:var(--white);">46%</div>
+      <p style="font-size:15px;color:var(--body);font-weight:400;margin:16px 0 0;line-height:1.5;max-width:28ch;">of LPs rate GP reputation as more important than fund-level returns. 98% check public channels before allocating capital.</p>
+      <div style="font-size:12.5px;color:var(--graphite);margin-top:14px;">ILPA, 2024</div>
+    </div>
+    <div style="background:#141414;padding:34px 0 36px 30px;">
+      <div style="font-size:clamp(44px,5.2vw,62px);font-weight:600;line-height:1;letter-spacing:-0.03em;color:var(--white);">49%</div>
+      <p style="font-size:15px;color:var(--body);font-weight:400;margin:16px 0 0;line-height:1.5;max-width:28ch;">of LPs use AI in investment or operational workflows by early 2025, up from 14% the year before.</p>
+      <div style="font-size:12.5px;color:var(--graphite);margin-top:14px;">MSCI, April 2026</div>
+    </div>
+  </div>
+  <p style="max-width:880px;font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:34px 0 0;">The films, decks, and content your firm produces for finance-sector clients are now read by allocator humans and allocator AI tools as part of a diligence cycle the production firm rarely sees. Operating in the strategic register is what makes the read clean.</p>
+</section>
+
+<!-- IN BRIEF -->
+<section data-screen-label="In Brief" style="max-width:1100px;margin:0 auto;padding:104px 40px 0;">
+  <div style="display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:56px;align-items:start;">
+    <div style="position:sticky;top:40px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);margin-bottom:18px;">In brief</div>
+      <h2 style="font-size:clamp(30px,3.4vw,40px);line-height:1.1;letter-spacing:-0.028em;font-weight:600;margin:0;">The long version follows. This is the short one.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <div style="display:grid;grid-template-columns:130px 1fr;gap:28px;padding:26px 0;border-top:1.5px solid var(--line);">
+        <div style="font-size:17px;font-weight:600;color:var(--signal);letter-spacing:-0.01em;">The thesis</div>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;font-weight:400;color:var(--body);">Premium briefs go to the firms that hold the room at the strategic register, not the firms that hold it at the production-delivery register. We move you up the register.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:130px 1fr;gap:28px;padding:26px 0;border-top:1.5px solid var(--line);">
+        <div style="font-size:17px;font-weight:600;color:var(--white);letter-spacing:-0.01em;">The work</div>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;font-weight:400;color:var(--body);">Two questions decide whether a finance-sector brief converts to premium fees. Can the firm articulate the strategic value of the content, not just the production value, and can it hold that conversation through the client's investor narrative, compliance envelope, and partnership defence. We answer both at once.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:130px 1fr;gap:28px;padding:26px 0;border-top:1.5px solid var(--line);">
+        <div style="font-size:17px;font-weight:600;color:var(--white);letter-spacing:-0.01em;">The frontier</div>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;font-weight:400;color:var(--body);">The premium end of corporate, finance, and strategic content is consolidating into firms that operate as advisors first and producers second. Mid-tier firms are squeezed between commodity day-rate competition and full-service strategic agencies. The route up is not capacity. It is capability.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:130px 1fr;gap:28px;padding:26px 0;border-top:1.5px solid var(--line);">
+        <div style="font-size:17px;font-weight:600;color:var(--white);letter-spacing:-0.01em;">The operation</div>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;font-weight:400;color:var(--body);">Three configurations. Deal Closer on no-win-no-fee against briefs we help close. Strategic Retainer for continuous register access. Co-Delivery where the strategic layer is material. Designed to compound across many briefs over years, not transact through one.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:130px 1fr;gap:28px;padding:26px 0;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);">
+        <div style="font-size:17px;font-weight:600;color:var(--white);letter-spacing:-0.01em;">The numbers</div>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;font-weight:400;color:var(--body);">Rogue is a specialist capital markets advisory firm with production heritage. 80+ mandates across 28 countries, 17,000+ active investor relationships, $1.1tn aggregate dry powder. We bring that exposure into briefs you win, not from clients we deliver to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section data-screen-label="Contents" style="max-width:1100px;margin:0 auto;padding:104px 40px 0;">
+  <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);margin-bottom:30px;">Contents</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 64px;">
+    <a href="#s1" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">01</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Introduction</span></a>
+    <a href="#s8" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">08</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Engagement phases</span></a>
+    <a href="#s2" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">02</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">The state of production firms serving finance</span></a>
+    <a href="#s9" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">09</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Results you can expect</span></a>
+    <a href="#s3" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">03</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Our approach: Brief-Mandate Fit</span></a>
+    <a href="#s10" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">10</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Compliance discipline</span></a>
+    <a href="#s4" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">04</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Why it works</span></a>
+    <a href="#s11" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">11</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Is Rogue Divisions right for you?</span></a>
+    <a href="#s5" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">05</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">The diligence environment</span></a>
+    <a href="#s12" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">12</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Configurations</span></a>
+    <a href="#s6" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">06</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">The system behind it</span></a>
+    <a href="#s13" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">13</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Testimonials &amp; social proof</span></a>
+    <a href="#s7" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">07</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Case studies</span></a>
+    <a href="#sc" style="display:flex;gap:20px;align-items:baseline;padding:16px 0;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);text-decoration:none;"><span style="font-size:13px;font-weight:600;color:var(--graphite);width:24px;">—</span><span style="font-size:16.5px;font-weight:500;color:var(--white);">Conclusion</span></a>
+  </div>
+</section>
+
+<!-- BODY SECTIONS -->
+
+<!-- 01 INTRODUCTION -->
+<section id="s1" data-screen-label="01 Introduction" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">01</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Introduction</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:18ch;">A structural ceiling, sitting <span class="rd-mark draw">upstream</span> of production.</h2>
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:19px;line-height:1.62;font-weight:400;color:var(--white);margin:0 0 1.3em;">Production companies that serve finance-sector clients face a structural ceiling. The work is interesting, the relationships are real, and the production capability is solid. The problem is upstream of production.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">A fund-launch film, an LP communications campaign, an M&amp;A narrative, an IPO comms package. These are not production briefs in the conventional sense. They are capital markets exercises with a film at the centre. They sit inside an investor narrative, a compliance envelope, and an LP psychology that most production firms have not been trained to navigate.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">The firms that win this work consistently are not the firms with the best cameras. They are the firms that can hold the strategic conversation with the client's investor relations head, fund partnership, or CFO with the same authority they hold the production conversation with the client's marketing or comms team. That register, strategic rather than production-delivery, is the gate to premium fees.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">Rogue Divisions is a specialist capital advisory firm headquartered in London with global coverage. We help fund managers and founders raise equity from Seed through Series B, with select work at growth and lower-middle-market, and we run capital markets distribution programmes for fund managers, asset managers, and capital advisors. Our investor network spans seventeen thousand active VC, PE, family office, HNW, and sovereign relationships with aggregate dry powder above $1.1 trillion.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">We also carry production heritage. The firm grew out of marketing and production operations that ran high-performance campaigns for global brands and venture-backed startups. Production is part of what we do, not adjacent to it. That dual identity is the foundation of Production Company Consulting: a specialist capital markets brain available to production firms that already have the relationships, the brief, and the production capability, and need a strategic register their clients reward with premium fees.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0;">This document explains how the service works, who it is for, and why it sits at the intersection of capital markets discipline and content production that no other firm is currently filling.</p>
+  </div>
+</section>
+
+<!-- 02 STATE OF PRODUCTION FIRMS -->
+<section id="s2" data-screen-label="02 The state of production firms" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">02</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">The state of production firms serving finance</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:20ch;">Three patterns repeat. A fourth is closing the door.</h2>
+  <p style="max-width:760px;font-size:19px;line-height:1.62;font-weight:400;color:var(--white);margin:36px 0 0;">Three patterns repeat in conversations with production company founders who have spent meaningful time on finance-sector briefs.</p>
+
+  <div style="margin-top:56px;display:flex;flex-direction:column;">
+    <div style="display:grid;grid-template-columns:64px 1fr;gap:32px;padding:36px 0;border-top:1.5px solid var(--line);align-items:start;">
+      <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">01</div>
+      <div style="max-width:760px;">
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;color:var(--white);">The value-ceiling problem</h3>
+        <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">The firm wins a brief, scopes it on day rate plus delivery overhead, ships strong creative, and gets paid at the rate the client allocates to production. The client takes the strategic value the film actually delivers, including LP commitments, fund visibility, deal-flow, and brand permission, and books it elsewhere on the P&amp;L. The firm cannot price the strategic value because it cannot articulate it. Premium fee for premium value is the trade. Without the articulation, the trade does not happen.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:64px 1fr;gap:32px;padding:36px 0;border-top:1.5px solid var(--line);align-items:start;">
+      <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">02</div>
+      <div style="max-width:760px;">
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;color:var(--white);">The brief-to-mandate gap</h3>
+        <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Finance clients arrive with briefs written by their marketing or comms function. Those briefs read like production briefs because that is the language the buyer's marketing function speaks. But the project is funded out of the GP's own budget, owned by the partnership, and judged against the firm's capital-raising or LP relations outcomes. The brief and the mandate are different documents. Firms that respond only to the brief lose to firms that respond to the mandate behind it. The gap is where premium positioning lives.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:64px 1fr;gap:32px;padding:36px 0;border-top:1.5px solid var(--line);align-items:start;">
+      <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">03</div>
+      <div style="max-width:760px;">
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;color:var(--white);">The compliance and register problem</h3>
+        <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Anything that touches financial promotions in the UK runs through the FCA section 21 perimeter. Anything client-facing on LinkedIn, the firm's website, or paid distribution has to be approved by the client's compliance officer. Production firms generally do not have a compliance posture to offer the client, which means the client either pays a separate advisory layer that eats the production firm's margin upstream, or does it themselves badly. Either way, the production firm is the supplier, not the partner.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:760px;margin-top:48px;">
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0;">These three patterns compound. A firm operating in production-delivery register, responding to the brief rather than the mandate, without a compliance posture to bring to the table, occupies the bottom of the value chain. The fix is not more capacity. The fix is moving up the register.</p>
+  </div>
+
+  <div style="margin-top:40px;background:var(--surface);border-radius:20px;padding:44px 48px;max-width:900px;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;">
+      <span style="font-size:30px;font-weight:600;color:var(--signal);letter-spacing:-0.02em;line-height:1;">04</span>
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">The pattern larger than the rest</span>
+    </div>
+    <p style="font-size:18px;line-height:1.66;font-weight:400;color:var(--body);margin:0 0 1.1em;">The finance sector's content budget is concentrating at the top into a small number of firms that operate as strategic advisors first and producers second, and fragmenting at the bottom into commodity day-rate competition. The mid-tier, capable, professional, finance-curious production firms, is being squeezed.</p>
+    <p style="font-size:18px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Firms that move up the register before the squeeze closes them out are the firms that survive the decade. Firms that do not are reduced to the day rate plus delivery overhead at the bottom, with no commercial leverage on either side. <span style="color:var(--white);font-weight:500;">Brief-Mandate Fit is the discipline of moving up.</span></p>
+  </div>
+</section>
+
+<!-- 03 OUR APPROACH -->
+<section id="s3" data-screen-label="03 Our approach" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">03</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Our approach</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:16ch;">Brief‑Mandate <span class="rd-mark draw">Fit</span>.</h2>
+  <div style="max-width:760px;margin-top:36px;">
+    <p style="font-size:19px;line-height:1.62;font-weight:400;color:var(--white);margin:0 0 1.3em;">Capital does not flow to the best film. Premium fees do not flow to the best production. Both flow to the firm that the client can defend internally, to their partnership, to their LPs, to their compliance officer, to their CFO, as having delivered against the mandate behind the brief.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0;">Brief-Mandate Fit is the discipline of producing work the client can defend, repeat, and underwrite without bending. It sits at the intersection of five components, and we work across all of them in parallel.</p>
+  </div>
+
+  <!-- Component 1 -->
+  <div style="margin-top:64px;display:grid;grid-template-columns:64px 1fr auto;gap:32px;padding-top:36px;border-top:1.5px solid var(--line);align-items:start;">
+    <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">1</div>
+    <div style="max-width:780px;">
+      <h3 style="font-size:25px;font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;color:var(--white);">The mandate layer</h3>
+      <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Every finance-sector brief is funded out of, and judged against, a mandate the firm has set for itself. A fund launch is funded against an LP raise target. An IR film is judged against next-round NAV and capital deployment. A portfolio anatomy is sized against a fund's track-record narrative. We read the mandate behind the brief before we write the response. The brief tells you what the marketing team wants. The mandate tells you what the partnership will sign off on. Pricing, scope, and integration into the client's broader programme all start at the mandate, not at the brief.</p>
+    </div>
+    <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);white-space:nowrap;padding-top:8px;">Fit</div>
+  </div>
+
+  <!-- Component 2 — register elevation device -->
+  <div style="display:grid;grid-template-columns:64px 1fr auto;gap:32px;padding-top:36px;margin-top:36px;border-top:1.5px solid var(--line);align-items:start;">
+    <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">2</div>
+    <div style="max-width:900px;">
+      <h3 style="font-size:25px;font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;color:var(--white);">The strategic register</h3>
+      <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0 0 32px;max-width:780px;">The same brief, discussed in two registers, attracts two very different fees. The shift is not language alone. It is capability. We bring capital markets fluency, FCA-aware compliance posture, and investor-psychology calibration to the conversation, so the production firm holds the strategic conversation with authority rather than deferring it to a third party.</p>
+      <div style="display:grid;grid-template-columns:1fr 168px;gap:0;align-items:stretch;max-width:840px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="background:var(--surface);border:1.5px solid rgba(255,44,85,0.45);border-radius:16px;padding:24px 26px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);">Strategic register</span>
+              <span style="height:1px;flex:1;background:var(--line-soft);"></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="font-size:13.5px;font-weight:500;color:var(--white);background:rgba(255,255,255,0.06);padding:7px 13px;border-radius:9999px;">LP psychology</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--white);background:rgba(255,255,255,0.06);padding:7px 13px;border-radius:9999px;">Investor narrative</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--white);background:rgba(255,255,255,0.06);padding:7px 13px;border-radius:9999px;">Compliance envelope</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--white);background:rgba(255,255,255,0.06);padding:7px 13px;border-radius:9999px;">Fund positioning</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--white);background:rgba(255,255,255,0.06);padding:7px 13px;border-radius:9999px;">Partnership signalling</span>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,0.02);border:1.5px solid var(--line);border-radius:16px;padding:24px 26px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);">Production-delivery register</span>
+              <span style="height:1px;flex:1;background:var(--line-soft);"></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="font-size:13.5px;font-weight:500;color:var(--faint);background:rgba(255,255,255,0.03);padding:7px 13px;border-radius:9999px;">Cameras</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--faint);background:rgba(255,255,255,0.03);padding:7px 13px;border-radius:9999px;">Location</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--faint);background:rgba(255,255,255,0.03);padding:7px 13px;border-radius:9999px;">Edit time</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--faint);background:rgba(255,255,255,0.03);padding:7px 13px;border-radius:9999px;">Day rate</span>
+              <span style="font-size:13.5px;font-weight:500;color:var(--faint);background:rgba(255,255,255,0.03);padding:7px 13px;border-radius:9999px;">Deliverables</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding-left:24px;">
+          <div style="font-size:13px;color:var(--graphite);margin-bottom:6px;">↑ move up</div>
+          <div style="font-size:clamp(40px,4vw,52px);font-weight:700;color:var(--signal);letter-spacing:-0.03em;line-height:1;">2–3×</div>
+          <div style="font-size:13px;color:var(--body);text-align:center;margin-top:8px;max-width:14ch;line-height:1.35;">the fee, for the same brief</div>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);white-space:nowrap;padding-top:8px;">Authority</div>
+  </div>
+
+  <!-- Component 3 -->
+  <div style="display:grid;grid-template-columns:64px 1fr auto;gap:32px;padding-top:36px;margin-top:36px;border-top:1.5px solid var(--line);align-items:start;">
+    <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">3</div>
+    <div style="max-width:780px;">
+      <h3 style="font-size:25px;font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;color:var(--white);">The compliance envelope</h3>
+      <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Anything public-facing in finance runs through compliance. FCA financial promotions, section 21 FSMA, internal IR sign-off, fund prospectus alignment. We set up the compliance envelope with the client's compliance officer or chaperone partner on day one, not as a bolt-on, as part of setup. The production firm goes from supplier the compliance officer reviews to partner the compliance officer trusts. That shift alone justifies premium fees, and it is the single fastest route to repeat work inside the same fund family.</p>
+    </div>
+    <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);white-space:nowrap;padding-top:8px;">Defensibility</div>
+  </div>
+
+  <!-- Component 4 -->
+  <div style="display:grid;grid-template-columns:64px 1fr auto;gap:32px;padding-top:36px;margin-top:36px;border-top:1.5px solid var(--line);align-items:start;">
+    <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">4</div>
+    <div style="max-width:780px;">
+      <h3 style="font-size:25px;font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;color:var(--white);">The narrative architecture</h3>
+      <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">A film alone does not raise capital. A film inside a narrative architecture, including teaser, deck, data room, principal LinkedIn posts, paid retargeting, warm-intro asset, and IC pre-read, does. We design the architecture and place the film at the centre. The production firm then produces a film that integrates into a system the client can run, rather than a deliverable that sits on a server. The film becomes the centrepiece of a campaign that compounds, and the production firm's value moves from one deliverable to one architecture.</p>
+    </div>
+    <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);white-space:nowrap;padding-top:8px;">Compound</div>
+  </div>
+
+  <!-- Component 5 -->
+  <div style="display:grid;grid-template-columns:64px 1fr auto;gap:32px;padding-top:36px;margin-top:36px;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding-bottom:36px;align-items:start;">
+    <div style="font-size:30px;font-weight:600;color:var(--graphite);letter-spacing:-0.02em;line-height:1;">5</div>
+    <div style="max-width:780px;">
+      <h3 style="font-size:25px;font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;color:var(--white);">The optimisation loop</h3>
+      <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Every public-facing asset produces signal. Which posts engaged ICP accounts, which LPs the firm met after retargeting, which question the client's investor calls keep raising, where the narrative is strong, where it needs another pass. We capture that signal, feed it back into the architecture, the targeting, and the materials, and run the next brief inside the same client better than the last. Repeat work becomes the norm rather than the exception. The production firm moves from one-off vendor to ongoing strategic partner.</p>
+    </div>
+    <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);white-space:nowrap;padding-top:8px;">Repeat</div>
+  </div>
+  <p style="max-width:760px;font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:36px 0 0;">Together, these five components are the operating system of a Production Company Consulting engagement.</p>
+</section>
+
+<!-- 04 WHY IT WORKS -->
+<section id="s4" data-screen-label="04 Why it works" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">04</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Why it works</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:18ch;">Augmentation first. Extension second.</h2>
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:19px;line-height:1.62;font-weight:400;color:var(--white);margin:0;">Brief-Mandate Fit does two things at once.</p>
+  </div>
+
+  <!-- Augmentation / Extension -->
+  <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;max-width:980px;">
+    <div style="background:var(--surface);border-radius:20px;padding:34px 36px;border-left:2.5px solid var(--signal);">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;">Augmentation · the larger effect</div>
+      <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">By an order of magnitude. Every existing GP engagement in the firm's book generates more revenue per brief once the strategic register is in place. The same client, the same relationship, more value extracted per project.</p>
+    </div>
+    <div style="background:var(--surface);border-radius:20px;padding:34px 36px;border-left:2.5px solid var(--line);">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:14px;">Extension · the smaller effect</div>
+      <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">Smaller but meaningful. The firm reaches GP engagements it could not previously hold, typically GPs whose briefs sit too deep in the partnership or IR function for a production-delivery vendor to credibly bid on.</p>
+    </div>
+  </div>
+  <p style="max-width:760px;font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:32px 0 0;">The two effects together are the commercial mechanism. The structural drivers underneath the mechanism are three.</p>
+
+  <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--line);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);">
+    <div style="background:#141414;padding:34px 30px 38px 0;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);margin-bottom:18px;">On the brief</div>
+      <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0 0 1.1em;">The brief the production firm receives is rarely the brief the GP partnership funded. By reading the mandate behind the brief, we identify the strategic layer the client cannot articulate, build the response around that layer, and reset the conversation to a level the marketing function alone could not authorise.</p>
+      <p style="font-size:16px;line-height:1.62;font-weight:500;color:var(--white);margin:0;">The same brief, the same firm, twice to three times the value.</p>
+    </div>
+    <div style="background:#141414;padding:34px 30px 38px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);margin-bottom:18px;">On the relationship</div>
+      <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0 0 1.1em;">A production firm that brings only production capability is replaced when the GP's marketing head changes. A firm that brings the strategic register, the compliance envelope, and the narrative architecture is embedded in the fund's investor relations function. It is harder to replace and harder to commodity-shop.</p>
+      <p style="font-size:16px;line-height:1.62;font-weight:500;color:var(--white);margin:0;">The engagement moves from per-brief to per-fund.</p>
+    </div>
+    <div style="background:#141414;padding:34px 0 38px 30px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);margin-bottom:18px;">On the moat</div>
+      <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0 0 1.1em;">The capability is not buyable on the open market. A sales coach does not understand finance. A finance consultant does not understand content. A marketing agency competes with the production firm directly. The combination of capital markets discipline, production heritage, and a willingness to embed alongside a partner firm sits in a category of one.</p>
+      <p style="font-size:16px;line-height:1.62;font-weight:500;color:var(--white);margin:0;">The moat is the combination, not the parts.</p>
+    </div>
+  </div>
+  <p style="max-width:760px;font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:40px 0 0;">Combined, those three layers move the firm up the register, deepen the GP engagement, and protect the firm against the squeeze at the mid-tier.</p>
+</section>
+
+<!-- 05 THE DILIGENCE ENVIRONMENT -->
+<section id="s5" data-screen-label="05 The diligence environment" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">05</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">The diligence environment</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:20ch;">Your work now survives a <span class="rd-mark draw">diligence</span> cycle you never see.</h2>
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:19px;line-height:1.62;font-weight:400;color:var(--white);margin:0 0 1.3em;">The case for operating at the strategic register has tightened on its own in the last twenty-four months, independently of anything Rogue argues for it.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">The films, decks, principal LinkedIn posts, and website thesis pages the production firm ships for a finance client now sit inside a diligence cycle the production firm rarely sees. Ninety-nine per cent of LPs review GP content during diligence. Forty-six per cent rate GP reputation as more important than fund-level returns. Almost half use AI tools in investment or operational workflows. The diligence trail terminates in two places: a human allocator's perception of the manager, and an AI summary of the manager's public material that feeds investment committee paper.</p>
+  </div>
+
+  <!-- two reads -->
+  <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;">
+    <div style="background:var(--surface);border-radius:20px;padding:32px 34px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:14px;">Read one · the human</div>
+      <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">A human allocator's perception of the manager, formed across the film, the footprint, and the meeting, then carried into the room where the GP is not.</p>
+    </div>
+    <div style="background:var(--surface);border-radius:20px;padding:32px 34px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:14px;">Read two · the machine</div>
+      <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">An AI summary of the manager's public material that feeds investment committee paper, summarising whatever it finds, contradictions included.</p>
+    </div>
+  </div>
+
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">When the film, the LinkedIn footprint, the website thesis page, and the deck all return the same story, the diligence trail confirms the manager. When they drift, the diligence trail flags the manager as one whose narrative is not held tight. The production firm whose work survives both reads is the production firm the GP brings back for the next brief. The production firm whose work drifts is the production firm the GP quietly replaces.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:500;color:var(--white);margin:0;">The premium fee is not a charge for craft. It is the price of work that survives the diligence cycle intact. Strategic register on the way in. Compliance envelope around delivery. Narrative architecture that holds across channels.</p>
+  </div>
+</section>
+
+<!-- 06 THE SYSTEM BEHIND IT -->
+<section id="s6" data-screen-label="06 The system behind it" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">06</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">The system behind it</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:18ch;">Infrastructure, where the sector still runs on <span class="rd-mark draw">relationships</span>.</h2>
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">Production company services historically sit inside a relationship-first sales motion, a project-based delivery cycle, and an analogue compliance posture. The firms that win the next decade replace each layer with infrastructure.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">Rogue Divisions runs an integrated capital markets stack: investor intelligence, mandate matching, deal operations, post-meeting analysis, and an outbound infrastructure that personalises at scale. We bring that stack into Production Company Consulting engagements, alongside our production methodology, so the production firm has access to capabilities it could not justify building in-house. The integration replaces a sequence of disconnected tools with one judgement-led operating system and frees up the partner's time to spend on the client conversations that matter.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">We are deliberate about how much of this we describe externally, because the system is not what is being sold. The system is what makes our judgement go further than a traditional advisory layer can without it. The output is what we are accountable for: more closed briefs at higher fees, deeper finance-sector positioning, and repeat work that compounds.</p>
+  </div>
+  <div style="margin-top:36px;background:var(--surface);border-radius:20px;padding:40px 44px;max-width:840px;">
+    <p style="font-size:18px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">We make the work visible. Every engagement runs against a live environment that shows pipeline, brief status, fee outcomes, and follow-on indicators. The firm sees the work as it happens, not in a monthly PDF. <span style="color:var(--white);font-weight:500;">Accountability is in the open.</span></p>
+  </div>
+  <div style="max-width:760px;margin-top:36px;">
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0;">The lessons are not from finance alone. They are from the operators we worked with before this was a capital markets firm: the best venture-backed startups, the best consumer brands, the best growth marketing teams. Those operators run tight feedback loops, instrument everything, segment relentlessly, and iterate against signal. We brought that discipline into a market that still defaults to relationship, retainer, and showreel. That gap is the firm's edge, and it does not close on its own.</p>
+  </div>
+</section>
+
+<!-- 07 CASE STUDIES -->
+<section id="s7" data-screen-label="07 Case studies" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">07</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Case studies</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:20ch;">From a production envelope to an integrated engagement.</h2>
+  <p style="max-width:760px;font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:32px 0 0;">Representative engagement, anonymised at the production firm's request given client confidentiality. Other live mandates in finance, corporate, and capital markets content are not named here for confidentiality reasons and are available to discuss on a call.</p>
+
+  <div style="margin-top:48px;border:1.5px solid var(--line);border-radius:22px;overflow:hidden;">
+    <div style="padding:32px 40px;border-bottom:1.5px solid var(--line);background:var(--surface);">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;">Venture capital · Oxford / London</div>
+      <h3 style="font-size:26px;font-weight:600;letter-spacing:-0.02em;margin:0 0 8px;color:var(--white);">London production firm · Oxford venture fund</h3>
+      <div style="font-size:15px;color:var(--graphite);font-weight:500;">LP raise programme · £100m–£200m</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;">
+      <div style="padding:34px 40px;border-right:1.5px solid var(--line);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--graphite);">Before</span>
+          <span style="height:1px;flex:1;background:var(--line-soft);"></span>
+        </div>
+        <p style="font-size:16px;line-height:1.64;font-weight:400;color:var(--body);margin:0 0 1em;">Established sub-10 production firm with a corporate and brand portfolio and a developing finance niche, engaged to produce a fund-launch programme, a flagship thesis film, a portfolio anatomy short, and a sizzler, for use in the GP's LP raise. The brief was production-led: three films, fixed deliverables, day rate plus delivery overhead. The fund was budgeting against its marketing line, capping the value at a production envelope.</p>
+        <p style="font-size:16px;line-height:1.64;font-weight:400;color:var(--body);margin:0;">The strategic layer, including how the films would integrate into the firm's LP outreach, principal LinkedIn programme, paid retargeting against a Matched Audience, and warm-intro mapping, was unaddressed. The fund saw the production firm as a film supplier. The firm could not articulate the value the films would deliver beyond shipped assets.</p>
+      </div>
+      <div style="padding:34px 40px;background:rgba(9,188,138,0.045);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--jade);">After</span>
+          <span style="height:1px;flex:1;background:var(--line-soft);"></span>
+        </div>
+        <p style="font-size:16px;line-height:1.64;font-weight:400;color:var(--body);margin:0 0 1em;">We re-scoped the engagement at the mandate layer. The films sat inside a twelve-month LinkedIn-and-warm-intro distribution programme architected to compound over the LP raise cycle. The production firm carried the production and brand-voice work. We carried the strategic register, the narrative architecture, the compliance envelope mapped to FCA section 21, and a commercial structure with explicit ranges including a meeting-bonus performance layer outside the capital-arranging perimeter.</p>
+        <p style="font-size:16px;line-height:1.64;font-weight:500;color:var(--white);margin:0;">The proposal moved from a production-envelope fee to an integrated six-figure engagement, structured as two contracts under a joint partnership MOU, with the production firm prime on production and Rogue prime on distribution.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;max-width:840px;">
+    <h3 style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin:0 0 16px;color:var(--white);">Beyond the marquee case</h3>
+    <p style="font-size:17px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Engagement-relevant work in flight or recently scoped includes a fund-launch distribution programme for an Oxford-based deep-tech venture fund, a distribution engagement for a US private equity fund, and active partner-pipeline conversations with sub-10 UK production firms holding Barclays, NatWest, Lloyds, Amazon, and Thompson Reuters work in their portfolios.</p>
+  </div>
+  <p style="max-width:840px;font-size:13.5px;line-height:1.6;font-weight:400;color:var(--graphite);margin:24px 0 0;"><span style="color:var(--white);font-weight:500;">Note.</span> Specific outcomes vary by individual engagement context. Case studies illustrate methodology, not guaranteed results. References to active partner production firms are available on a call, under NDA where the firm prefers.</p>
+</section>
+
+<!-- 08 ENGAGEMENT PHASES -->
+<section id="s8" data-screen-label="08 Engagement phases" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">08</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Engagement phases</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:18ch;">Three phases. Joint decisions. No lock-in.</h2>
+  <p style="max-width:760px;font-size:17.5px;line-height:1.66;font-weight:400;color:var(--body);margin:32px 0 0;">Engagements run in three phases. Phase decisions are joint. No multi-year lock-ins. The framework above is what we are working towards; the phases below are how we get there in practice.</p>
+
+  <div style="margin-top:56px;display:flex;flex-direction:column;">
+    <!-- Phase 01 -->
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;padding:38px 0;border-top:1.5px solid var(--line);align-items:start;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;"><span style="font-size:13px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">Phase 01</span></div>
+        <div style="font-size:22px;font-weight:600;letter-spacing:-0.02em;color:var(--white);line-height:1.18;">Discovery &amp; Strategic Audit</div>
+        <div style="display:inline-flex;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--signal);background:rgba(255,44,85,0.1);padding:6px 12px;border-radius:9999px;">Two to four weeks</div>
+      </div>
+      <div style="max-width:720px;">
+        <p style="font-size:16.5px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">We work with the production firm's founder or managing director to map the existing finance-sector portfolio, client base, pipeline, brief inflow, and current commercial structure. We audit the firm's positioning, capability narrative, pitch deck, and the register the firm currently occupies in finance-sector conversations. The output is a strategic-layer playbook calibrated to the firm's target client segments, including mandate-aware response templates, compliance envelope mapping, narrative-architecture playbook adapted to the firm's production capability, and refined positioning collateral the firm uses in pitches.</p>
+      </div>
+    </div>
+    <!-- Phase 02 -->
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;padding:38px 0;border-top:1.5px solid var(--line);align-items:start;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;"><span style="font-size:13px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">Phase 02</span></div>
+        <div style="font-size:22px;font-weight:600;letter-spacing:-0.02em;color:var(--white);line-height:1.18;">Pilot</div>
+        <div style="display:inline-flex;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--signal);background:rgba(255,44,85,0.1);padding:6px 12px;border-radius:9999px;">Approximately ninety days</div>
+      </div>
+      <div style="max-width:720px;">
+        <p style="font-size:16.5px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Joint working on live briefs in the firm's pipeline. We sit on pitches as the firm's strategic register, articulate the value layer, and price the engagement at mandate-fit fees rather than production-envelope fees. Where useful, we sit on the call. Where not, we equip the firm to hold the call alone. Compliance and regulatory considerations are handled through our broker-dealer chaperone partnerships where the brief type requires it. At day ninety, both sides decide whether and how to continue.</p>
+      </div>
+    </div>
+    <!-- Phase 03 -->
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;padding:38px 0;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);align-items:start;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;"><span style="font-size:13px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">Phase 03</span></div>
+        <div style="font-size:22px;font-weight:600;letter-spacing:-0.02em;color:var(--white);line-height:1.18;">Engine</div>
+        <div style="display:inline-flex;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--signal);background:rgba(255,44,85,0.1);padding:6px 12px;border-radius:9999px;">Monthly cadence, quarterly review</div>
+      </div>
+      <div style="max-width:720px;">
+        <p style="font-size:16.5px;line-height:1.66;font-weight:400;color:var(--body);margin:0;">Pilots that work continue into the full engagement on monthly cadence with quarterly review. We co-deliver alongside the firm on strategic engagements: narrative architecture, compliance documentation, distribution programme design, IR and LP-facing materials, principal-LinkedIn programme, paid retargeting setup. The firm produces. We position, structure, and integrate. Every closed brief feeds the next: the signal from one engagement informs the pitch, price, and architecture of the next. Repeat work compounds; the firm moves from one-off vendor to embedded partner across the GP's LP raise cycle and into the next fundraise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 RESULTS -->
+<section id="s9" data-screen-label="09 Results you can expect" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">09</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Results you can expect</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:18ch;">What changes, once you hold the register.</h2>
+
+  <div style="margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--line);border:1.5px solid var(--line);border-radius:22px;overflow:hidden;">
+    <div style="background:#141414;padding:36px 38px;">
+      <div style="font-size:34px;font-weight:600;color:var(--signal);letter-spacing:-0.03em;line-height:1;margin-bottom:18px;">2–3×</div>
+      <h3 style="font-size:19px;font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;color:var(--white);">Higher fees per brief</h3>
+      <p style="font-size:15.5px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">Strategic-register engagement reframes the conversation from production envelope to mandate envelope. Two to three times the fee for the same brief is the typical reset.</p>
+    </div>
+    <div style="background:#141414;padding:36px 38px;">
+      <div style="font-size:34px;font-weight:600;color:var(--white);letter-spacing:-0.03em;line-height:1;margin-bottom:18px;">↑ close</div>
+      <h3 style="font-size:19px;font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;color:var(--white);">Closure on briefs that previously bounced</h3>
+      <p style="font-size:15.5px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">Finance briefs that previously slipped to a strategic competitor or a do-it-yourself response from the client now convert. The firm wins work it could not previously hold.</p>
+    </div>
+    <div style="background:#141414;padding:36px 38px;">
+      <div style="font-size:34px;font-weight:600;color:var(--jade);letter-spacing:-0.03em;line-height:1;margin-bottom:18px;">per-fund</div>
+      <h3 style="font-size:19px;font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;color:var(--white);">Deeper, longer GP engagements</h3>
+      <p style="font-size:15.5px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">Per-brief turns into per-fund. Per-fund turns into per-firm. Revenue per GP compounds across the LP raise cycle and into the next, with the production firm moving from one-off supplier to embedded partner.</p>
+    </div>
+    <div style="background:#141414;padding:36px 38px;">
+      <div style="font-size:34px;font-weight:600;color:var(--azure);letter-spacing:-0.03em;line-height:1;margin-bottom:18px;">moat</div>
+      <h3 style="font-size:19px;font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;color:var(--white);">Defensible positioning</h3>
+      <p style="font-size:15.5px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">Compliance posture, narrative architecture, and mandate fluency are not buyable on the open market by a competitor. The firm's moat against day-rate competition deepens with each closed brief.</p>
+    </div>
+  </div>
+  <div style="margin-top:1.5px;background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:34px 38px;">
+    <h3 style="font-size:19px;font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;color:var(--white);">A cleaner business</h3>
+    <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0;max-width:880px;">By the end of the buildout phase your positioning, collateral, and pitch process are in better shape than they were when you started, regardless of how any single brief lands. That work compounds.</p>
+  </div>
+</section>
+
+<!-- 10 COMPLIANCE DISCIPLINE -->
+<section id="s10" data-screen-label="10 Compliance discipline" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">10</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Compliance discipline</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:20ch;">The perimeter is a design constraint, not a disclaimer.</h2>
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">Finance-sector briefs operate inside regulatory perimeters that constrain what can be said, by whom, to whom, on which channels. We bring a compliance posture into the firm's pitches and into delivery from day one of any engagement.</p>
+  </div>
+
+  <!-- jurisdiction chips -->
+  <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;max-width:840px;">
+    <span style="font-size:13.5px;font-weight:500;color:var(--white);background:var(--surface);border:1.5px solid var(--line);padding:9px 16px;border-radius:9999px;">FCA financial promotions · s21 gateway · UK</span>
+    <span style="font-size:13.5px;font-weight:500;color:var(--white);background:var(--surface);border:1.5px solid var(--line);padding:9px 16px;border-radius:9999px;">SEC Marketing Rule · broker-dealer perimeter · US</span>
+    <span style="font-size:13.5px;font-weight:500;color:var(--white);background:var(--surface);border:1.5px solid var(--line);padding:9px 16px;border-radius:9999px;">EU &amp; Middle East equivalents</span>
+    <span style="font-size:13.5px;font-weight:500;color:var(--white);background:var(--surface);border:1.5px solid var(--line);padding:9px 16px;border-radius:9999px;">SEC Rule 15a-6 chaperone</span>
+  </div>
+
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">We work alongside the client's compliance officer or chaperone partner; promotional content is reviewed inside the client's authorised structure before publication. We do not approve financial promotions, opine on regulatory questions, or substitute for legal advice. We treat the regulatory perimeter as a design constraint, not a disclaimer. <span style="color:var(--white);font-weight:500;">The production firm goes from supplier the compliance officer reviews to partner the compliance officer trusts. That shift is the single fastest route to repeat work inside the same client family.</span></p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0;">Any U.S.-facing capital-raising work is conducted through a chaperone arrangement under SEC Rule 15a-6 and our regulated partners. Where engagements call for capabilities outside our remit, including placement agency, broker-dealer activity, or regulated capital introduction, we partner with specialists we work with regularly, or refer the work to firms we trust.</p>
+  </div>
+</section>
+
+<!-- 11 IS ROGUE RIGHT FOR YOU -->
+<section id="s11" data-screen-label="11 Is Rogue right for you" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">11</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Is Rogue Divisions right for you?</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:20ch;">A strong fit in some rooms. A wrong fit in others.</h2>
+  <p style="max-width:760px;font-size:17.5px;line-height:1.66;font-weight:400;color:var(--body);margin:32px 0 0;">The honest answer is that we are a strong fit in some situations and a wrong fit in others.</p>
+
+  <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--jade);">The right partner when</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5px;background:var(--line-soft);border-top:1.5px solid rgba(9,188,138,0.5);">
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--jade);font-size:18px;line-height:1.3;">✓</span>
+          <div><div style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:5px;">You operate at founder or MD level</div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You run a sub-50 production firm with founder or MD leading from the front. The strategic conversation happens at your level, not three managers down.</p></div>
+        </div>
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--jade);font-size:18px;line-height:1.3;">✓</span>
+          <div><div style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:5px;">You have finance exposure already</div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You have shipped finance-sector work, or have a credible path to it, and you can see the value-ceiling problem in your own P&amp;L. Not pre-finance; mid-finance, ready to move up.</p></div>
+        </div>
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--jade);font-size:18px;line-height:1.3;">✓</span>
+          <div><div style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:5px;">You want capability, not coaching</div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You want to hold the strategic conversation, not just refer it out. Capability acquisition is the path up, not vendor extraction.</p></div>
+        </div>
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--jade);font-size:18px;line-height:1.3;">✓</span>
+          <div><div style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:5px;">You value process and infrastructure</div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You want to know what is happening, when, and what the signal is showing, rather than waiting for a monthly update from an advisor on a static retainer.</p></div>
+        </div>
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--jade);font-size:18px;line-height:1.3;">✓</span>
+          <div><div style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:5px;">You are looking for a partner, not a list</div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You want someone who will sit on pitches with you, hold the strategic register alongside you, and stay through the close, not someone who hands over a methodology PDF and waits for a referral.</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--graphite);">The wrong partner when</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5px;background:var(--line-soft);border-top:1.5px solid var(--line);">
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--graphite);font-size:18px;line-height:1.3;">×</span>
+          <div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You are pure broadcast, pure consumer, or pure wedding production. The frame does not apply.</p></div>
+        </div>
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--graphite);font-size:18px;line-height:1.3;">×</span>
+          <div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You are a large agency with procurement, account-management layers, and political resistance to an embedded strategic partner. The fit will be slow at best.</p></div>
+        </div>
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--graphite);font-size:18px;line-height:1.3;">×</span>
+          <div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You already have a strong capital markets layer in-house and a partner-grade finance-fluent producer running pitches. You do not need us.</p></div>
+        </div>
+        <div style="background:#141414;padding:22px 0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;">
+          <span style="color:var(--graphite);font-size:18px;line-height:1.3;">×</span>
+          <div><p style="font-size:15px;line-height:1.56;color:var(--body);margin:0;font-weight:400;">You are not prepared to commit time to the strategic-register buildout in the first two to four weeks. The work compounds; the buildout matters.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What this offering is not -->
+  <div style="margin-top:56px;border-top:1.5px solid var(--line);padding-top:40px;">
+    <h3 style="font-size:21px;font-weight:600;letter-spacing:-0.02em;margin:0 0 24px;color:var(--white);">What this offering is not</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;max-width:960px;">
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-top:1.5px solid var(--line-soft);align-items:start;">
+        <span style="font-size:13px;color:var(--graphite);font-weight:600;line-height:1.5;">Not</span>
+        <p style="font-size:15.5px;line-height:1.56;color:var(--body);margin:0;font-weight:400;"><span style="color:var(--white);font-weight:500;">a referral arrangement.</span> The production firm keeps every client relationship.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-top:1.5px solid var(--line-soft);align-items:start;">
+        <span style="font-size:13px;color:var(--graphite);font-weight:600;line-height:1.5;">Not</span>
+        <p style="font-size:15.5px;line-height:1.56;color:var(--body);margin:0;font-weight:400;"><span style="color:var(--white);font-weight:500;">a substitute for production.</span> We do not replace the firm's production capability, account management, or creative function. We layer alongside them.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-top:1.5px solid var(--line-soft);align-items:start;">
+        <span style="font-size:13px;color:var(--graphite);font-weight:600;line-height:1.5;">Not</span>
+        <p style="font-size:15.5px;line-height:1.56;color:var(--body);margin:0;font-weight:400;"><span style="color:var(--white);font-weight:500;">regulated capital introduction.</span> We do not perform regulated capital introduction or placement agency activity, and we are not the firm's compliance officer.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-top:1.5px solid var(--line-soft);align-items:start;">
+        <span style="font-size:13px;color:var(--graphite);font-weight:600;line-height:1.5;">Not</span>
+        <p style="font-size:15.5px;line-height:1.56;color:var(--body);margin:0;font-weight:400;"><span style="color:var(--white);font-weight:500;">regulatory advice.</span> We do not opine on regulatory questions or substitute for legal advice. Regulated activity runs through our chaperone partners.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-top:1.5px solid var(--line-soft);border-bottom:1.5px solid var(--line-soft);align-items:start;">
+        <span style="font-size:13px;color:var(--graphite);font-weight:600;line-height:1.5;">Not</span>
+        <p style="font-size:15.5px;line-height:1.56;color:var(--body);margin:0;font-weight:400;"><span style="color:var(--white);font-weight:500;">for firms without a founder in the room.</span> We do not work below the founder or MD level, where the strategic conversation cannot reach the room that signs the engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 CONFIGURATIONS -->
+<section id="s12" data-screen-label="12 Configurations" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">12</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Configurations</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:20ch;">Same methodology. A ladder, not a menu.</h2>
+  <p style="max-width:760px;font-size:17.5px;line-height:1.66;font-weight:400;color:var(--body);margin:32px 0 0;">The methodology is the same. The configuration changes. We treat the three configurations below as a ladder, not a menu. Each is appropriate to a different stage of the firm's strategic-register development; we are flexible on the mix because every firm sits at a different point.</p>
+
+  <div style="margin-top:60px;display:flex;flex-direction:column;gap:18px;">
+    <!-- Config C (top) -->
+    <div style="margin-left:0;background:var(--surface);border:1.5px solid var(--line);border-radius:20px;padding:34px 38px;display:grid;grid-template-columns:1fr 240px;gap:32px;align-items:start;">
+      <div style="max-width:640px;">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;"><span style="font-size:13px;font-weight:600;color:var(--graphite);">C</span><h3 style="font-size:24px;font-weight:600;letter-spacing:-0.02em;margin:0;color:var(--white);">Co-Delivery</h3></div>
+        <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0 0 1em;">For engagements where the strategic register layer is material. We co-deliver alongside the firm: narrative architecture, compliance documentation, distribution, IR-facing materials, principal-LinkedIn programme, paid retargeting setup.</p>
+        <p style="font-size:15px;line-height:1.6;font-weight:400;color:var(--faint);margin:0;">Billed through one of two structures: two contracts to the client under a joint partnership MOU, each party prime on its specialist competency; or a subcontract arrangement with a margin cap of 20% on Rogue's line. The first is preferred; the second is available where the client prefers a single invoice.</p>
+      </div>
+      <div style="border-left:1.5px solid var(--line);padding-left:28px;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px;">Of total project value</div>
+        <div style="font-size:40px;font-weight:600;color:var(--white);letter-spacing:-0.03em;line-height:1;">25–40<span style="font-size:24px;">%</span></div>
+      </div>
+    </div>
+    <!-- Config B (mid) -->
+    <div style="margin-left:48px;background:var(--surface);border:1.5px solid var(--line);border-radius:20px;padding:34px 38px;display:grid;grid-template-columns:1fr 240px;gap:32px;align-items:start;">
+      <div style="max-width:640px;">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;"><span style="font-size:13px;font-weight:600;color:var(--graphite);">B</span><h3 style="font-size:24px;font-weight:600;letter-spacing:-0.02em;margin:0;color:var(--white);">Strategic Retainer</h3></div>
+        <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">A continuous strategic register at the firm's disposal. We are on call for pitches, brief reviews, compliance questions, positioning work, and ad-hoc client conversations. The lower end is for firms with low brief volume and high in-house capability. The upper end is for firms with high brief volume and material in-house gap. The firm pays for capability rather than for output, which is the right alignment for an engagement that compounds across many briefs.</p>
+      </div>
+      <div style="border-left:1.5px solid var(--line);padding-left:28px;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px;">Per month</div>
+        <div style="font-size:40px;font-weight:600;color:var(--white);letter-spacing:-0.03em;line-height:1;">£3–8k</div>
+      </div>
+    </div>
+    <!-- Config A (bottom, entry) -->
+    <div style="margin-left:96px;background:#141414;border:1.5px solid rgba(255,44,85,0.45);border-radius:20px;padding:34px 38px;display:grid;grid-template-columns:1fr 240px;gap:32px;align-items:start;">
+      <div style="max-width:640px;">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;"><span style="font-size:13px;font-weight:600;color:var(--signal);">A</span><h3 style="font-size:24px;font-weight:600;letter-spacing:-0.02em;margin:0;color:var(--white);">Deal Closer</h3><span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--signal);background:rgba(255,44,85,0.12);padding:4px 10px;border-radius:9999px;">Entry rung</span></div>
+        <p style="font-size:16px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">The first engagement on most relationships. Rogue sits on pitches alongside the firm, brings the strategic register, and helps convert finance-sector briefs into closed work. Zero risk to the firm. Validates the value before either side commits further. The natural step from here is Configuration B or C, on the back of one or two closed briefs.</p>
+      </div>
+      <div style="border-left:1.5px solid var(--line);padding-left:28px;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px;">Of project value</div>
+        <div style="font-size:40px;font-weight:600;color:var(--signal);letter-spacing:-0.03em;line-height:1;">10–20<span style="font-size:24px;">%</span></div>
+        <div style="font-size:13px;color:var(--faint);margin-top:8px;line-height:1.4;">no upfront fee</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;max-width:980px;">
+    <div>
+      <h3 style="font-size:18px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;color:var(--white);">How the three configurations interact</h3>
+      <p style="font-size:15.5px;line-height:1.62;font-weight:400;color:var(--body);margin:0;">A firm starting cold begins on Deal Closer. After two or three closed engagements, the natural shape becomes Strategic Retainer plus Co-Delivery on the strategic briefs. A firm that already has a developed finance practice often begins on Retainer and Co-Delivery in parallel, without the Deal Closer step. A firm bringing Rogue a brief it has originated through its own pipeline, with the strategic layer pre-identified, often begins directly on Co-Delivery. Every engagement is shaped to the firm.</p>
+    </div>
+    <div>
+      <h3 style="font-size:18px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;color:var(--white);">Terms &amp; reciprocity</h3>
+      <p style="font-size:15.5px;line-height:1.62;font-weight:400;color:var(--body);margin:0 0 1em;">Engagements are typically structured as twelve-month initial terms with renewal agreed if the partnership continues. We frame engagements with a view to multiple briefs and multiple GPs across years.</p>
+      <p style="font-size:15.5px;line-height:1.62;font-weight:400;color:var(--body);margin:0;"><span style="color:var(--white);font-weight:500;">Reciprocity.</span> Where either party originates work the other executes outside the joint scope, a cross-referral framework applies: an agreed share of net revenue on the first twelve months. Reciprocity is explicit, not buried.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13 TESTIMONIALS -->
+<section id="s13" data-screen-label="13 Testimonials" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">13</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Testimonials &amp; social proof</span>
+  </div>
+  <h2 style="font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-0.03em;font-weight:600;margin:24px 0 0;max-width:20ch;">The same discipline, from the advisory practice.</h2>
+  <p style="max-width:840px;font-size:16px;line-height:1.66;font-weight:400;color:var(--body);margin:32px 0 0;">Production Company Consulting is a developing service line. Partner production firms in current engagements are anonymised pending consent to name. The quotes below are from Rogue's primary advisory practice, where the same capital markets discipline and operating posture apply. Direct introductions to partner production firms and to past advisory clients are available on a call.</p>
+
+  <div style="margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
+    <blockquote style="grid-column:1 / -1;margin:0;background:var(--surface);border-radius:20px;padding:40px 44px;">
+      <p style="font-size:clamp(20px,2.2vw,26px);line-height:1.42;font-weight:500;letter-spacing:-0.01em;color:var(--white);margin:0 0 24px;">“The sourcing and identification of investor candidates have been spot-on, exactly the right people we need to speak to. As a small company, we have tried reaching out ourselves without success, and the team's ability to secure the right meetings has been impressive. This service has made a real difference by connecting us with the right level of sophistication we require, avoiding the wasted time and cost we have experienced elsewhere.”</p>
+      <div style="display:flex;align-items:center;gap:12px;"><span style="width:28px;height:1.5px;background:var(--signal);"></span><span style="font-size:14.5px;font-weight:600;color:var(--white);">Maurice Boucher</span><span style="font-size:14.5px;color:var(--graphite);">Executive Chairman, Renaissance Bioscience</span></div>
+    </blockquote>
+    <blockquote style="margin:0;background:var(--surface);border-radius:20px;padding:36px 38px;">
+      <p style="font-size:18px;line-height:1.5;font-weight:500;letter-spacing:-0.01em;color:var(--white);margin:0 0 22px;">“The distinct advantage is the capability to turn over every rock until they find that perfect fit. With the right network, entrepreneurial spirit, and integrated capabilities, they bring a level of drive and reach that traditional firms lack. This combination has proven incredibly valuable in connecting clients with exactly the right opportunities.”</p>
+      <div style="display:flex;align-items:center;gap:12px;"><span style="width:28px;height:1.5px;background:var(--azure);"></span><span style="font-size:14px;font-weight:600;color:var(--white);">Dominic Spooner</span><span style="font-size:14px;color:var(--graphite);">Founder, Spooner Capital Advisors</span></div>
+    </blockquote>
+    <blockquote style="margin:0;background:var(--surface);border-radius:20px;padding:36px 38px;display:flex;flex-direction:column;justify-content:space-between;min-height:100%;">
+      <p style="font-size:clamp(22px,2.4vw,28px);line-height:1.34;font-weight:600;letter-spacing:-0.02em;color:var(--white);margin:0 0 22px;">“One meeting and they just knew exactly what we needed and how to execute.”</p>
+      <div style="display:flex;align-items:center;gap:12px;"><span style="width:28px;height:1.5px;background:var(--jade);"></span><span style="font-size:14px;font-weight:600;color:var(--white);">Myles Peyton</span><span style="font-size:14px;color:var(--graphite);">Centric Software</span></div>
+    </blockquote>
+  </div>
+  <p style="font-size:13.5px;color:var(--graphite);margin:28px 0 0;">References and direct introductions to past clients and active partner production firms available on request.</p>
+</section>
+
+<!-- CONCLUSION -->
+<section id="sc" data-screen-label="Conclusion" style="max-width:1100px;margin:0 auto;padding:140px 40px 0;">
+  <div style="height:1.5px;background:var(--line);"></div>
+  <div style="display:flex;align-items:baseline;gap:18px;padding-top:30px;">
+    <span style="font-size:15px;font-weight:600;color:var(--graphite);letter-spacing:0.04em;">—</span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--graphite);">Conclusion</span>
+  </div>
+  <h2 style="font-size:clamp(34px,5vw,60px);line-height:1.06;letter-spacing:-0.032em;font-weight:600;margin:24px 0 0;max-width:17ch;">The route up is the <span class="rd-mark draw">register</span>.</h2>
+  <div style="max-width:760px;margin-top:40px;">
+    <p style="font-size:19px;line-height:1.62;font-weight:400;color:var(--white);margin:0 0 1.3em;">Production companies serving finance-sector clients face a value ceiling that is not solvable by more capacity, better cameras, or a sharper showreel. The route up is the strategic register: the discipline of reading the mandate behind the brief, holding the conversation at the level the client's partnership signs off on, and integrating the production work into a system that compounds and survives the diligence cycle intact.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:400;color:var(--body);margin:0 0 1.3em;">That is what we do. We bring capital markets discipline and production heritage to firms already doing the work and already in the room, and we make the value the firm delivers legible at the level the client funds it. The work is substantive, the framework is built, and the alignment is clear.</p>
+    <p style="font-size:17.5px;line-height:1.68;font-weight:500;color:var(--white);margin:0;">Premium briefs do not flow to the best film. They flow to the firm the client's partnership can defend. If that is the firm you are building, we would like to hear about the work.</p>
+  </div>
+  <div style="margin-top:44px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <a href="https://www.roguedivisions.com/contact" style="display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:9999px;background:var(--white);color:var(--ink);font-weight:600;font-size:16px;text-decoration:none;">Book intro call</a>
+    <a href="mailto:sage@roguedivisions.com" style="display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:9999px;background:transparent;color:var(--white);border:1.5px solid var(--white);font-weight:600;font-size:16px;text-decoration:none;">sage@roguedivisions.com <span style="color:var(--azure);">➞</span></a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer data-screen-label="Footer" style="max-width:1100px;margin:128px auto 0;padding:48px 40px 64px;border-top:1.5px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="/" aria-label="Rogue Divisions home"><img src="/thesis/assets/RD-Name-Mono_White.png" alt="Rogue Divisions" style="height:18px;width:auto;opacity:0.92;"></a>
+    <span style="font-size:13px;color:var(--graphite);">Specialist capital markets advisory, with production heritage.</span>
+  </div>
+  <span style="font-size:13px;color:var(--graphite);">roguedivisions.com · London · sage@roguedivisions.com</span>
+</footer>
+
+</div>
+<script>
+  // rd-mark keyword underline draw-on when it enters the viewport.
+  (function () {
+    var marks = document.querySelectorAll(".rd-mark.draw");
+    if (!("IntersectionObserver" in window)) {
+      marks.forEach(function (m) { m.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.55 });
+    marks.forEach(function (m) { io.observe(m); });
+  })();
+</script>
+</body>
+</html>
