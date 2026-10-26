@@ -1,0 +1,13 @@
+name = "rd-client-proposals"
+account_id = "df342de49e7e0f702d8491bccd7c2dc6"
+compatibility_date = "2025-01-01"
+workers_dev = false
+preview_urls = false
+
+routes = [
+  { pattern = "client.roguedivisions.com", custom_domain = true },
+]
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
