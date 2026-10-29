@@ -1,6 +1,7 @@
 name = "rd-client-proposals"
 account_id = "df342de49e7e0f702d8491bccd7c2dc6"
 compatibility_date = "2025-01-01"
+main = "./reporting-auth/worker.mjs"
 workers_dev = false
 preview_urls = false
 
@@ -8,6 +9,13 @@ routes = [
   { pattern = "client.roguedivisions.com", custom_domain = true },
 ]
 
+[[ratelimits]]
+name = "C3_LOGIN_LIMITER"
+namespace_id = "918425737147103"
+simple = { limit = 10, period = 60 }
+
 [assets]
+binding = "ASSETS"
+run_worker_first = true
 directory = "./public"
 not_found_handling = "404-page"
