@@ -13,3 +13,6 @@ test('unrelated existing client route unchanged',async()=>{const r=await gate.fe
 
 test('rate limiter denial blocks login',async()=>{const r=await gate.fetch(post('SYNTHETIC-test-passphrase-only'),{...env,C3_LOGIN_LIMITER:{limit:async()=>({success:false})}});assert.equal(r.status,429);assert.equal(r.headers.get('Retry-After'),'60')});
 test('missing or failed rate limiter fails closed',async()=>{for(const C3_LOGIN_LIMITER of [undefined,{limit:async()=>{throw Error('synthetic failure')}}])assert.equal((await gate.fetch(post('SYNTHETIC-test-passphrase-only'),{...env,C3_LOGIN_LIMITER})).status,503)});
+
+test('concept entry shows login while nested assets remain protected',async()=>{const r=await gate.fetch(req(prefix+'/concept/'),env);assert.equal(r.status,401);assert((await r.text()).includes('_session?view=concept'));assert.equal((await gate.fetch(req(prefix+'/concept/assets/example.js'),env)).status,401)});
+test('concept login returns to concept and arbitrary redirects stay on site',async()=>{for(const [query,path] of [['?view=concept',prefix+'/concept/'],['?view=https://evil.invalid',prefix+'/']]){const original=post('SYNTHETIC-test-passphrase-only');const r=await gate.fetch(new Request(original.url+query,original),env);assert.equal(r.status,303);assert.equal(r.headers.get('Location'),path)}});
