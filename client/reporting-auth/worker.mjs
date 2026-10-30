@@ -1,3 +1,4 @@
+import { C3_HOST, c3Portal } from './c3-host.mjs';
 // Prepared for the existing client site's owner. No secret or CRM content in this module.
 const PREFIX='/c3/reporting';
 const COOKIE='__Secure-c3-reporting';
@@ -14,7 +15,7 @@ function login(message='',status=401,concept=false){return secure(new Response(`
 export default {async fetch(request,env){
  const u=new URL(request.url);let path;try{path=new URL(decodeURIComponent(u.pathname).replace(/\\/g,'/').replace(/\/+/g,'/'),u.origin).pathname}catch{return new Response('Invalid path',{status:400})}
  const protectedPath=path===PREFIX||path.startsWith(PREFIX+'/');
- if(!protectedPath)return env.ASSETS.fetch(request); // Existing unrelated client publications stay unchanged.
+ if(!protectedPath)return u.hostname===C3_HOST ? c3Portal(request,env,path) : env.ASSETS.fetch(request); // Existing unrelated client publications stay unchanged.
  if(u.protocol!=='https:')return new Response('HTTPS required',{status:400});
  if(!env.C3_PASSWORD_HASH||!env.C3_SESSION_SECRET||env.C3_SESSION_SECRET.length<32)return secure(new Response('Reporting access is not configured.',{status:503}));
  const now=Math.floor(Date.now()/1000);
