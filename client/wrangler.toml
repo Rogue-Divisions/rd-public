@@ -7,6 +7,7 @@ preview_urls = false
 
 routes = [
   { pattern = "client.roguedivisions.com", custom_domain = true },
+  { pattern = "c3ai.roguedivisions.com", custom_domain = true },
 ]
 
 [[ratelimits]]
