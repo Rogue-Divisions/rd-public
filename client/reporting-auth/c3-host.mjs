@@ -11,7 +11,7 @@ const FILES = new Set([
   'assets/fonts/Poppins-Medium.ttf', 'assets/fonts/Poppins-Regular.ttf',
   'assets/fonts/Poppins-SemiBold.ttf', 'story/index.html',
   'story/pipeline.html', 'story/reporting.html', 'story/story.css',
-  'research/index.html',
+  'research/index.html', 'research/research.js',
 ]);
 export async function c3Portal(request, env, path) {
   const url = new URL(request.url);
