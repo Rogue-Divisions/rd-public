@@ -14,3 +14,19 @@ test('old client host asset request stays unchanged',async()=>{requests.length=0
 test('dedicated portal upgrades HTTP before reading assets',async()=>{requests.length=0;const r=await gate.fetch(new Request('http://c3ai.roguedivisions.com/c3/portal/'),env);assert.equal(r.status,308);assert(r.headers.get('Location').startsWith('https:'));assert.equal(requests.length,0);});
 
 test('research page uses only the admitted branded file and preserves private headers',async()=>{requests.length=0;const r=await gate.fetch(new Request(base+'/c3/portal/research/'),env);assert.equal(r.status,200);assert.equal(requests[0],base+'/c3/portal/c3ai/research/');assert.equal(r.headers.get('Cache-Control'),'private, no-store');assert.equal(r.headers.get('X-Robots-Tag'),'noindex, nofollow, noarchive');requests.length=0;const unknown=await gate.fetch(new Request(base+'/c3/portal/research/private.json'),env);assert.equal(unknown.status,404);assert.equal(requests.length,0);});
+
+test('separate research review admits its exact page and script without exposing other files',async()=>{
+  for(const suffix of ['research-next/','research-next/explorer.js']){
+    requests.length=0;
+    const response=await gate.fetch(new Request(base+'/c3/portal/'+suffix),env);
+    assert.equal(response.status,200);
+    assert.equal(requests[0],base+'/c3/portal/c3ai/'+suffix);
+    assert.equal(response.headers.get('Cache-Control'),'private, no-store');
+    assert.equal(response.headers.get('X-Robots-Tag'),'noindex, nofollow, noarchive');
+  }
+  requests.length=0;
+  for(const suffix of ['research-next/raw.json','research-next/private/index.html']){
+    assert.equal((await gate.fetch(new Request(base+'/c3/portal/'+suffix),env)).status,404);
+  }
+  assert.equal(requests.length,0);
+});
